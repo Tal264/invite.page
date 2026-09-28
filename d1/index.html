@@ -3,24 +3,22 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Save the Date | נועה & תומר · 18.06.2027</title>
+
+<title>Save the Date</title>
 
 <!-- ============================================================
      GOOGLE FONTS
-     - 'Frank Ruhl Libre': Hebrew-supporting serif for headlines
-     - 'Assistant': Hebrew-supporting sans-serif for body copy
-     - 'Playfair Display' (italic): the "Save the Date" script-like
-        line, and swapped in for headlines in English mode
      ============================================================ -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@400;500;700&family=Assistant:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
 
 <style>
+
   /* ============================================================
-     1. DESIGN TOKENS — same brand palette as the card-style invite,
-     plus tokens for the full-bleed hero overlay.
+     1. DESIGN TOKENS
      ============================================================ */
+
   :root{
     --cream:        #FAF6F0;
     --forest:       #2C3E35;
@@ -41,14 +39,20 @@
     --shadow-soft: 0 18px 40px -18px rgba(44,62,53,0.35);
     --shadow-tight: 0 8px 20px -10px rgba(44,62,53,0.30);
 
-    /* Content stays comfortably narrow on phones, widens gently on desktop */
     --content-width: 480px;
     --content-width-lg: 760px;
   }
 
-  *{ box-sizing: border-box; margin: 0; padding: 0; }
+  *{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
 
-  html{ scroll-behavior: smooth; scroll-padding-top: 20px; }
+  html{
+    scroll-behavior: smooth;
+    scroll-padding-top: 20px;
+  }
 
   body{
     background: var(--cream);
@@ -59,7 +63,10 @@
     overflow-x: hidden;
   }
 
-  img{ max-width: 100%; display: block; }
+  img{
+    max-width: 100%;
+    display: block;
+  }
 
   @media (prefers-reduced-motion: reduce){
     *, *::before, *::after{
@@ -70,7 +77,8 @@
     }
   }
 
-  a:focus-visible, button:focus-visible{
+  a:focus-visible,
+  button:focus-visible{
     outline: 2px solid var(--gold);
     outline-offset: 3px;
   }
@@ -79,35 +87,55 @@
     max-width: var(--content-width);
     margin: 0 auto;
   }
+
   @media (min-width: 900px){
-    .wrap{ max-width: var(--content-width-lg); }
+    .wrap{
+      max-width: var(--content-width-lg);
+    }
   }
 
+
   /* ============================================================
-     2. LANGUAGE TOGGLE — identical behaviour to the card-style page
+     2. LANGUAGE TOGGLE
      ============================================================ */
+
   .lang-toggle{
     position: fixed;
     top: 18px;
     inset-inline-end: 18px;
     z-index: 50;
+
     display: inline-flex;
     align-items: center;
     gap: 6px;
+
     padding: 9px 16px;
+
     background: rgba(255,255,255,0.16);
     color: #fff;
+
     border: 1px solid rgba(255,255,255,0.55);
     border-radius: 999px;
+
     font-family: var(--font-body);
     font-size: 0.85rem;
     font-weight: 600;
+
     cursor: pointer;
+
     backdrop-filter: blur(6px);
     -webkit-backdrop-filter: blur(6px);
   }
-  .lang-toggle svg{ width: 16px; height: 16px; flex-shrink: 0; }
-  .lang-toggle:active{ transform: scale(0.96); }
+
+  .lang-toggle svg{
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+  }
+
+  .lang-toggle:active{
+    transform: scale(0.96);
+  }
 
   html[lang="en"] .save-the-date,
   html[lang="en"] .hero-names,
@@ -118,20 +146,23 @@
     font-family: var(--font-script);
   }
 
+
   /* ============================================================
      3. FULL-BLEED HERO
-     A single full-viewport section: background photo + a graded
-     overlay tuned so white text stays legible over any part of the
-     image, from the top of the frame to the scroll cue at the base.
      ============================================================ */
+
   .hero-full{
     position: relative;
+
     min-height: 100vh;
-    min-height: 100dvh; /* accounts for mobile browser chrome */
+    min-height: 100dvh;
+
     width: 100%;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     overflow: hidden;
   }
 
@@ -140,51 +171,82 @@
     inset: 0;
     z-index: 0;
   }
+
   .hero-media img{
     width: 100%;
     height: 100%;
+
     object-fit: cover;
     object-position: center 35%;
   }
-  /* 🔧 CUSTOMIZE: the darkness/warmth of this gradient controls the
-     contrast against the white text below — deepen the rgba alpha
-     values if a brighter background photo is swapped in. */
+
   .hero-media::after{
     content: "";
+
     position: absolute;
     inset: 0;
+
     background:
-      linear-gradient(180deg, rgba(20,24,20,0.45) 0%, rgba(20,24,20,0.30) 30%, rgba(20,24,20,0.55) 75%, rgba(16,20,16,0.78) 100%);
+      linear-gradient(
+        180deg,
+        rgba(20,24,20,0.45) 0%,
+        rgba(20,24,20,0.30) 30%,
+        rgba(20,24,20,0.55) 75%,
+        rgba(16,20,16,0.78) 100%
+      );
   }
 
   .hero-content{
     position: relative;
     z-index: 1;
+
     width: 100%;
     max-width: var(--content-width);
+
     padding: 0 24px;
+
     text-align: center;
     color: #fff;
   }
+
   @media (min-width: 900px){
-    .hero-content{ max-width: 640px; }
+    .hero-content{
+      max-width: 640px;
+    }
   }
 
-  /* Single orchestrated load-in: eyebrow, title, names and date
-     rise in one soft, staggered sequence — the page's one moment
-     of non-user-triggered motion. */
   .hero-content > *{
     opacity: 0;
     transform: translateY(14px);
+
     animation: hero-rise 0.9s ease forwards;
   }
-  .hero-eyebrow{ animation-delay: 0.1s; }
-  .save-the-date{ animation-delay: 0.28s; }
-  .hero-names{ animation-delay: 0.46s; }
-  .hero-date-line{ animation-delay: 0.64s; }
-  .hero-scroll-cue{ animation-delay: 0.9s; }
+
+  .hero-eyebrow{
+    animation-delay: 0.1s;
+  }
+
+  .save-the-date{
+    animation-delay: 0.28s;
+  }
+
+  .hero-names{
+    animation-delay: 0.46s;
+  }
+
+  .hero-date-line{
+    animation-delay: 0.64s;
+  }
+
+  .hero-scroll-cue{
+    animation-delay: 0.9s;
+  }
+
   @keyframes hero-rise{
-    to{ opacity: 1; transform: translateY(0); }
+    to{
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
   .hero-eyebrow{
@@ -198,680 +260,2585 @@
     font-family: var(--font-script);
     font-style: italic;
     font-weight: 500;
+
     font-size: clamp(1.6rem, 5vw, 2.2rem);
+
     color: #fff;
+
     text-shadow: 0 2px 20px rgba(0,0,0,0.35);
+
     margin-bottom: 10px;
   }
 
   .hero-names{
     font-family: var(--font-display);
     font-weight: 500;
+
     font-size: clamp(2.8rem, 11vw, 4.6rem);
+
     line-height: 1.1;
+
     text-shadow: 0 4px 30px rgba(0,0,0,0.4);
   }
+
   .hero-names .amp{
     color: var(--gold-soft);
     font-style: italic;
+
     padding: 0 10px;
+
     display: inline-block;
   }
 
   .hero-date-line{
     margin-top: 22px;
+
     font-size: 1.05rem;
     font-weight: 600;
+
     letter-spacing: 0.01em;
+
     text-shadow: 0 2px 14px rgba(0,0,0,0.4);
   }
-  .hero-date-line .dot{ color: var(--gold-soft); margin: 0 10px; }
+
+  .hero-date-line .dot{
+    color: var(--gold-soft);
+    margin: 0 10px;
+  }
 
   .hero-scroll-cue{
     position: absolute;
+
     bottom: 26px;
+
     inset-inline-start: 50%;
+
     transform: translateX(-50%);
+
     display: flex;
     flex-direction: column;
     align-items: center;
+
     gap: 6px;
+
     color: rgba(255,255,255,0.85);
+
     font-size: 0.78rem;
   }
-  html[dir="rtl"] .hero-scroll-cue{ transform: translateX(50%); }
-  .hero-scroll-cue svg{
-    width: 20px; height: 20px;
-    animation: bob 2s ease-in-out infinite;
-  }
-  @keyframes bob{
-    0%, 100%{ transform: translateY(0); }
-    50%{ transform: translateY(6px); }
+
+  html[dir="rtl"] .hero-scroll-cue{
+    transform: translateX(50%);
   }
 
+  .hero-scroll-cue svg{
+    width: 20px;
+    height: 20px;
+
+    animation: bob 2s ease-in-out infinite;
+  }
+
+  @keyframes bob{
+    0%, 100%{
+      transform: translateY(0);
+    }
+
+    50%{
+      transform: translateY(6px);
+    }
+  }
+
+
   /* ============================================================
-     4. SECTION SCAFFOLDING (post-hero content)
+     4. SECTION SCAFFOLDING
      ============================================================ */
+
   section{
     padding: 56px 24px;
   }
+
   .section-title{
     font-family: var(--font-display);
+
     font-size: 1.8rem;
+
     text-align: center;
+
     color: var(--forest);
+
     margin-bottom: 6px;
   }
+
   .section-kicker{
     text-align: center;
+
     color: var(--forest-soft);
+
     font-size: 0.94rem;
+
     margin-bottom: 30px;
   }
 
   .reveal{
     opacity: 0;
     transform: translateY(18px);
-    transition: opacity 0.7s ease, transform 0.7s ease;
+
+    transition:
+      opacity 0.7s ease,
+      transform 0.7s ease;
   }
-  .reveal.is-visible{ opacity: 1; transform: translateY(0); }
+
+  .reveal.is-visible{
+    opacity: 1;
+    transform: translateY(0);
+  }
+
 
   /* ============================================================
-     5. COUNTDOWN — "flip clock" style
-     A complete departure from the dark glowing card: each unit now
-     sits on the page's own cream background as a pale paper tile
-     with a hairline seam across its middle (the classic flip-clock
-     silhouette), and a light 3D flip plays across that seam every
-     time the number underneath changes.
+     5. COUNTDOWN
      ============================================================ */
+
   .countdown-wrap{
     max-width: var(--content-width);
+
     margin: 0 auto;
+
     text-align: center;
   }
+
   @media (min-width: 900px){
-    .countdown-wrap{ max-width: 640px; }
+    .countdown-wrap{
+      max-width: 640px;
+    }
   }
 
-  /* Small gold diamond-and-hairline ornament above the title */
   .countdown-ornament{
     display: flex;
     align-items: center;
     justify-content: center;
+
     gap: 10px;
+
     margin-bottom: 14px;
+
     color: var(--gold);
   }
+
   .countdown-ornament .line{
     height: 1px;
     width: 38px;
-    background: linear-gradient(to right, transparent, currentColor, transparent);
+
+    background:
+      linear-gradient(
+        to right,
+        transparent,
+        currentColor,
+        transparent
+      );
   }
-  .countdown-ornament svg{ width: 10px; height: 10px; }
+
+  .countdown-ornament svg{
+    width: 10px;
+    height: 10px;
+  }
 
   .countdown-row{
     display: flex;
     align-items: flex-start;
     justify-content: center;
+
     gap: clamp(6px, 2.5vw, 16px);
+
     margin-top: 28px;
   }
+
   .cd-unit{
     display: flex;
     flex-direction: column;
     align-items: center;
+
     min-width: 64px;
   }
 
-  /* The flip-clock tile itself: perspective lives here so the digit
-     inside can rotate in 3D when it ticks over. */
   .flip-card{
     position: relative;
+
     width: 100%;
+
     background: var(--paper);
+
     border: 1px solid var(--line);
+
     border-radius: 12px;
-    box-shadow: var(--shadow-tight), inset 0 1px 0 rgba(255,255,255,0.7);
+
+    box-shadow:
+      var(--shadow-tight),
+      inset 0 1px 0 rgba(255,255,255,0.7);
+
     padding: 14px 4px 12px;
+
     perspective: 240px;
+
     overflow: hidden;
   }
-  /* The hairline seam across the middle, with a faint highlight
-     just beneath it to sell the "two halves" illusion */
+
   .flip-card::before{
     content: "";
+
     position: absolute;
-    left: 0; right: 0; top: 50%;
+
+    left: 0;
+    right: 0;
+
+    top: 50%;
+
     height: 1px;
+
     background: rgba(44,62,53,0.16);
+
     box-shadow: 0 1px 0 rgba(255,255,255,0.65);
+
     z-index: 2;
   }
 
   .countdown-num{
     display: block;
+
     font-family: var(--font-display);
+
     font-weight: 700;
+
     font-size: clamp(1.8rem, 8vw, 2.6rem);
+
     color: var(--forest);
+
     line-height: 1;
+
     font-variant-numeric: tabular-nums;
+
     transform-style: preserve-3d;
+
     backface-visibility: hidden;
   }
-  /* Fired by JS for ~0.5s whenever the value underneath changes */
+
   .countdown-num.tick{
-    animation: flip-tick 0.5s cubic-bezier(.45,0,.55,1);
+    animation:
+      flip-tick 0.5s cubic-bezier(.45,0,.55,1);
   }
+
   @keyframes flip-tick{
-    0%   { transform: rotateX(0deg);   opacity: 1;   }
-    48%  { transform: rotateX(90deg);  opacity: 0.25; }
-    52%  { transform: rotateX(-90deg); opacity: 0.25; }
-    100% { transform: rotateX(0deg);   opacity: 1;   }
+    0%{
+      transform: rotateX(0deg);
+      opacity: 1;
+    }
+
+    48%{
+      transform: rotateX(90deg);
+      opacity: 0.25;
+    }
+
+    52%{
+      transform: rotateX(-90deg);
+      opacity: 0.25;
+    }
+
+    100%{
+      transform: rotateX(0deg);
+      opacity: 1;
+    }
   }
 
   .flip-sep{
     align-self: center;
+
     font-family: var(--font-display);
+
     font-size: clamp(1.4rem, 5.5vw, 1.9rem);
+
     color: var(--gold);
+
     padding: 0 1px 26px;
+
     line-height: 1;
   }
 
   .countdown-label{
     display: block;
+
     margin-top: 10px;
+
     font-size: 0.78rem;
+
     letter-spacing: 0.05em;
+
     color: var(--forest-soft);
   }
 
+
   /* ============================================================
      6. WHERE & WHEN
-     Two info cards — stacked on mobile, side-by-side on desktop.
      ============================================================ */
+
   .info-grid{
     display: grid;
+
     grid-template-columns: 1fr;
+
     gap: 18px;
+
     max-width: var(--content-width);
+
     margin: 0 auto;
   }
 
   .info-card{
     background: var(--paper);
+
     border: 1px solid var(--line);
+
     border-radius: var(--radius-lg);
+
     padding: 26px 22px;
+
     box-shadow: var(--shadow-tight);
+
     text-align: center;
   }
+
   .info-card-icon{
-    width: 46px; height: 46px;
+    width: 46px;
+    height: 46px;
+
     margin: 0 auto 14px;
-    display: flex; align-items: center; justify-content: center;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     border-radius: 50%;
+
     background: var(--blush);
+
     color: var(--forest);
   }
-  .info-card-icon svg{ width: 22px; height: 22px; }
+
+  .info-card-icon svg{
+    width: 22px;
+    height: 22px;
+  }
+
   .info-card-title{
     font-family: var(--font-display);
+
     font-size: 1.2rem;
+
     margin-bottom: 6px;
   }
+
   .info-card-main{
     font-size: 1.15rem;
+
     font-weight: 700;
+
     color: var(--forest);
+
     margin-bottom: 4px;
   }
+
   .info-card-sub{
     color: var(--forest-soft);
+
     font-size: 0.95rem;
+
     margin-bottom: 18px;
   }
 
   .map-embed{
     width: 100%;
+
     height: 170px;
+
     border: 0;
+
     border-radius: var(--radius-md);
+
     margin-bottom: 16px;
+
     filter: sepia(8%) saturate(85%);
   }
 
   .btn-waze{
     display: flex;
+
     align-items: center;
     justify-content: center;
+
     gap: 10px;
+
     width: 100%;
+
     padding: 14px 18px;
+
     background: var(--forest);
+
     color: var(--cream);
+
     font-weight: 700;
+
     font-size: 1rem;
+
     border: none;
+
     border-radius: 999px;
+
     text-decoration: none;
+
     box-shadow: var(--shadow-tight);
+
     transition: transform 0.15s ease;
   }
-  .btn-waze:active{ transform: scale(0.97); }
-  .btn-waze svg{ width: 20px; height: 20px; flex-shrink: 0; }
+
+  .btn-waze:active{
+    transform: scale(0.97);
+  }
+
+  .btn-waze svg{
+    width: 20px;
+    height: 20px;
+
+    flex-shrink: 0;
+  }
+
 
   /* ============================================================
      7. SCHEDULE / TIMELINE
      ============================================================ */
+
   .timeline{
     position: relative;
+
     max-width: var(--content-width);
+
     margin: 0 auto;
+
     padding-inline-start: 26px;
+
     border-inline-start: 2px solid var(--blush);
   }
-  .timeline-item{ position: relative; padding-bottom: 30px; }
-  .timeline-item:last-child{ padding-bottom: 4px; }
+
+  .timeline-item{
+    position: relative;
+
+    padding-bottom: 30px;
+  }
+
+  .timeline-item:last-child{
+    padding-bottom: 4px;
+  }
+
   .timeline-item::before{
     content: "";
+
     position: absolute;
+
     inset-inline-start: -33px;
+
     top: 4px;
-    width: 14px; height: 14px;
+
+    width: 14px;
+    height: 14px;
+
     border-radius: 50%;
+
     background: var(--gold);
+
     border: 3px solid var(--cream);
-    box-shadow: 0 0 0 2px var(--blush);
+
+    box-shadow:
+      0 0 0 2px var(--blush);
   }
-  .timeline-time{ font-family: var(--font-display); font-size: 1.15rem; font-weight: 700; }
-  .timeline-desc{ color: var(--forest-soft); font-size: 1rem; margin-top: 2px; }
+
+  .timeline-time{
+    font-family: var(--font-display);
+
+    font-size: 1.15rem;
+
+    font-weight: 700;
+  }
+
+  .timeline-desc{
+    color: var(--forest-soft);
+
+    font-size: 1rem;
+
+    margin-top: 2px;
+  }
+
 
   /* ============================================================
      8. RSVP CTA
      ============================================================ */
-  .rsvp-section{ text-align: center; }
-  .rsvp-copy{ color: var(--forest-soft); max-width: 34ch; margin: 0 auto 26px; }
+
+  .rsvp-section{
+    text-align: center;
+  }
+
+  .rsvp-copy{
+    color: var(--forest-soft);
+
+    max-width: 34ch;
+
+    margin: 0 auto 26px;
+  }
 
   .btn-rsvp{
     position: relative;
+
     display: inline-flex;
+
     align-items: center;
+
     gap: 10px;
+
     padding: 18px 38px;
+
     font-weight: 700;
+
     font-size: 1.15rem;
+
     color: var(--forest);
-    background: linear-gradient(135deg, var(--blush), var(--gold-soft));
+
+    background:
+      linear-gradient(
+        135deg,
+        var(--blush),
+        var(--gold-soft)
+      );
+
     border: none;
+
     border-radius: 999px;
+
     cursor: pointer;
-    animation: pulse-glow 2.6s ease-in-out infinite;
+
+    animation:
+      pulse-glow 2.6s ease-in-out infinite;
   }
+
   @keyframes pulse-glow{
-    0%{ box-shadow: 0 0 0 0 rgba(212,175,55,0.45); }
-    70%{ box-shadow: 0 0 0 16px rgba(212,175,55,0); }
-    100%{ box-shadow: 0 0 0 0 rgba(212,175,55,0); }
+    0%{
+      box-shadow:
+        0 0 0 0 rgba(212,175,55,0.45);
+    }
+
+    70%{
+      box-shadow:
+        0 0 0 16px rgba(212,175,55,0);
+    }
+
+    100%{
+      box-shadow:
+        0 0 0 0 rgba(212,175,55,0);
+    }
   }
+
 
   /* ============================================================
      9. RSVP MODAL
      ============================================================ */
+
   .modal-overlay{
-    position: fixed; inset: 0;
+    position: fixed;
+    inset: 0;
+
     background: rgba(44,62,53,0.55);
+
     backdrop-filter: blur(3px);
     -webkit-backdrop-filter: blur(3px);
+
     z-index: 100;
-    display: flex; align-items: flex-end; justify-content: center;
-    opacity: 0; pointer-events: none;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+
+    opacity: 0;
+
+    pointer-events: none;
+
     transition: opacity 0.35s ease;
   }
-  .modal-overlay.is-open{ opacity: 1; pointer-events: auto; }
+
+  .modal-overlay.is-open{
+    opacity: 1;
+
+    pointer-events: auto;
+  }
 
   .modal-sheet{
     width: 100%;
+
     max-width: var(--content-width);
+
     max-height: 88vh;
+
     background: var(--cream);
+
     border-radius: 26px 26px 0 0;
-    box-shadow: 0 -20px 50px -20px rgba(44,62,53,0.5);
-    display: flex; flex-direction: column;
+
+    box-shadow:
+      0 -20px 50px -20px rgba(44,62,53,0.5);
+
+    display: flex;
+    flex-direction: column;
+
     transform: translateY(100%);
-    transition: transform 0.4s cubic-bezier(.32,.72,.35,1);
-    padding-bottom: env(safe-area-inset-bottom, 0px);
+
+    transition:
+      transform 0.4s cubic-bezier(.32,.72,.35,1);
+
+    padding-bottom:
+      env(safe-area-inset-bottom, 0px);
   }
+
   @media (min-width: 900px){
-    .modal-overlay{ align-items: center; }
-    .modal-sheet{ max-width: 560px; border-radius: 26px; max-height: 82vh; }
+
+    .modal-overlay{
+      align-items: center;
+    }
+
+    .modal-sheet{
+      max-width: 560px;
+
+      border-radius: 26px;
+
+      max-height: 82vh;
+    }
   }
-  .modal-overlay.is-open .modal-sheet{ transform: translateY(0); }
+
+  .modal-overlay.is-open .modal-sheet{
+    transform: translateY(0);
+  }
 
   .modal-header{
-    display: flex; align-items: center; justify-content: space-between;
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
     padding: 18px 20px;
+
     border-bottom: 1px solid var(--line);
   }
-  .modal-title{ font-family: var(--font-display); font-size: 1.25rem; }
+
+  .modal-title{
+    font-family: var(--font-display);
+
+    font-size: 1.25rem;
+  }
+
   .modal-close{
-    width: 36px; height: 36px;
+    width: 36px;
+    height: 36px;
+
     border-radius: 50%;
+
     border: 1px solid var(--line);
+
     background: var(--paper);
+
     color: var(--forest);
-    font-size: 1.1rem; line-height: 1;
+
+    font-size: 1.1rem;
+
+    line-height: 1;
+
     cursor: pointer;
-    display: flex; align-items: center; justify-content: center;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
   }
-  .modal-body{ flex: 1; overflow-y: auto; padding: 16px; position: relative; min-height: 320px; }
+
+  .modal-body{
+    flex: 1;
+
+    overflow-y: auto;
+
+    padding: 16px;
+
+    position: relative;
+
+    min-height: 320px;
+  }
+
   .form-loader{
-    position: absolute; inset: 16px;
-    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px;
-    color: var(--forest-soft); font-size: 0.95rem;
-    background: var(--cream); border-radius: var(--radius-md);
-  }
-  .form-loader .spinner{
-    width: 28px; height: 28px; border-radius: 50%;
-    border: 3px solid var(--blush); border-top-color: var(--gold);
-    animation: spin 0.9s linear infinite;
-  }
-  @keyframes spin{ to{ transform: rotate(360deg); } }
-  #rsvpIframe{
-    width: 100%; min-height: 640px; border: 0;
+    position: absolute;
+
+    inset: 16px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    color: var(--forest-soft);
+
+    font-size: 0.95rem;
+
+    background: var(--cream);
+
     border-radius: var(--radius-md);
-    position: relative; z-index: 1; background: transparent;
   }
+
+  .form-loader .spinner{
+    width: 28px;
+    height: 28px;
+
+    border-radius: 50%;
+
+    border: 3px solid var(--blush);
+
+    border-top-color: var(--gold);
+
+    animation:
+      spin 0.9s linear infinite;
+  }
+
+  @keyframes spin{
+    to{
+      transform: rotate(360deg);
+    }
+  }
+
+  #rsvpIframe{
+    width: 100%;
+
+    min-height: 640px;
+
+    border: 0;
+
+    border-radius: var(--radius-md);
+
+    position: relative;
+
+    z-index: 1;
+
+    background: transparent;
+  }
+
 
   /* ============================================================
      10. FOOTER
      ============================================================ */
+
   footer{
     text-align: center;
+
     padding: 34px 24px 46px;
+
     color: var(--forest-soft);
+
     font-size: 0.85rem;
   }
+
+
+  /* ============================================================
+     11. LOADING STATE
+     ============================================================ */
+
+  body.invitation-loading .hero-content{
+    visibility: hidden;
+  }
+
+  body.invitation-ready .hero-content{
+    visibility: visible;
+  }
+
 </style>
 </head>
-<body>
 
-<!-- ======================= LANGUAGE TOGGLE ======================= -->
-<button class="lang-toggle" id="langToggle" type="button" aria-label="Switch language">
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+<body class="invitation-loading">
+
+
+<!-- ============================================================
+     LANGUAGE TOGGLE
+     ============================================================ -->
+
+<button
+  class="lang-toggle"
+  id="langToggle"
+  type="button"
+  aria-label="Switch language"
+>
+
+  <svg
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="1.6"
+  >
     <circle cx="12" cy="12" r="9"/>
     <path d="M3 12h18M12 3c2.5 2.6 3.8 5.7 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.7-3.8-9S9.5 5.6 12 3Z"/>
   </svg>
+
   <span id="langToggleLabel">English</span>
+
 </button>
 
-<!-- ======================= FULL-BLEED HERO ======================= -->
+
+<!-- ============================================================
+     FULL-BLEED HERO
+     ============================================================ -->
+
 <section class="hero-full">
+
   <div class="hero-media">
-    <!--
-      🔧 CUSTOMIZE: swap this src for your own photo of the two of
-      you (a casual, candid, in-love moment works best here — not a
-      formal wedding portrait). Keep it at least 1600px wide so it
-      stays crisp full-screen on desktop.
-    -->
-    <img src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?q=80&w=800&auto=format&fit=crop"
-         alt="נועה ותומר" data-he-alt="נועה ותומר" data-en-alt="Noa and Tomer">
-    <!-- the ::after gradient defined in CSS sits on top of this image -->
+
+    <img
+      id="heroImage"
+      src=""
+      alt=""
+      data-he-alt=""
+      data-en-alt=""
+    >
+
   </div>
+
 
   <div class="hero-content">
-    <p class="hero-eyebrow" data-en="We're getting married">מתחתנים</p>
-    <p class="save-the-date" data-en="Save the Date">שמרו את התאריך</p>
-    <h1 class="hero-names">נועה<span class="amp">&</span>תומר</h1>
-    <p class="hero-date-line">18.06.2027<span class="dot">•</span><span data-en="Hanachala Event Hall">אולם אירועים "הנחלה"</span></p>
+
+    <p
+      class="hero-eyebrow"
+      data-en="We're getting married"
+    >
+      מתחתנים
+    </p>
+
+
+    <p
+      class="save-the-date"
+      data-en="Save the Date"
+    >
+      שמרו את התאריך
+    </p>
+
+
+    <h1 class="hero-names">
+
+      <span id="brideName"></span>
+
+      <span class="amp">&</span>
+
+      <span id="groomName"></span>
+
+    </h1>
+
+
+    <p class="hero-date-line">
+
+      <span id="heroDate"></span>
+
+      <span class="dot">•</span>
+
+      <span
+        id="heroVenue"
+        data-en=""
+        data-he=""
+      ></span>
+
+    </p>
+
   </div>
 
-  <div class="hero-scroll-cue" aria-hidden="true">
-    <span data-en="Scroll">גללו</span>
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 9l6 6 6-6"/></svg>
+
+  <div
+    class="hero-scroll-cue"
+    aria-hidden="true"
+  >
+
+    <span data-en="Scroll">
+      גללו
+    </span>
+
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="1.8"
+    >
+      <path d="M6 9l6 6 6-6"/>
+    </svg>
+
   </div>
+
 </section>
 
-<!-- ======================= COUNTDOWN ======================= -->
+
+<!-- ============================================================
+     COUNTDOWN
+     ============================================================ -->
+
 <section class="reveal">
+
   <div class="countdown-wrap">
-    <div class="countdown-ornament" aria-hidden="true">
-      <span class="line"></span>
-      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 L18 12 L12 22 L6 12 Z"/></svg>
-      <span class="line"></span>
-    </div>
-    <h2 class="section-title" data-en="Countdown">ספירה לאחור</h2>
-    <p class="section-kicker" data-en="Until we start celebrating together">עד שנתחיל לחגוג ביחד</p>
 
-    <div class="countdown-row" id="countdown">
-      <div class="cd-unit">
-        <div class="flip-card"><span class="countdown-num" id="cd-days">00</span></div>
-        <span class="countdown-label" data-en="Days">ימים</span>
-      </div>
-      <span class="flip-sep" aria-hidden="true">:</span>
-      <div class="cd-unit">
-        <div class="flip-card"><span class="countdown-num" id="cd-hours">00</span></div>
-        <span class="countdown-label" data-en="Hours">שעות</span>
-      </div>
-      <span class="flip-sep" aria-hidden="true">:</span>
-      <div class="cd-unit">
-        <div class="flip-card"><span class="countdown-num" id="cd-minutes">00</span></div>
-        <span class="countdown-label" data-en="Minutes">דקות</span>
-      </div>
-      <span class="flip-sep" aria-hidden="true">:</span>
-      <div class="cd-unit">
-        <div class="flip-card"><span class="countdown-num" id="cd-seconds">00</span></div>
-        <span class="countdown-label" data-en="Seconds">שניות</span>
-      </div>
+    <div
+      class="countdown-ornament"
+      aria-hidden="true"
+    >
+
+      <span class="line"></span>
+
+      <svg
+        viewBox="0 0 24 24"
+        fill="currentColor"
+      >
+        <path d="M12 2 L18 12 L12 22 L6 12 Z"/>
+      </svg>
+
+      <span class="line"></span>
+
     </div>
+
+
+    <h2
+      class="section-title"
+      data-en="Countdown"
+    >
+      ספירה לאחור
+    </h2>
+
+
+    <p
+      class="section-kicker"
+      data-en="Until we start celebrating together"
+    >
+      עד שנתחיל לחגוג ביחד
+    </p>
+
+
+    <div
+      class="countdown-row"
+      id="countdown"
+    >
+
+      <div class="cd-unit">
+
+        <div class="flip-card">
+
+          <span
+            class="countdown-num"
+            id="cd-days"
+          >
+            00
+          </span>
+
+        </div>
+
+        <span
+          class="countdown-label"
+          data-en="Days"
+        >
+          ימים
+        </span>
+
+      </div>
+
+
+      <span
+        class="flip-sep"
+        aria-hidden="true"
+      >
+        :
+      </span>
+
+
+      <div class="cd-unit">
+
+        <div class="flip-card">
+
+          <span
+            class="countdown-num"
+            id="cd-hours"
+          >
+            00
+          </span>
+
+        </div>
+
+        <span
+          class="countdown-label"
+          data-en="Hours"
+        >
+          שעות
+        </span>
+
+      </div>
+
+
+      <span
+        class="flip-sep"
+        aria-hidden="true"
+      >
+        :
+      </span>
+
+
+      <div class="cd-unit">
+
+        <div class="flip-card">
+
+          <span
+            class="countdown-num"
+            id="cd-minutes"
+          >
+            00
+          </span>
+
+        </div>
+
+        <span
+          class="countdown-label"
+          data-en="Minutes"
+        >
+          דקות
+        </span>
+
+      </div>
+
+
+      <span
+        class="flip-sep"
+        aria-hidden="true"
+      >
+        :
+      </span>
+
+
+      <div class="cd-unit">
+
+        <div class="flip-card">
+
+          <span
+            class="countdown-num"
+            id="cd-seconds"
+          >
+            00
+          </span>
+
+        </div>
+
+        <span
+          class="countdown-label"
+          data-en="Seconds"
+        >
+          שניות
+        </span>
+
+      </div>
+
+    </div>
+
   </div>
+
 </section>
 
-<!-- ======================= WHERE & WHEN ======================= -->
+
+<!-- ============================================================
+     WHERE & WHEN
+     ============================================================ -->
+
 <section class="reveal">
-  <h2 class="section-title" data-en="Where & When">איפה ומתי</h2>
-  <p class="section-kicker" data-en="Save the details, we'll see you there">שמרו את הפרטים, נתראה שם</p>
+
+  <h2
+    class="section-title"
+    data-en="Where & When"
+  >
+    איפה ומתי
+  </h2>
+
+
+  <p
+    class="section-kicker"
+    data-en="Save the details, we'll see you there"
+  >
+    שמרו את הפרטים, נתראה שם
+  </p>
+
 
   <div class="info-grid">
 
+
     <!-- WHEN -->
+
     <div class="info-card">
-      <div class="info-card-icon" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 10h18"/></svg>
+
+      <div
+        class="info-card-icon"
+        aria-hidden="true"
+      >
+
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.6"
+        >
+          <rect
+            x="3"
+            y="5"
+            width="18"
+            height="16"
+            rx="2"
+          />
+
+          <path d="M8 3v4M16 3v4M3 10h18"/>
+        </svg>
+
       </div>
-      <p class="info-card-title" data-en="When">מתי</p>
-      <p class="info-card-main">18.06.2027</p>
-      <p class="info-card-sub" data-en="Doors open 19:30">קבלת פנים מ-19:30</p>
+
+
+      <p
+        class="info-card-title"
+        data-en="When"
+      >
+        מתי
+      </p>
+
+
+      <p
+        class="info-card-main"
+        id="eventDate"
+      >
+      </p>
+
+
+      <p
+        class="info-card-sub"
+        id="receptionText"
+        data-en=""
+        data-he=""
+      >
+      </p>
+
     </div>
+
 
     <!-- WHERE -->
+
     <div class="info-card">
-      <div class="info-card-icon" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 22s7-6.5 7-12a7 7 0 0 0-14 0c0 5.5 7 12 7 12Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+
+      <div
+        class="info-card-icon"
+        aria-hidden="true"
+      >
+
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.6"
+        >
+          <path d="M12 22s7-6.5 7-12a7 7 0 0 0-14 0c0 5.5 7 12 7 12Z"/>
+          <circle
+            cx="12"
+            cy="10"
+            r="2.5"
+          />
+        </svg>
+
       </div>
-      <p class="info-card-title" data-en="Where">איפה</p>
-      <p class="info-card-main" data-en="Hanachala Event Hall">אולם אירועים "הנחלה"</p>
-      <p class="info-card-sub" data-en="12 Example St, Central Region">רחוב הדוגמה 12, אזור המרכז</p>
 
-      <!-- 🔧 CUSTOMIZE: replace with your venue's Google Maps embed src -->
-      <iframe class="map-embed"
-        src="https://www.google.com/maps?q=32.0853,34.7818&z=15&output=embed"
-        loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="מפת המיקום"></iframe>
 
-      <!-- 🔧 CUSTOMIZE: replace with your Waze share link -->
-      <a class="btn-waze" href="https://waze.com/ul?q=%D7%90%D7%95%D7%9C%D7%9D%20%D7%94%D7%A0%D7%97%D7%9C%D7%94&navigate=yes" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C7.6 2 4 5.6 4 10c0 6 8 12 8 12s8-6 8-12c0-4.4-3.6-8-8-8Zm0 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6Z"/></svg>
-        <span data-en="Navigate with Waze">נווטו למיקום ב-Waze</span>
+      <p
+        class="info-card-title"
+        data-en="Where"
+      >
+        איפה
+      </p>
+
+
+      <p
+        class="info-card-main"
+        id="venueName"
+        data-en=""
+        data-he=""
+      >
+      </p>
+
+
+      <p
+        class="info-card-sub"
+        id="venueAddress"
+        data-en=""
+        data-he=""
+      >
+      </p>
+
+
+      <iframe
+        id="googleMap"
+        class="map-embed"
+        src=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="מפת המיקום"
+      ></iframe>
+
+
+      <a
+        class="btn-waze"
+        id="wazeLink"
+        href="#"
+        target="_blank"
+        rel="noopener"
+      >
+
+        <svg
+          viewBox="0 0 24 24"
+          fill="currentColor"
+        >
+          <path d="M12 2C7.6 2 4 5.6 4 10c0 6 8 12 8 12s8-6 8-12c0-4.4-3.6-8-8-8Zm0 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6Z"/>
+        </svg>
+
+        <span data-en="Navigate with Waze">
+          נווטו למיקום ב-Waze
+        </span>
+
       </a>
+
     </div>
 
   </div>
+
 </section>
 
-<!-- ======================= SCHEDULE ======================= -->
+
+<!-- ============================================================
+     SCHEDULE
+     ============================================================ -->
+
 <section class="reveal">
-  <h2 class="section-title" data-en="Schedule">לוח זמנים</h2>
-  <p class="section-kicker" data-en="Here's how our evening will look">כך יראה הערב שלנו</p>
+
+  <h2
+    class="section-title"
+    data-en="Schedule"
+  >
+    לוח זמנים
+  </h2>
+
+
+  <p
+    class="section-kicker"
+    data-en="Here's how our evening will look"
+  >
+    כך יראה הערב שלנו
+  </p>
+
 
   <div class="timeline">
+
     <div class="timeline-item">
-      <p class="timeline-time">19:30</p>
-      <p class="timeline-desc" data-en="Reception 🍸">קבלת פנים 🍸</p>
+
+      <p
+        class="timeline-time"
+        id="scheduleReceptionTime"
+      >
+        19:30
+      </p>
+
+      <p
+        class="timeline-desc"
+        data-en="Reception 🍸"
+      >
+        קבלת פנים 🍸
+      </p>
+
     </div>
+
+
     <div class="timeline-item">
-      <p class="timeline-time">20:30</p>
-      <p class="timeline-desc" data-en="Chuppah & Ceremony 💍">חופה וקידושין 💍</p>
+
+      <p class="timeline-time">
+        20:30
+      </p>
+
+      <p
+        class="timeline-desc"
+        data-en="Chuppah & Ceremony 💍"
+      >
+        חופה וקידושין 💍
+      </p>
+
     </div>
+
+
     <div class="timeline-item">
-      <p class="timeline-time">21:15</p>
-      <p class="timeline-desc" data-en="Dinner & Party 🪩">ארוחת ערב ומסיבה 🪩</p>
+
+      <p class="timeline-time">
+        21:15
+      </p>
+
+      <p
+        class="timeline-desc"
+        data-en="Dinner & Party 🪩"
+      >
+        ארוחת ערב ומסיבה 🪩
+      </p>
+
     </div>
+
   </div>
+
 </section>
 
-<!-- ======================= RSVP ======================= -->
+
+<!-- ============================================================
+     RSVP
+     ============================================================ -->
+
 <section class="rsvp-section reveal">
-  <h2 class="section-title" data-en="RSVP">אישור הגעה</h2>
-  <p class="rsvp-copy" data-en="We'd love to know you'll be with us on our special evening — please RSVP by 1.06.2027">נשמח לדעת שתהיו איתנו בערב המיוחד הזה - אנא אשרו הגעתכם עד ה-1.06.2027</p>
-  <button class="btn-rsvp" id="openRsvp" type="button">
-    <span data-en="RSVP 💌">אשרו הגעה 💌</span>
+
+  <h2
+    class="section-title"
+    data-en="RSVP"
+  >
+    אישור הגעה
+  </h2>
+
+
+  <p
+    class="rsvp-copy"
+    id="rsvpCopy"
+    data-en=""
+    data-he=""
+  >
+  </p>
+
+
+  <button
+    class="btn-rsvp"
+    id="openRsvp"
+    type="button"
+  >
+
+    <span data-en="RSVP 💌">
+      אשרו הגעה 💌
+    </span>
+
   </button>
+
 </section>
 
-<!-- ======================= FOOTER ======================= -->
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+
 <footer>
-  <p class="credit" data-en="Made with love by dotpage 🤍">נבנה באהבה על ידי dotpage 🤍</p>
+
+  <p
+    class="credit"
+    data-en="Made with love by dotpage 🤍"
+  >
+    נבנה באהבה על ידי dotpage 🤍
+  </p>
+
 </footer>
 
-<!-- ======================= RSVP MODAL ======================= -->
-<div class="modal-overlay" id="rsvpModal" aria-hidden="true">
-  <div class="modal-sheet" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+
+<!-- ============================================================
+     RSVP MODAL
+     ============================================================ -->
+
+<div
+  class="modal-overlay"
+  id="rsvpModal"
+  aria-hidden="true"
+>
+
+  <div
+    class="modal-sheet"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="modalTitle"
+  >
+
     <div class="modal-header">
-      <h3 class="modal-title" id="modalTitle" data-en="RSVP Form">טופס אישור הגעה</h3>
-      <button class="modal-close" id="closeRsvp" type="button" aria-label="סגירה">✕</button>
+
+      <h3
+        class="modal-title"
+        id="modalTitle"
+        data-en="RSVP Form"
+      >
+        טופס אישור הגעה
+      </h3>
+
+
+      <button
+        class="modal-close"
+        id="closeRsvp"
+        type="button"
+        aria-label="סגירה"
+      >
+        ✕
+      </button>
+
     </div>
+
+
     <div class="modal-body">
-      <div class="form-loader" id="formLoader">
-        <div class="spinner" aria-hidden="true"></div>
-        <span data-en="Loading form...">טוען את הטופס...</span>
+
+      <div
+        class="form-loader"
+        id="formLoader"
+      >
+
+        <div
+          class="spinner"
+          aria-hidden="true"
+        ></div>
+
+        <span data-en="Loading form...">
+          טוען את הטופס...
+        </span>
+
       </div>
-      <!-- 🔧 CUSTOMIZE: paste your Google Form embed URL (from Send → <> → copy src) -->
-      <iframe id="rsvpIframe"
-         src="https://docs.google.com/forms/d/e/1FAIpQLSdWsHbUJHekWG7Xb15X_Zzy5mmfcJ23tLiQadgG6AyyRQ89bA/viewform?embedded=true"
-          title="טופס אישור הגעה">טוען...</iframe>
+
+
+      <iframe
+        id="rsvpIframe"
+        src=""
+        title="טופס אישור הגעה"
+      >
+        טוען...
+      </iframe>
+
     </div>
+
   </div>
+
 </div>
 
+
 <script>
+
 (function () {
+
   "use strict";
 
-  /* ---------------- 1) Countdown timer ---------------- */
-  // 🔧 CUSTOMIZE: set to your real wedding date/time
-  var WEDDING_DATE = new Date("2027-06-18T19:30:00");
-  var els = {
-    days: document.getElementById("cd-days"),
-    hours: document.getElementById("cd-hours"),
-    minutes: document.getElementById("cd-minutes"),
-    seconds: document.getElementById("cd-seconds")
-  };
-  var previous = { days: null, hours: null, minutes: null, seconds: null };
-  function pad(n){ return String(n).padStart(2, "0"); }
-  function renderUnit(el, key, value){
-    var text = pad(value);
-    if (previous[key] !== text){
-      el.textContent = text;
-      el.classList.add("tick");
-      window.setTimeout(function(){ el.classList.remove("tick"); }, 250);
-      previous[key] = text;
-    }
+
+  /* ============================================================
+     1. GLOBAL STATE
+     ============================================================ */
+
+  var invitationData = null;
+
+  var currentLang = "he";
+
+  var countdownTimer = null;
+
+  var WEDDING_DATE = null;
+
+
+  /* ============================================================
+     2. GET CUSTOMER SLUG
+     
+     Example:
+     
+     /d1/maya-yair
+     
+     becomes:
+     
+     maya-yair
+     ============================================================ */
+
+  function getInvitationSlug(){
+
+    var pathParts = window.location.pathname
+      .split("/")
+      .filter(Boolean);
+
+    /*
+      Expected:
+
+      pathParts[0] = d1
+      pathParts[1] = maya-yair
+    */
+
+    return pathParts[1] || null;
   }
-  function updateCountdown(){
-    var distance = WEDDING_DATE.getTime() - new Date().getTime();
-    if (distance <= 0){
-      renderUnit(els.days,"days",0); renderUnit(els.hours,"hours",0);
-      renderUnit(els.minutes,"minutes",0); renderUnit(els.seconds,"seconds",0);
-      clearInterval(countdownTimer);
+
+
+  /* ============================================================
+     3. DOM ELEMENTS
+     ============================================================ */
+
+  var els = {
+
+    days:
+      document.getElementById("cd-days"),
+
+    hours:
+      document.getElementById("cd-hours"),
+
+    minutes:
+      document.getElementById("cd-minutes"),
+
+    seconds:
+      document.getElementById("cd-seconds"),
+
+    brideName:
+      document.getElementById("brideName"),
+
+    groomName:
+      document.getElementById("groomName"),
+
+    heroDate:
+      document.getElementById("heroDate"),
+
+    heroVenue:
+      document.getElementById("heroVenue"),
+
+    heroImage:
+      document.getElementById("heroImage"),
+
+    eventDate:
+      document.getElementById("eventDate"),
+
+    receptionText:
+      document.getElementById("receptionText"),
+
+    venueName:
+      document.getElementById("venueName"),
+
+    venueAddress:
+      document.getElementById("venueAddress"),
+
+    googleMap:
+      document.getElementById("googleMap"),
+
+    wazeLink:
+      document.getElementById("wazeLink"),
+
+    rsvpCopy:
+      document.getElementById("rsvpCopy"),
+
+    rsvpIframe:
+      document.getElementById("rsvpIframe"),
+
+    scheduleReceptionTime:
+      document.getElementById("scheduleReceptionTime")
+
+  };
+
+
+  /* ============================================================
+     4. LOAD CUSTOMER JSON
+     ============================================================ */
+
+  async function loadInvitation(){
+
+    var slug = getInvitationSlug();
+
+    if (!slug){
+
+      console.error(
+        "No invitation slug found in URL."
+      );
+
+      showError(
+        "Invitation not found."
+      );
+
       return;
     }
-    renderUnit(els.days, "days", Math.floor(distance/86400000));
-    renderUnit(els.hours, "hours", Math.floor((distance%86400000)/3600000));
-    renderUnit(els.minutes, "minutes", Math.floor((distance%3600000)/60000));
-    renderUnit(els.seconds, "seconds", Math.floor((distance%60000)/1000));
-  }
-  updateCountdown();
-  var countdownTimer = window.setInterval(updateCountdown, 1000);
 
-  /* ---------------- 2) Scroll reveal ---------------- */
-  var revealTargets = document.querySelectorAll(".reveal");
-  if ("IntersectionObserver" in window){
-    var observer = new IntersectionObserver(function(entries, obs){
-      entries.forEach(function(entry){
-        if (entry.isIntersecting){
-          entry.target.classList.add("is-visible");
-          obs.unobserve(entry.target);
+
+    try{
+
+      /*
+        Example request:
+
+        /d1/data/maya-yair.json
+      */
+
+      var response = await fetch(
+        "/d1/data/" +
+        encodeURIComponent(slug) +
+        ".json",
+        {
+          cache: "no-cache"
         }
-      });
-    }, { threshold: 0.15 });
-    revealTargets.forEach(function(t){ observer.observe(t); });
-  } else {
-    revealTargets.forEach(function(t){ t.classList.add("is-visible"); });
-  }
+      );
 
-  /* ---------------- 3) RSVP modal ---------------- */
-  var modal = document.getElementById("rsvpModal");
-  var openBtn = document.getElementById("openRsvp");
-  var closeBtn = document.getElementById("closeRsvp");
-  var iframe = document.getElementById("rsvpIframe");
-  var loader = document.getElementById("formLoader");
-  var lastFocused = null;
-  function openModal(){
-    lastFocused = document.activeElement;
-    modal.classList.add("is-open");
-    modal.setAttribute("aria-hidden", "false");
-    document.body.style.overflow = "hidden";
-    closeBtn.focus();
-  }
-  function closeModal(){
-    modal.classList.remove("is-open");
-    modal.setAttribute("aria-hidden", "true");
-    document.body.style.overflow = "";
-    if (lastFocused) lastFocused.focus();
-  }
-  openBtn.addEventListener("click", openModal);
-  closeBtn.addEventListener("click", closeModal);
-  modal.addEventListener("click", function(e){ if (e.target === modal) closeModal(); });
-  document.addEventListener("keydown", function(e){
-    if (e.key === "Escape" && modal.classList.contains("is-open")) closeModal();
-  });
-  iframe.addEventListener("load", function(){ loader.style.display = "none"; });
 
-  /* ---------------- 4) Language toggle ---------------- */
-  var htmlEl = document.documentElement;
-  var langToggle = document.getElementById("langToggle");
-  var langToggleLabel = document.getElementById("langToggleLabel");
-  var translatable = document.querySelectorAll("[data-en]");
-  var currentLang = "he";
-  function applyLanguage(lang){
-    translatable.forEach(function(el){
-      if (!el.dataset.he) el.dataset.he = el.textContent;
-      el.textContent = lang === "en" ? el.dataset.en : el.dataset.he;
-    });
-    var heroImg = document.querySelector(".hero-media img");
-    if (heroImg && heroImg.dataset.enAlt){
-      heroImg.alt = lang === "en" ? heroImg.dataset.enAlt : heroImg.dataset.heAlt;
+      if (!response.ok){
+
+        throw new Error(
+          "Invitation data not found: " +
+          slug
+        );
+
+      }
+
+
+      invitationData =
+        await response.json();
+
+
+      applyInvitationData();
+
+
+      document.body.classList.remove(
+        "invitation-loading"
+      );
+
+      document.body.classList.add(
+        "invitation-ready"
+      );
+
+
+    }catch(error){
+
+      console.error(
+        "Failed to load invitation:",
+        error
+      );
+
+      showError(
+        "Unable to load this invitation."
+      );
+
     }
-    htmlEl.setAttribute("lang", lang);
-    htmlEl.setAttribute("dir", lang === "en" ? "ltr" : "rtl");
-    langToggleLabel.textContent = lang === "en" ? "עברית" : "English";
-    currentLang = lang;
+
   }
-  langToggle.addEventListener("click", function(){
-    applyLanguage(currentLang === "he" ? "en" : "he");
-  });
+
+
+  /* ============================================================
+     5. APPLY CUSTOMER DATA TO PAGE
+     ============================================================ */
+
+  function applyInvitationData(){
+
+    var data = invitationData;
+
+
+    /* ----------------------------------------------------------
+       Names
+       ---------------------------------------------------------- */
+
+    if (els.brideName){
+
+      els.brideName.textContent =
+        data.brideName || "";
+
+    }
+
+
+    if (els.groomName){
+
+      els.groomName.textContent =
+        data.groomName || "";
+
+    }
+
+
+    /* ----------------------------------------------------------
+       Browser title
+       ---------------------------------------------------------- */
+
+    document.title =
+      "Save the Date | " +
+      (data.brideName || "") +
+      " & " +
+      (data.groomName || "") +
+      " · " +
+      (data.date || "");
+
+
+    /* ----------------------------------------------------------
+       Hero date
+       ---------------------------------------------------------- */
+
+    if (els.heroDate){
+
+      els.heroDate.textContent =
+        data.date || "";
+
+    }
+
+
+    /* ----------------------------------------------------------
+       Hero venue
+       ---------------------------------------------------------- */
+
+    if (els.heroVenue){
+
+      els.heroVenue.dataset.he =
+        data.venueHe || "";
+
+      els.heroVenue.dataset.en =
+        data.venueEn || "";
+
+      els.heroVenue.textContent =
+        currentLang === "en"
+          ? data.venueEn
+          : data.venueHe;
+
+    }
+
+
+    /* ----------------------------------------------------------
+       Hero image
+       ---------------------------------------------------------- */
+
+    if (
+      els.heroImage &&
+      data.heroImage
+    ){
+
+      els.heroImage.src =
+        data.heroImage;
+
+
+      var bride =
+        data.brideName || "";
+
+      var groom =
+        data.groomName || "";
+
+
+      els.heroImage.dataset.heAlt =
+        bride +
+        " ו" +
+        groom;
+
+
+      els.heroImage.dataset.enAlt =
+        bride +
+        " and " +
+        groom;
+
+
+      els.heroImage.alt =
+        currentLang === "en"
+          ? els.heroImage.dataset.enAlt
+          : els.heroImage.dataset.heAlt;
+
+    }
+
+
+    /* ----------------------------------------------------------
+       Event date
+       ---------------------------------------------------------- */
+
+    if (els.eventDate){
+
+      els.eventDate.textContent =
+        data.date || "";
+
+    }
+
+
+    /* ----------------------------------------------------------
+       Reception
+       ---------------------------------------------------------- */
+
+    if (els.receptionText){
+
+      var reception =
+        data.reception || "";
+
+      els.receptionText.dataset.he =
+        "קבלת פנים מ-" +
+        reception;
+
+      els.receptionText.dataset.en =
+        "Doors open " +
+        reception;
+
+    }
+
+
+    if (els.scheduleReceptionTime){
+
+      els.scheduleReceptionTime.textContent =
+        data.reception || "";
+
+    }
+
+
+    /* ----------------------------------------------------------
+       Venue
+       ---------------------------------------------------------- */
+
+    if (els.venueName){
+
+      els.venueName.dataset.he =
+        data.venueHe || "";
+
+      els.venueName.dataset.en =
+        data.venueEn || "";
+
+    }
+
+
+    /* ----------------------------------------------------------
+       Address
+       ---------------------------------------------------------- */
+
+    if (els.venueAddress){
+
+      els.venueAddress.dataset.he =
+        data.addressHe || "";
+
+      els.venueAddress.dataset.en =
+        data.addressEn || "";
+
+    }
+
+
+    /* ----------------------------------------------------------
+       Google Maps
+       ---------------------------------------------------------- */
+
+    if (
+      els.googleMap &&
+      data.googleMaps
+    ){
+
+      els.googleMap.src =
+        data.googleMaps;
+
+    }
+
+
+    /* ----------------------------------------------------------
+       Waze
+       ---------------------------------------------------------- */
+
+    if (
+      els.wazeLink &&
+      data.waze
+    ){
+
+      els.wazeLink.href =
+        data.waze;
+
+    }
+
+
+    /* ----------------------------------------------------------
+       RSVP copy
+       ---------------------------------------------------------- */
+
+    if (els.rsvpCopy){
+
+      var deadlineHe =
+        data.rsvpDeadlineHe ||
+        data.rsvpDeadlineEn ||
+        "";
+
+      var deadlineEn =
+        data.rsvpDeadlineEn ||
+        data.rsvpDeadlineHe ||
+        "";
+
+
+      els.rsvpCopy.dataset.he =
+        "נשמח לדעת שתהיו איתנו בערב המיוחד הזה - אנא אשרו הגעתכם עד ה-" +
+        deadlineHe;
+
+
+      els.rsvpCopy.dataset.en =
+        "We'd love to know you'll be with us on our special evening — please RSVP by " +
+        deadlineEn;
+
+    }
+
+
+    /* ----------------------------------------------------------
+       RSVP Google Form
+       ---------------------------------------------------------- */
+
+    if (
+      els.rsvpIframe &&
+      data.rsvpUrl
+    ){
+
+      els.rsvpIframe.src =
+        data.rsvpUrl;
+
+    }
+
+
+    /* ----------------------------------------------------------
+       Countdown
+       ---------------------------------------------------------- */
+
+    if (data.dateISO){
+
+      startCountdown(
+        data.dateISO
+      );
+
+    }
+
+
+    /* ----------------------------------------------------------
+       Apply current language
+       ---------------------------------------------------------- */
+
+    applyLanguage(
+      currentLang
+    );
+
+  }
+
+
+  /* ============================================================
+     6. ERROR STATE
+     ============================================================ */
+
+  function showError(message){
+
+    document.body.classList.remove(
+      "invitation-loading"
+    );
+
+    document.body.classList.add(
+      "invitation-ready"
+    );
+
+    var heroContent =
+      document.querySelector(
+        ".hero-content"
+      );
+
+    if (heroContent){
+
+      heroContent.innerHTML =
+        '<p style="font-size:1.1rem;">' +
+        message +
+        "</p>";
+
+    }
+
+  }
+
+
+  /* ============================================================
+     7. COUNTDOWN
+     ============================================================ */
+
+  var previous = {
+
+    days: null,
+
+    hours: null,
+
+    minutes: null,
+
+    seconds: null
+
+  };
+
+
+  function pad(n){
+
+    return String(n).padStart(
+      2,
+      "0"
+    );
+
+  }
+
+
+  function renderUnit(
+    el,
+    key,
+    value
+  ){
+
+    if (!el){
+      return;
+    }
+
+
+    var text =
+      pad(value);
+
+
+    if (
+      previous[key] !== text
+    ){
+
+      el.textContent =
+        text;
+
+
+      el.classList.add(
+        "tick"
+      );
+
+
+      window.setTimeout(
+        function(){
+
+          el.classList.remove(
+            "tick"
+          );
+
+        },
+        250
+      );
+
+
+      previous[key] =
+        text;
+
+    }
+
+  }
+
+
+  function updateCountdown(){
+
+    if (!WEDDING_DATE){
+      return;
+    }
+
+
+    var distance =
+      WEDDING_DATE.getTime() -
+      new Date().getTime();
+
+
+    if (distance <= 0){
+
+      renderUnit(
+        els.days,
+        "days",
+        0
+      );
+
+      renderUnit(
+        els.hours,
+        "hours",
+        0
+      );
+
+      renderUnit(
+        els.minutes,
+        "minutes",
+        0
+      );
+
+      renderUnit(
+        els.seconds,
+        "seconds",
+        0
+      );
+
+
+      if (countdownTimer){
+
+        clearInterval(
+          countdownTimer
+        );
+
+      }
+
+
+      return;
+
+    }
+
+
+    renderUnit(
+      els.days,
+      "days",
+      Math.floor(
+        distance / 86400000
+      )
+    );
+
+
+    renderUnit(
+      els.hours,
+      "hours",
+      Math.floor(
+        (distance % 86400000) /
+        3600000
+      )
+    );
+
+
+    renderUnit(
+      els.minutes,
+      "minutes",
+      Math.floor(
+        (distance % 3600000) /
+        60000
+      )
+    );
+
+
+    renderUnit(
+      els.seconds,
+      "seconds",
+      Math.floor(
+        (distance % 60000) /
+        1000
+      )
+    );
+
+  }
+
+
+  function startCountdown(
+    dateISO
+  ){
+
+    WEDDING_DATE =
+      new Date(dateISO);
+
+
+    if (
+      isNaN(
+        WEDDING_DATE.getTime()
+      )
+    ){
+
+      console.error(
+        "Invalid wedding date:",
+        dateISO
+      );
+
+      return;
+
+    }
+
+
+    if (countdownTimer){
+
+      clearInterval(
+        countdownTimer
+      );
+
+    }
+
+
+    previous = {
+
+      days: null,
+
+      hours: null,
+
+      minutes: null,
+
+      seconds: null
+
+    };
+
+
+    updateCountdown();
+
+
+    countdownTimer =
+      window.setInterval(
+        updateCountdown,
+        1000
+      );
+
+  }
+
+
+  /* ============================================================
+     8. SCROLL REVEAL
+     ============================================================ */
+
+  var revealTargets =
+    document.querySelectorAll(
+      ".reveal"
+    );
+
+
+  if (
+    "IntersectionObserver"
+    in window
+  ){
+
+    var observer =
+      new IntersectionObserver(
+        function(entries, obs){
+
+          entries.forEach(
+            function(entry){
+
+              if (
+                entry.isIntersecting
+              ){
+
+                entry.target.classList.add(
+                  "is-visible"
+                );
+
+
+                obs.unobserve(
+                  entry.target
+                );
+
+              }
+
+            }
+          );
+
+        },
+        {
+          threshold: 0.15
+        }
+      );
+
+
+    revealTargets.forEach(
+      function(t){
+
+        observer.observe(t);
+
+      }
+    );
+
+
+  }else{
+
+    revealTargets.forEach(
+      function(t){
+
+        t.classList.add(
+          "is-visible"
+        );
+
+      }
+    );
+
+  }
+
+
+  /* ============================================================
+     9. RSVP MODAL
+     ============================================================ */
+
+  var modal =
+    document.getElementById(
+      "rsvpModal"
+    );
+
+  var openBtn =
+    document.getElementById(
+      "openRsvp"
+    );
+
+  var closeBtn =
+    document.getElementById(
+      "closeRsvp"
+    );
+
+  var iframe =
+    document.getElementById(
+      "rsvpIframe"
+    );
+
+  var loader =
+    document.getElementById(
+      "formLoader"
+    );
+
+  var lastFocused =
+    null;
+
+
+  function openModal(){
+
+    lastFocused =
+      document.activeElement;
+
+
+    modal.classList.add(
+      "is-open"
+    );
+
+
+    modal.setAttribute(
+      "aria-hidden",
+      "false"
+    );
+
+
+    document.body.style.overflow =
+      "hidden";
+
+
+    closeBtn.focus();
+
+  }
+
+
+  function closeModal(){
+
+    modal.classList.remove(
+      "is-open"
+    );
+
+
+    modal.setAttribute(
+      "aria-hidden",
+      "true"
+    );
+
+
+    document.body.style.overflow =
+      "";
+
+
+    if (lastFocused){
+
+      lastFocused.focus();
+
+    }
+
+  }
+
+
+  if (openBtn){
+
+    openBtn.addEventListener(
+      "click",
+      openModal
+    );
+
+  }
+
+
+  if (closeBtn){
+
+    closeBtn.addEventListener(
+      "click",
+      closeModal
+    );
+
+  }
+
+
+  if (modal){
+
+    modal.addEventListener(
+      "click",
+      function(e){
+
+        if (
+          e.target === modal
+        ){
+
+          closeModal();
+
+        }
+
+      }
+    );
+
+  }
+
+
+  document.addEventListener(
+    "keydown",
+    function(e){
+
+      if (
+        e.key === "Escape" &&
+        modal.classList.contains(
+          "is-open"
+        )
+      ){
+
+        closeModal();
+
+      }
+
+    }
+  );
+
+
+  if (iframe){
+
+    iframe.addEventListener(
+      "load",
+      function(){
+
+        if (loader){
+
+          loader.style.display =
+            "none";
+
+        }
+
+      }
+    );
+
+  }
+
+
+  /* ============================================================
+     10. LANGUAGE TOGGLE
+     ============================================================ */
+
+  var htmlEl =
+    document.documentElement;
+
+  var langToggle =
+    document.getElementById(
+      "langToggle"
+    );
+
+  var langToggleLabel =
+    document.getElementById(
+      "langToggleLabel"
+    );
+
+
+  function applyLanguage(lang){
+
+    currentLang =
+      lang;
+
+
+    var translatable =
+      document.querySelectorAll(
+        "[data-en]"
+      );
+
+
+    translatable.forEach(
+      function(el){
+
+        /*
+          Only save the original Hebrew text
+          if data-he has not already been
+          provided dynamically.
+        */
+
+        if (
+          !el.dataset.he
+        ){
+
+          el.dataset.he =
+            el.textContent.trim();
+
+        }
+
+
+        el.textContent =
+          lang === "en"
+            ? el.dataset.en
+            : el.dataset.he;
+
+      }
+    );
+
+
+    /* ----------------------------------------------------------
+       Hero image alt
+       ---------------------------------------------------------- */
+
+    var heroImg =
+      document.querySelector(
+        ".hero-media img"
+      );
+
+
+    if (
+      heroImg &&
+      heroImg.dataset.enAlt
+    ){
+
+      heroImg.alt =
+        lang === "en"
+          ? heroImg.dataset.enAlt
+          : heroImg.dataset.heAlt;
+
+    }
+
+
+    /* ----------------------------------------------------------
+       Page direction
+       ---------------------------------------------------------- */
+
+    htmlEl.setAttribute(
+      "lang",
+      lang
+    );
+
+
+    htmlEl.setAttribute(
+      "dir",
+      lang === "en"
+        ? "ltr"
+        : "rtl"
+    );
+
+
+    /* ----------------------------------------------------------
+       Toggle label
+       ---------------------------------------------------------- */
+
+    if (langToggleLabel){
+
+      langToggleLabel.textContent =
+        lang === "en"
+          ? "עברית"
+          : "English";
+
+    }
+
+  }
+
+
+  if (langToggle){
+
+    langToggle.addEventListener(
+      "click",
+      function(){
+
+        applyLanguage(
+          currentLang === "he"
+            ? "en"
+            : "he"
+        );
+
+      }
+    );
+
+  }
+
+
+  /* ============================================================
+     11. START
+     ============================================================ */
+
+  loadInvitation();
+
 
 })();
+
 </script>
 
 </body>
