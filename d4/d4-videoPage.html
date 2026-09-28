@@ -1,0 +1,1563 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+  >
+
+  <meta name="theme-color" content="#23372e">
+
+  <title>נועה & תומר | Save the Date</title>
+
+  <!-- ==========================================================
+       GOOGLE FONTS
+       ========================================================== -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;500;600;700&family=Frank+Ruhl+Libre:wght@400;500;600;700&family=Playfair+Display:ital,wght@500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+
+  <style>
+
+    /* ==========================================================
+       COLORS & FONTS
+       ========================================================== */
+
+    :root {
+
+      --cream: #fffaf3;
+
+      --white: #ffffff;
+
+      /* Dark green taken as the main wedding color */
+      --forest: #23372e;
+      --forest-dark: #18251f;
+      --forest-light: #30493d;
+
+      --gold: #d5b36a;
+      --gold-light: #f0dba8;
+
+      --shadow: 0 20px 60px rgba(0, 0, 0, .25);
+
+      --display: 'Frank Ruhl Libre', Georgia, serif;
+      --script: 'Playfair Display', Georgia, serif;
+      --body: 'Assistant', Arial, sans-serif;
+    }
+
+
+    /* ==========================================================
+       GLOBAL
+       ========================================================== */
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+
+      background: var(--forest-dark);
+
+      color: var(--white);
+
+      font-family: var(--body);
+
+      overflow-x: hidden;
+    }
+
+    button,
+    input,
+    textarea {
+      font: inherit;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+
+    /* ==========================================================
+       MAIN INVITATION
+       ========================================================== */
+
+    .invitation {
+
+      position: relative;
+
+      width: 100%;
+
+      min-height: 100svh;
+      min-height: 100dvh;
+
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      overflow: hidden;
+
+      isolation: isolate;
+
+      background: var(--forest-dark);
+    }
+
+
+    /* ==========================================================
+       DARK GREEN BACKGROUND
+
+       This fills the sides of the screen on desktop.
+       ========================================================== */
+
+    .video-background {
+
+      position: absolute;
+
+      inset: 0;
+
+      z-index: -10;
+
+      background:
+        radial-gradient(
+          circle at center,
+          var(--forest-light) 0%,
+          var(--forest) 45%,
+          var(--forest-dark) 100%
+        );
+    }
+
+
+    /* ==========================================================
+       VIDEO FRAME
+       ========================================================== */
+
+    .video-frame {
+
+      position: absolute;
+
+      inset: 0;
+
+      width: 100%;
+      height: 100%;
+
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      overflow: hidden;
+
+      z-index: -5;
+    }
+
+
+    /* ==========================================================
+       VIDEO
+
+       The video itself is portrait 9:16.
+
+       On desktop:
+       - stays centered
+       - maintains its proportions
+
+       On mobile:
+       - fills the entire screen
+       ========================================================== */
+
+    .wedding-video {
+
+      display: block;
+
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+
+      object-position: center center;
+
+      flex-shrink: 0;
+
+      background: var(--forest-dark);
+    }
+
+
+    /* ==========================================================
+       VIDEO OVERLAY
+
+       Makes the text readable while keeping the video visible.
+       ========================================================== */
+
+    .video-overlay {
+
+      position: absolute;
+
+      inset: 0;
+
+      z-index: -3;
+
+      pointer-events: none;
+
+      background:
+        linear-gradient(
+          180deg,
+          rgba(12, 25, 19, .45) 0%,
+          rgba(12, 25, 19, .25) 35%,
+          rgba(12, 25, 19, .40) 65%,
+          rgba(12, 25, 19, .75) 100%
+        );
+    }
+
+
+    /* ==========================================================
+       SUBTLE VIGNETTE
+       ========================================================== */
+
+    .video-vignette {
+
+      position: absolute;
+
+      inset: 0;
+
+      z-index: -2;
+
+      pointer-events: none;
+
+      box-shadow:
+        inset 0 0 180px rgba(0, 0, 0, .45);
+    }
+
+
+    /* ==========================================================
+       CONTENT
+
+       IMPORTANT:
+       This is positioned above the video.
+       ========================================================== */
+
+    .content {
+
+      position: relative;
+
+      z-index: 5;
+
+      width: 100%;
+
+      min-height: 100svh;
+      min-height: 100dvh;
+
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      padding:
+        clamp(30px, 6vh, 70px)
+        24px;
+    }
+
+
+    .content-inner {
+
+      width: min(720px, 100%);
+
+      display: flex;
+
+      flex-direction: column;
+
+      align-items: center;
+
+      text-align: center;
+      
+      gap: 16px;
+    }
+
+
+    /* ==========================================================
+       NAMES
+       ========================================================== */
+
+    .names {
+      font-family: var(--display);
+      font-weight: 600;
+
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+
+      line-height: 1.1;
+      letter-spacing: -.025em;
+
+      color: var(--cream);
+
+      text-shadow:
+        0 4px 20px rgba(0, 0, 0, .8),
+        0 2px 6px rgba(0, 0, 0, .6);
+
+      animation:
+        fadeUp .9s .12s ease both;
+
+      margin-top: 0;
+    }
+
+
+    /* ==========================================================
+       AMPERSAND
+       ========================================================== */
+
+    .amp {
+
+      display: inline-block;
+
+      padding: 0 .14em;
+
+      color: var(--gold-light);
+
+      font-family: var(--script);
+
+      font-style: italic;
+
+      font-size: .8em;
+
+      vertical-align: .04em;
+    }
+
+
+    /* ==========================================================
+       DATE
+       ========================================================== */
+
+    .date {
+
+      margin-top: 8px;
+
+      font-family: var(--script);
+
+      font-size: clamp(1.4rem, 4vw, 2.2rem);
+
+      font-weight: 500;
+
+      letter-spacing: .08em;
+
+      color: var(--cream);
+
+      text-shadow:
+        0 3px 18px rgba(0, 0, 0, .8),
+        0 2px 6px rgba(0, 0, 0, .6);
+
+      animation:
+        fadeUp .9s .24s ease both;
+    }
+
+
+    /* ==========================================================
+       LOCATION
+       ========================================================== */
+
+    .location {
+
+      margin-top: 4px;
+
+      font-size: clamp(1.05rem, 2.8vw, 1.3rem);
+
+      color: var(--cream);
+
+      text-shadow:
+        0 3px 18px rgba(0, 0, 0, .8),
+        0 2px 6px rgba(0, 0, 0, .6);
+
+      animation:
+        fadeUp .9s .34s ease both;
+    }
+
+
+    /* ==========================================================
+       PERSONAL MESSAGE
+       ========================================================== */
+
+    .message {
+
+      width: min(600px, 100%);
+
+      margin-top: 12px;
+
+      font-size: clamp(1rem, 2.7vw, 1.25rem);
+
+      line-height: 1.65;
+
+      color: rgba(255, 255, 255, .96);
+
+      text-shadow:
+        0 3px 18px rgba(0, 0, 0, .8),
+        0 2px 6px rgba(0, 0, 0, .6);
+
+      animation:
+        fadeUp .9s .44s ease both;
+    }
+
+
+    /* ==========================================================
+       DIVIDER
+       ========================================================== */
+
+    .divider {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 12px;
+
+      width: min(300px, 70%);
+
+      margin: 12px auto;
+
+      animation:
+        fadeUp .9s .52s ease both;
+    }
+
+
+    .divider::before,
+    .divider::after {
+
+      content: '';
+
+      height: 1px;
+
+      flex: 1;
+
+      background:
+        linear-gradient(
+          90deg,
+          transparent,
+          rgba(240, 219, 168, .8),
+          transparent
+        );
+    }
+
+
+    .divider span {
+
+      color: var(--gold-light);
+
+      font-size: 1rem;
+    }
+
+
+    /* ==========================================================
+       BUTTONS
+       ========================================================== */
+
+    .actions {
+
+      display: flex;
+
+      flex-wrap: wrap;
+
+      justify-content: center;
+
+      gap: 12px;
+
+      margin-top: 8px;
+
+      animation:
+        fadeUp .9s .62s ease both;
+    }
+
+
+    /* ==========================================================
+       RSVP BUTTON
+       ========================================================== */
+
+    .rsvp-button {
+
+      position: relative;
+
+      min-width: 190px;
+
+      padding: 15px 28px;
+
+      border: 1px solid rgba(255, 255, 255, .7);
+
+      border-radius: 999px;
+
+      background: rgba(255, 255, 255, .96);
+
+      color: var(--forest);
+
+      font-weight: 700;
+
+      font-size: 1rem;
+
+      box-shadow:
+        0 15px 40px rgba(0, 0, 0, .35);
+
+      transition:
+        transform .2s ease,
+        box-shadow .2s ease,
+        background .2s ease;
+    }
+
+
+    .rsvp-button:hover {
+
+      transform: translateY(-3px);
+
+      box-shadow:
+        0 24px 55px rgba(0, 0, 0, .45);
+
+      background: #ffffff;
+    }
+
+
+    .rsvp-button:active {
+
+      transform:
+        translateY(0)
+        scale(.98);
+    }
+
+
+    /* ==========================================================
+       SOUND BUTTON
+       ========================================================== */
+
+    .secondary-button {
+
+      padding: 14px 24px;
+
+      border:
+        1px solid rgba(255, 255, 255, .6);
+
+      border-radius: 999px;
+
+      background:
+        rgba(20, 30, 25, .45);
+
+      color: #ffffff;
+
+      font-weight: 600;
+
+      backdrop-filter: blur(8px);
+
+      -webkit-backdrop-filter: blur(8px);
+
+      transition:
+        background .2s ease,
+        transform .2s ease;
+    }
+
+
+    .secondary-button:hover {
+
+      background:
+        rgba(20, 30, 25, .65);
+
+      transform: translateY(-2px);
+    }
+
+
+    /* ==========================================================
+       CREDIT
+       ========================================================== */
+
+    .credit {
+
+      margin-top: 14px;
+
+      font-size: .78rem;
+
+      color:
+        rgba(255, 255, 255, .85);
+
+      text-shadow: 0 2px 4px rgba(0, 0, 0, .6);
+
+      animation:
+        fadeUp .9s .72s ease both;
+    }
+
+
+    /* ==========================================================
+       ANIMATION
+       ========================================================== */
+
+    @keyframes fadeUp {
+
+      from {
+
+        opacity: 0;
+
+        transform:
+          translateY(18px);
+      }
+
+      to {
+
+        opacity: 1;
+
+        transform:
+          translateY(0);
+      }
+    }
+
+
+    /* ==========================================================
+       RSVP MODAL
+       ========================================================== */
+
+    .modal {
+
+      position: fixed;
+
+      inset: 0;
+
+      z-index: 100;
+
+      display: flex;
+
+      align-items: flex-end;
+
+      justify-content: center;
+
+      padding: 0;
+
+      background:
+        rgba(10, 18, 14, .58);
+
+      backdrop-filter: blur(7px);
+
+      -webkit-backdrop-filter: blur(7px);
+
+      opacity: 0;
+
+      pointer-events: none;
+
+      transition:
+        opacity .3s ease;
+    }
+
+
+    .modal.open {
+
+      opacity: 1;
+
+      pointer-events: auto;
+    }
+
+
+    .modal-card {
+
+      width: min(620px, 100%);
+
+      max-height: 92dvh;
+
+      background: var(--cream);
+
+      color: var(--forest);
+
+      border-radius:
+        28px 28px 0 0;
+
+      overflow: hidden;
+
+      box-shadow:
+        0 -20px 70px rgba(0, 0, 0, .35);
+
+      transform:
+        translateY(100%);
+
+      transition:
+        transform .4s
+        cubic-bezier(.2, .75, .25, 1);
+
+      display: flex;
+
+      flex-direction: column;
+    }
+
+
+    .modal.open .modal-card {
+
+      transform:
+        translateY(0);
+    }
+
+
+    /* ==========================================================
+       DESKTOP MODAL
+       ========================================================== */
+
+    @media (min-width: 800px) {
+
+      .modal {
+
+        align-items: center;
+
+        padding: 24px;
+      }
+
+      .modal-card {
+
+        border-radius: 28px;
+
+        max-height: 88dvh;
+      }
+    }
+
+
+    /* ==========================================================
+       MODAL HEADER
+       ========================================================== */
+
+    .modal-header {
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      gap: 15px;
+
+      padding: 18px 20px;
+
+      border-bottom:
+        1px solid rgba(35, 55, 46, .12);
+
+      flex-shrink: 0;
+    }
+
+
+    .modal-title {
+
+      font-family: var(--display);
+
+      font-size: 1.4rem;
+
+      font-weight: 600;
+    }
+
+
+    .close-button {
+
+      width: 38px;
+
+      height: 38px;
+
+      border:
+        1px solid rgba(35, 55, 46, .15);
+
+      border-radius: 50%;
+
+      background: #ffffff;
+
+      color: var(--forest);
+
+      font-size: 1.1rem;
+
+      transition:
+        transform .2s ease;
+    }
+
+
+    .close-button:hover {
+
+      transform: rotate(90deg);
+    }
+
+
+    /* ==========================================================
+       MODAL BODY
+       ========================================================== */
+
+    .modal-body {
+
+      overflow: auto;
+
+      padding: 18px;
+
+      -webkit-overflow-scrolling: touch;
+    }
+
+
+    .form-note {
+
+      text-align: center;
+
+      margin-bottom: 14px;
+
+      color: #52645b;
+
+      font-size: .95rem;
+    }
+
+
+    /* ==========================================================
+       GOOGLE FORM
+       ========================================================== */
+
+    #rsvpIframe {
+
+      display: block;
+
+      width: 100%;
+
+      height: 650px;
+
+      min-height: 500px;
+
+      border: 0;
+
+      border-radius: 18px;
+
+      background: #ffffff;
+    }
+
+
+    /* ==========================================================
+       MOBILE
+       ========================================================== */
+
+    @media (max-width: 767px) {
+
+      .invitation {
+
+        min-height: 100dvh;
+      }
+
+
+      .wedding-video {
+
+        width: 100%;
+
+        height: 100%;
+
+        object-fit: cover;
+
+        object-position:
+          center center;
+      }
+
+
+      .video-overlay {
+
+        background:
+          linear-gradient(
+            180deg,
+            rgba(12, 25, 19, .35) 0%,
+            rgba(12, 25, 19, .15) 30%,
+            rgba(12, 25, 19, .30) 60%,
+            rgba(12, 25, 19, .80) 100%
+          );
+      }
+
+
+      .content {
+
+        padding:
+          40px 20px
+          45px;
+      }
+
+
+      .content-inner {
+
+        width: 100%;
+        gap: 12px;
+      }
+
+
+      .names {
+
+        font-size:
+          clamp(3.1rem, 15vw, 5rem);
+      }
+
+
+      .message {
+
+        max-width: 340px;
+      }
+
+
+      .actions {
+
+        width: 100%;
+      }
+
+
+      .rsvp-button,
+      .secondary-button {
+
+        width:
+          min(320px, 100%);
+      }
+    }
+
+
+    /* ==========================================================
+       DESKTOP VIDEO
+       ========================================================== */
+
+    @media (min-width: 768px) {
+
+      .video-frame {
+
+        width: 100%;
+        height: 100%;
+      }
+
+
+      .wedding-video {
+
+        width:
+          min(56.25vh, 100vw);
+
+        height:
+          min(100vh, 177.7778vw);
+
+        aspect-ratio:
+          9 / 16;
+
+        object-fit:
+          cover;
+
+        flex-shrink: 0;
+
+        box-shadow:
+          0 0 100px rgba(0, 0, 0, .40);
+      }
+
+
+      .video-overlay {
+
+        background:
+          linear-gradient(
+            180deg,
+            rgba(12, 25, 19, .35) 0%,
+            rgba(12, 25, 19, .15) 30%,
+            rgba(12, 25, 19, .35) 60%,
+            rgba(12, 25, 19, .75) 100%
+          );
+      }
+
+
+      .content-inner {
+
+        width:
+          min(680px, 80%);
+      }
+    }
+
+
+    /* ==========================================================
+       SHORT DESKTOP SCREENS
+       ========================================================== */
+
+    @media (min-width: 768px)
+      and (max-height: 700px) {
+
+      .wedding-video {
+
+        height: 100vh;
+
+        width: 56.25vh;
+      }
+
+
+      .content {
+
+        padding-top: 25px;
+
+        padding-bottom: 25px;
+      }
+
+
+      .names {
+
+        font-size:
+          clamp(3rem, 9vw, 5.5rem);
+      }
+
+
+      .message {
+
+        margin-top: 10px;
+      }
+
+
+      .divider {
+
+        margin:
+          10px auto;
+      }
+    }
+
+
+    /* ==========================================================
+       VERY SMALL PHONES
+       ========================================================== */
+
+    @media (max-width: 380px) {
+
+      .content {
+
+        padding:
+          28px 16px
+          35px;
+      }
+
+
+      .names {
+
+        font-size:
+          2.8rem;
+      }
+
+
+      .message {
+
+        font-size:
+          .95rem;
+
+        line-height:
+          1.5;
+      }
+
+
+      .rsvp-button,
+      .secondary-button {
+
+        font-size:
+          .95rem;
+
+        padding:
+          13px 20px;
+      }
+    }
+
+
+    /* ==========================================================
+       REDUCED MOTION
+       ========================================================== */
+
+    @media (prefers-reduced-motion: reduce) {
+
+      *,
+      *::before,
+      *::after {
+
+        animation-duration:
+          .01ms !important;
+
+        animation-iteration-count:
+          1 !important;
+
+        transition-duration:
+          .01ms !important;
+      }
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+  <!-- ==========================================================
+       WEDDING INVITATION
+       ========================================================== -->
+
+  <main class="invitation">
+
+
+    <!-- ========================================================
+         DARK GREEN BACKGROUND
+         ======================================================== -->
+
+    <div class="video-background"></div>
+
+
+    <!-- ========================================================
+         VIDEO
+         ======================================================== -->
+
+    <div class="video-frame">
+
+      <video
+        class="wedding-video"
+        id="weddingVideo"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="auto"
+        aria-hidden="true"
+      >
+
+        <source
+          src="flower.mp4"
+          type="video/mp4"
+        >
+
+      </video>
+
+    </div>
+
+
+    <!-- ========================================================
+         VIDEO OVERLAY
+         ======================================================== -->
+
+    <div class="video-overlay"></div>
+
+    <div class="video-vignette"></div>
+
+
+    <!-- ========================================================
+         EDITABLE WEDDING CONTENT
+         ======================================================== -->
+
+    <section
+      class="content"
+      aria-label="Wedding invitation"
+    >
+
+      <div class="content-inner">
+
+
+        <!-- ====================================================
+             EDIT NAMES
+             ==================================================== -->
+
+        <h1 class="names">
+
+          נועה
+
+          <span class="amp">
+            &
+          </span>
+
+          תומר
+
+        </h1>
+
+
+        <!-- ====================================================
+             EDIT DATE & TIME
+             ==================================================== -->
+
+        <p class="date">
+
+          18.06.2027 · 19:30
+
+        </p>
+
+
+        <!-- ====================================================
+             EDIT LOCATION
+             ==================================================== -->
+
+        <p class="location">
+
+          אולם אירועים "הנחלה" · אזור המרכז
+
+        </p>
+
+
+        <!-- ====================================================
+             EDIT PERSONAL MESSAGE
+             ==================================================== -->
+
+        <p class="message">
+
+          אנחנו מתרגשים להזמין אתכם לחגוג איתנו
+
+          <br>
+          את היום המיוחד שלנו ❤️
+
+        </p>
+
+
+        <!-- ====================================================
+             DECORATIVE DIVIDER
+             ==================================================== -->
+
+        <div
+          class="divider"
+          aria-hidden="true"
+        >
+
+          <span>
+            ✦
+          </span>
+
+        </div>
+
+
+        <!-- ====================================================
+             BUTTONS
+             ==================================================== -->
+
+        <div class="actions">
+
+
+          <!-- ==================================================
+               RSVP BUTTON
+               ================================================== -->
+
+          <button
+            class="rsvp-button"
+            id="openRsvp"
+            type="button"
+          >
+
+            אישור הגעה
+
+          </button>
+
+
+          <!-- ==================================================
+               SOUND BUTTON
+               ================================================== -->
+
+          <button
+            class="secondary-button"
+            id="soundButton"
+            type="button"
+          >
+
+            🔊 הפעלת מוזיקה
+
+          </button>
+
+          <audio
+            id="weddingAudio"
+            loop
+            preload="auto"
+          >
+            <source
+              src="treasure.mp3"
+              type="audio/mpeg"
+            >
+          </audio>
+
+        </div>
+
+
+        <!-- ====================================================
+             CREDIT
+             ==================================================== -->
+
+        <p class="credit">
+
+          נבנה באהבה על ידי dotpage 🤍
+
+        </p>
+
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+  <!-- ==========================================================
+       RSVP MODAL
+       ========================================================== -->
+
+  <div
+    class="modal"
+    id="rsvpModal"
+    aria-hidden="true"
+  >
+
+    <div
+      class="modal-card"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modalTitle"
+    >
+
+
+      <!-- ======================================================
+           MODAL HEADER
+           ====================================================== -->
+
+      <div class="modal-header">
+
+
+        <h2
+          class="modal-title"
+          id="modalTitle"
+        >
+
+          אישור הגעה 💌
+
+        </h2>
+
+
+        <button
+          class="close-button"
+          id="closeRsvp"
+          type="button"
+          aria-label="סגירה"
+        >
+
+          ✕
+
+        </button>
+
+
+      </div>
+
+
+      <!-- ======================================================
+           MODAL BODY
+           ====================================================== -->
+
+      <div class="modal-body">
+
+
+        <p class="form-note">
+
+          נשמח לדעת שתהיו איתנו ❤️
+
+        </p>
+
+
+        <!-- ====================================================
+             GOOGLE FORM
+             ==================================================== -->
+
+        <iframe
+          id="rsvpIframe"
+          src="https://docs.google.com/forms/d/e/1FAIpQLSdWsHbUJHekWG7Xb15X_Zzy5mmfcJ23tLiQadgG6AyyRQ89bA/viewform?embedded=true"
+          title="טופס אישור הגעה"
+          loading="lazy"
+        >
+
+          טוען...
+
+        </iframe>
+
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- ==========================================================
+       JAVASCRIPT
+       ========================================================== -->
+
+  <script>
+
+
+    /* ==========================================================
+       RSVP MODAL
+       ========================================================== */
+
+    const modal =
+      document.getElementById('rsvpModal');
+
+    const openRsvp =
+      document.getElementById('openRsvp');
+
+    const closeRsvp =
+      document.getElementById('closeRsvp');
+
+
+    /* ==========================================================
+       OPEN MODAL
+       ========================================================== */
+
+    function openModal() {
+
+      modal.classList.add('open');
+
+      modal.setAttribute(
+        'aria-hidden',
+        'false'
+      );
+
+      document.body.style.overflow =
+        'hidden';
+
+      closeRsvp.focus();
+    }
+
+
+    /* ==========================================================
+       CLOSE MODAL
+       ========================================================== */
+
+    function closeModal() {
+
+      modal.classList.remove('open');
+
+      modal.setAttribute(
+        'aria-hidden',
+        'true'
+      );
+
+      document.body.style.overflow =
+        '';
+
+      openRsvp.focus();
+    }
+
+
+    /* ==========================================================
+       RSVP EVENTS
+       ========================================================== */
+
+    openRsvp.addEventListener(
+      'click',
+      openModal
+    );
+
+
+    closeRsvp.addEventListener(
+      'click',
+      closeModal
+    );
+
+
+    /* Close when clicking outside the modal */
+
+    modal.addEventListener(
+      'click',
+      function(event) {
+
+        if (
+          event.target === modal
+        ) {
+
+          closeModal();
+
+        }
+
+      }
+    );
+
+
+    /* Close with ESC */
+
+    document.addEventListener(
+      'keydown',
+      function(event) {
+
+        if (
+          event.key === 'Escape' &&
+          modal.classList.contains('open')
+        ) {
+
+          closeModal();
+
+        }
+
+      }
+    );
+
+/* ==========================================================
+   VIDEO / SOUND
+   ========================================================== */
+
+const video =
+  document.getElementById(
+    'weddingVideo'
+  );
+
+const soundButton =
+  document.getElementById(
+    'soundButton'
+  );
+
+const weddingAudio =
+  document.getElementById(
+    'weddingAudio'
+  );
+
+
+soundButton.addEventListener(
+  'click',
+  async function() {
+
+    try {
+
+      if (weddingAudio.paused) {
+
+        await weddingAudio.play();
+
+        soundButton.textContent =
+          '🔇 כיבוי מוזיקה';
+
+      } else {
+
+        weddingAudio.pause();
+
+        soundButton.textContent =
+          '🔊 הפעלת מוזיקה';
+
+      }
+
+    }
+
+    catch (error) {
+
+      console.error(
+        'Unable to play wedding music:',
+        error
+      );
+
+    }
+
+  }
+);
+
+    /* ==========================================================
+       MAKE SURE VIDEO STARTS
+       ========================================================== */
+
+    window.addEventListener(
+      'load',
+      function() {
+
+        video.play().catch(
+          function() {
+            /*
+              Autoplay may be blocked by
+              the browser. The video is muted,
+              so normally it should work.
+            */
+          }
+        );
+
+      }
+    );
+
+
+  </script>
+
+
+</body>
+
+</html>
