@@ -1,15 +1,12 @@
-cat > functions/d1/[[slug]].js <<'EOF'
 export async function onRequest(context) {
   const url = new URL(context.request.url);
 
-  // Let customer JSON files load normally
+  // Customer JSON files are static assets
   if (url.pathname.startsWith("/d1/data/")) {
     return context.env.ASSETS.fetch(context.request);
   }
 
-  // Serve the D1 template for every customer URL
-  // Use /d1/ instead of /d1/index.html because
-  // Cloudflare Pages automatically redirects index.html -> /
+  // Serve the D1 template for customer URLs
   if (url.pathname.startsWith("/d1/")) {
     const templateUrl = new URL("/d1/", url);
 
@@ -20,4 +17,3 @@ export async function onRequest(context) {
 
   return context.env.ASSETS.fetch(context.request);
 }
-EOF
