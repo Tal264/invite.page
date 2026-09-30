@@ -1749,45 +1749,65 @@
   var WEDDING_DATE = null;
 
 
-  /* ============================================================
-     2. GET CUSTOMER SLUG
-     
-     Example:
-     
-     /d1/maya-yair
-     
-     becomes:
-     
-     maya-yair
-     ============================================================ */
+/* ============================================================
+   2. GET CUSTOMER SLUG
+
+   Examples:
+
+   /d1/maya-yair/
+   /d2/maya-yair/
+   /d3/maya-yair/
+   /d4/maya-yair/
+
+   all become:
+
+   maya-yair
+   ============================================================ */
 
 function getInvitationSlug() {
+
   // 1. Local testing:
   // Example: /d1/?slug=maya-yair
-  const urlParams = new URLSearchParams(window.location.search);
-  const paramSlug = urlParams.get("slug");
+  const urlParams =
+    new URLSearchParams(window.location.search);
+
+  const paramSlug =
+    urlParams.get("slug");
 
   if (paramSlug) {
     return paramSlug.trim();
   }
 
+
   // 2. Production URL:
   // Example: /d1/maya-yair/
-  var pathParts = window.location.pathname
-    .split("/")
-    .filter(Boolean);
+  //          /d2/maya-yair/
+  //          /d3/maya-yair/
+  //          /d4/maya-yair/
+
+  var pathParts =
+    window.location.pathname
+      .split("/")
+      .filter(Boolean);
+
 
   // Expected path:
   // ["d1", "maya-yair"]
+  // ["d2", "maya-yair"]
+  // ["d3", "maya-yair"]
+  // ["d4", "maya-yair"]
 
   if (
     pathParts.length >= 2 &&
-    pathParts[0].toLowerCase() === "d1" &&
+    /^d[1-4]$/i.test(pathParts[0]) &&
     pathParts[1].trim() !== "" &&
     !pathParts[1].toLowerCase().endsWith(".html")
   ) {
+
     return pathParts[1].trim();
+
   }
+
 
   return null;
 }
@@ -1889,9 +1909,9 @@ async function loadInvitation() {
     */
 
     var dataUrl =
-      "/d1/data/" +
-      encodeURIComponent(slug) +
-      ".json";
+    "/data/" +
+    encodeURIComponent(slug) +
+    ".json";
 
 
     console.log(

@@ -1,4 +1,4 @@
 /d1/:slug/ /d1/ 200
-/d2/* /d2/index.html 200
-/d3/* /d3/index.html 200
-/d4/* /d4/index.html 200
+/d2/:slug/ /d2/ 200
+/d3/:slug/ /d3/ 200
+/d4/:slug/ /d4/ 200
