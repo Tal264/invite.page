@@ -1762,161 +1762,195 @@
      ============================================================ */
 
 function getInvitationSlug() {
-  // 1. Check for local testing parameter: ?slug=maya-yair
+  // 1. Local testing:
+  // Example: /d1/?slug=maya-yair
   const urlParams = new URLSearchParams(window.location.search);
-  const paramSlug = urlParams.get('slug');
-  if (paramSlug) return paramSlug;
+  const paramSlug = urlParams.get("slug");
 
-  // 2. Fallback to production URL path segment parsing (/d1/maya-yair)
-  var pathParts = window.location.pathname.split("/").filter(Boolean);
-  if (pathParts.length >= 2 && pathParts[1].trim() !== "" && !pathParts[1].endsWith('.html')) {
-    return pathParts[1];
+  if (paramSlug) {
+    return paramSlug.trim();
+  }
+
+  // 2. Production URL:
+  // Example: /d1/maya-yair/
+  var pathParts = window.location.pathname
+    .split("/")
+    .filter(Boolean);
+
+  // Expected path:
+  // ["d1", "maya-yair"]
+
+  if (
+    pathParts.length >= 2 &&
+    pathParts[0].toLowerCase() === "d1" &&
+    pathParts[1].trim() !== "" &&
+    !pathParts[1].toLowerCase().endsWith(".html")
+  ) {
+    return pathParts[1].trim();
   }
 
   return null;
 }
 
-  /* ============================================================
-     3. DOM ELEMENTS
-     ============================================================ */
 
-  var els = {
+/* ============================================================
+   3. DOM ELEMENTS
+   ============================================================ */
 
-    days:
-      document.getElementById("cd-days"),
+var els = {
 
-    hours:
-      document.getElementById("cd-hours"),
+  days:
+    document.getElementById("cd-days"),
 
-    minutes:
-      document.getElementById("cd-minutes"),
+  hours:
+    document.getElementById("cd-hours"),
 
-    seconds:
-      document.getElementById("cd-seconds"),
+  minutes:
+    document.getElementById("cd-minutes"),
 
-    brideName:
-      document.getElementById("brideName"),
+  seconds:
+    document.getElementById("cd-seconds"),
 
-    groomName:
-      document.getElementById("groomName"),
+  brideName:
+    document.getElementById("brideName"),
 
-    heroDate:
-      document.getElementById("heroDate"),
+  groomName:
+    document.getElementById("groomName"),
 
-    heroVenue:
-      document.getElementById("heroVenue"),
+  heroDate:
+    document.getElementById("heroDate"),
 
-    heroImage:
-      document.getElementById("heroImage"),
+  heroVenue:
+    document.getElementById("heroVenue"),
 
-    eventDate:
-      document.getElementById("eventDate"),
+  heroImage:
+    document.getElementById("heroImage"),
 
-    receptionText:
-      document.getElementById("receptionText"),
+  eventDate:
+    document.getElementById("eventDate"),
 
-    venueName:
-      document.getElementById("venueName"),
+  receptionText:
+    document.getElementById("receptionText"),
 
-    venueAddress:
-      document.getElementById("venueAddress"),
+  venueName:
+    document.getElementById("venueName"),
 
-    googleMap:
-      document.getElementById("googleMap"),
+  venueAddress:
+    document.getElementById("venueAddress"),
 
-    wazeLink:
-      document.getElementById("wazeLink"),
+  googleMap:
+    document.getElementById("googleMap"),
 
-    rsvpCopy:
-      document.getElementById("rsvpCopy"),
+  wazeLink:
+    document.getElementById("wazeLink"),
 
-    rsvpIframe:
-      document.getElementById("rsvpIframe"),
+  rsvpCopy:
+    document.getElementById("rsvpCopy"),
 
-    scheduleReceptionTime:
-      document.getElementById("scheduleReceptionTime")
+  rsvpIframe:
+    document.getElementById("rsvpIframe"),
 
-  };
+  scheduleReceptionTime:
+    document.getElementById("scheduleReceptionTime")
 
-
-  /* ============================================================
-     4. LOAD CUSTOMER JSON
-     ============================================================ */
-
-  async function loadInvitation(){
-
-    var slug = getInvitationSlug();
-
-    if (!slug){
-
-      console.error(
-        "No invitation slug found in URL."
-      );
-
-      showError(
-        "Invitation not found."
-      );
-
-      return;
-    }
+};
 
 
-    try{
+/* ============================================================
+   4. LOAD CUSTOMER JSON
+   ============================================================ */
 
-      /*
-        Example request:
+async function loadInvitation() {
 
-        /d1/data/maya-yair.json
-      */
+  var slug = getInvitationSlug();
 
-     // Uses relative path so it works both locally and in production
-var response = await fetch(
-  "./data/" + encodeURIComponent(slug) + ".json",
-  { cache: "no-cache" }
-);
+  if (!slug) {
+
+    console.error(
+      "No invitation slug found in URL:",
+      window.location.href
+    );
+
+    showError(
+      "Invitation not found."
+    );
+
+    return;
+  }
 
 
-      if (!response.ok){
+  try {
 
-        throw new Error(
-          "Invitation data not found: " +
-          slug
-        );
+    /*
+      Customer data files:
 
+      /d1/data/maya-yair.json
+      /d1/data/daniel-noa.json
+    */
+
+    var dataUrl =
+      "/d1/data/" +
+      encodeURIComponent(slug) +
+      ".json";
+
+
+    console.log(
+      "Loading invitation data:",
+      dataUrl
+    );
+
+
+    var response = await fetch(
+      dataUrl,
+      {
+        cache: "no-cache"
       }
+    );
 
 
-      invitationData =
-        await response.json();
+    if (!response.ok) {
 
-
-      applyInvitationData();
-
-
-      document.body.classList.remove(
-        "invitation-loading"
-      );
-
-      document.body.classList.add(
-        "invitation-ready"
-      );
-
-
-    }catch(error){
-
-      console.error(
-        "Failed to load invitation:",
-        error
-      );
-
-      showError(
-        "Unable to load this invitation."
+      throw new Error(
+        "Invitation data not found: " +
+        slug +
+        " (" +
+        response.status +
+        ")"
       );
 
     }
+
+
+    invitationData =
+      await response.json();
+
+
+    applyInvitationData();
+
+
+    document.body.classList.remove(
+      "invitation-loading"
+    );
+
+    document.body.classList.add(
+      "invitation-ready"
+    );
+
+
+  } catch (error) {
+
+    console.error(
+      "Failed to load invitation:",
+      error
+    );
+
+    showError(
+      "Unable to load this invitation."
+    );
 
   }
 
+}
 
   /* ============================================================
      5. APPLY CUSTOMER DATA TO PAGE
