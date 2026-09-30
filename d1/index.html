@@ -2196,19 +2196,24 @@ async function loadInvitation() {
 
 
     /* ----------------------------------------------------------
-       RSVP Google Form
-       ---------------------------------------------------------- */
+      RSVP Google Form
+      ---------------------------------------------------------- */
 
     if (
       els.rsvpIframe &&
-      data.rsvpUrl
-    ){
+      (data.rsvpUrlEn || data.rsvpUrlHe)
+    ) {
 
-      els.rsvpIframe.src =
-        data.rsvpUrl;
+      const rsvpUrl =
+        lang === "en"
+          ? data.rsvpUrlEn
+          : data.rsvpUrlHe;
+
+      if (rsvpUrl) {
+        els.rsvpIframe.src = rsvpUrl;
+      }
 
     }
-
 
     /* ----------------------------------------------------------
        Countdown
