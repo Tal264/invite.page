@@ -1,18 +1,26 @@
 export async function onRequest(context) {
   const url = new URL(context.request.url);
 
-  // Customer JSON files are static assets
+  // JSON files are served normally
   if (url.pathname.startsWith("/d1/data/")) {
     return context.env.ASSETS.fetch(context.request);
   }
 
-  // Serve the D1 template for customer URLs
+  // All /d1/<customer> URLs use the single D1 template.
+  // Fetch the HTML asset internally and return it directly,
+  // without redirecting the browser URL.
   if (url.pathname.startsWith("/d1/")) {
-    const templateUrl = new URL("/d1/", url);
+    const assetUrl = new URL("/d1/index.html", url);
 
-    return context.env.ASSETS.fetch(
-      new Request(templateUrl, context.request)
+    const response = await context.env.ASSETS.fetch(
+      new Request(assetUrl)
     );
+
+    return new Response(response.body, {
+      status: response.status,
+      statusText: response.statusText,
+      headers: response.headers
+    });
   }
 
   return context.env.ASSETS.fetch(context.request);

@@ -1,6 +1,6 @@
 {
-  "brideName": "Noa",
-  "groomName": "Daniel",
+  "brideName": "נועה",
+  "groomName": "תומר",
 
   "date": "15.05.2027",
   "dateISO": "2027-05-15T19:30:00+03:00",
@@ -20,7 +20,7 @@
 
   "waze": "https://waze.com/ul?q=%D7%A8%D7%97%D7%95%D7%91%20%D7%94%D7%A9%D7%A8%D7%95%D7%9F%2025%20%D7%94%D7%A8%D7%A6%D7%9C%D7%99%D7%94&navigate=yes",
 
-  "rsvpUrl": "https://docs.google.com/forms/d/e/EXAMPLE-FORM-ID/viewform?embedded=true",
+  "rsvpUrl": "https://docs.google.com/forms/d/e/1FAIpQLSdWsHbUJHekWG7Xb15X_Zzy5mmfcJ23tLiQadgG6AyyRQ89bA/viewform?embedded=true",
 
   "heroImage": "https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1600&auto=format&fit=crop"
 }

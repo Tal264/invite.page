@@ -1761,22 +1761,20 @@
      maya-yair
      ============================================================ */
 
-  function getInvitationSlug(){
+function getInvitationSlug() {
+  // 1. Check for local testing parameter: ?slug=maya-yair
+  const urlParams = new URLSearchParams(window.location.search);
+  const paramSlug = urlParams.get('slug');
+  if (paramSlug) return paramSlug;
 
-    var pathParts = window.location.pathname
-      .split("/")
-      .filter(Boolean);
-
-    /*
-      Expected:
-
-      pathParts[0] = d1
-      pathParts[1] = maya-yair
-    */
-
-    return pathParts[1] || null;
+  // 2. Fallback to production URL path segment parsing (/d1/maya-yair)
+  var pathParts = window.location.pathname.split("/").filter(Boolean);
+  if (pathParts.length >= 2 && pathParts[1].trim() !== "" && !pathParts[1].endsWith('.html')) {
+    return pathParts[1];
   }
 
+  return null;
+}
 
   /* ============================================================
      3. DOM ELEMENTS
@@ -1871,14 +1869,11 @@
         /d1/data/maya-yair.json
       */
 
-      var response = await fetch(
-        "/d1/data/" +
-        encodeURIComponent(slug) +
-        ".json",
-        {
-          cache: "no-cache"
-        }
-      );
+     // Uses relative path so it works both locally and in production
+var response = await fetch(
+  "./data/" + encodeURIComponent(slug) + ".json",
+  { cache: "no-cache" }
+);
 
 
       if (!response.ok){
