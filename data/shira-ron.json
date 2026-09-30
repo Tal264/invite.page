@@ -1,0 +1,28 @@
+{
+  "brideNameEn": "Shira",
+  "brideNameHe": "שירה",
+  "groomNameEn": "Ron",
+  "groomNameHe": "רון",
+
+  "date": "18.09.2027 · 19:30",
+  "dateISO": "2027-09-18T19:30:00+03:00",
+
+  "reception": "19:30",
+
+  "venueEn": "58 Events",
+  "venueHe": "58 גן אירועים",
+
+  "addressEn": "58 HaYarkonim St, Petah Tikva, Israel",
+  "addressHe": "רחוב הירקונים 58, פתח תקווה",
+
+  "rsvpDeadlineEn": "01.09.2027",
+  "rsvpDeadlineHe": "01.09.2027",
+
+  "googleMaps": "https://www.google.com/maps/search/?api=1&query=58+HaYarkonim+St,+Petah+Tikva,+Israel",
+  "waze": "https://www.waze.com/live-map/directions?to=place.ChIJG1cQcoo3HRUR2_WTdTdihbw",
+
+  "rsvpUrlEn": "https://forms.google.com/",
+  "rsvpUrlHe": "https://forms.google.com/",
+
+  "heroImage": "/assets/couple-on-beach.jpg"
+}
