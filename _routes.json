@@ -1,9 +1,0 @@
-{
-  "version": 1,
-  "include": [
-    "/d1/*"
-  ],
-  "exclude": [
-    "/d1/data/*"
-  ]
-}
