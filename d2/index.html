@@ -13,6 +13,100 @@
   <title>Save the Date</title>
 
   <!-- ============================================================
+       SOCIAL / SEO METADATA
+       These values are updated dynamically from the customer JSON.
+       Hebrew is the default language.
+       ============================================================ -->
+
+  <meta
+    name="description"
+    id="metaDescription"
+    content="הזמנה לחתונה"
+  >
+
+  <link
+    rel="canonical"
+    id="canonicalLink"
+    href=""
+  >
+
+  <meta
+    property="og:type"
+    content="website"
+  >
+
+  <meta
+    property="og:locale"
+    id="ogLocale"
+    content="he_IL"
+  >
+
+  <meta
+    property="og:title"
+    id="ogTitle"
+    content="שמרו את התאריך"
+  >
+
+  <meta
+    property="og:description"
+    id="ogDescription"
+    content="הזמנה לחתונה"
+  >
+
+  <meta
+    property="og:image"
+    id="ogImage"
+    content=""
+  >
+
+  <meta
+    property="og:image:alt"
+    id="ogImageAlt"
+    content=""
+  >
+
+  <meta
+    property="og:url"
+    id="ogUrl"
+    content=""
+  >
+
+  <meta
+    property="og:site_name"
+    content="dotpage"
+  >
+
+  <meta
+    name="twitter:card"
+    content="summary_large_image"
+  >
+
+  <meta
+    name="twitter:title"
+    id="twitterTitle"
+    content="שמרו את התאריך"
+  >
+
+  <meta
+    name="twitter:description"
+    id="twitterDescription"
+    content="הזמנה לחתונה"
+  >
+
+  <meta
+    name="twitter:image"
+    id="twitterImage"
+    content=""
+  >
+
+  <meta
+    name="twitter:image:alt"
+    id="twitterImageAlt"
+    content=""
+  >
+
+
+  <!-- ============================================================
        GOOGLE FONTS
        ============================================================ -->
 
@@ -1544,6 +1638,51 @@
 
 
     /* ============================================================
+       SOCIAL / SEO META ELEMENTS
+       ============================================================ */
+
+    var metaEls = {
+
+      description:
+        document.getElementById("metaDescription"),
+
+      canonical:
+        document.getElementById("canonicalLink"),
+
+      ogLocale:
+        document.getElementById("ogLocale"),
+
+      ogTitle:
+        document.getElementById("ogTitle"),
+
+      ogDescription:
+        document.getElementById("ogDescription"),
+
+      ogImage:
+        document.getElementById("ogImage"),
+
+      ogImageAlt:
+        document.getElementById("ogImageAlt"),
+
+      ogUrl:
+        document.getElementById("ogUrl"),
+
+      twitterTitle:
+        document.getElementById("twitterTitle"),
+
+      twitterDescription:
+        document.getElementById("twitterDescription"),
+
+      twitterImage:
+        document.getElementById("twitterImage"),
+
+      twitterImageAlt:
+        document.getElementById("twitterImageAlt")
+
+    };
+
+
+    /* ============================================================
        1. GET CUSTOMER SLUG
        ============================================================ */
 
@@ -1607,7 +1746,325 @@
 
 
     /* ============================================================
-       2. LOAD CUSTOMER JSON
+       2. ABSOLUTE URL HELPER
+       ============================================================ */
+
+    function getAbsoluteUrl(url) {
+
+      if (!url) {
+        return "";
+      }
+
+
+      try {
+
+        return new URL(
+          url,
+          window.location.origin
+        ).href;
+
+      }
+      catch (error) {
+
+        return url;
+
+      }
+
+    }
+
+
+    /* ============================================================
+       3. UPDATE SOCIAL / SEO METADATA
+       ============================================================ */
+
+    function updateSocialMetadata() {
+
+      if (!invitationData) {
+        return;
+      }
+
+
+      var data =
+        invitationData;
+
+
+      var brideHe =
+        data.brideNameHe ||
+        data.brideNameEn ||
+        "";
+
+
+      var groomHe =
+        data.groomNameHe ||
+        data.groomNameEn ||
+        "";
+
+
+      var brideEn =
+        data.brideNameEn ||
+        data.brideNameHe ||
+        "";
+
+
+      var groomEn =
+        data.groomNameEn ||
+        data.groomNameHe ||
+        "";
+
+
+      var venueHe =
+        data.venueHe ||
+        data.venueEn ||
+        "";
+
+
+      var venueEn =
+        data.venueEn ||
+        data.venueHe ||
+        "";
+
+
+      var date =
+        data.date ||
+        "";
+
+
+      var imageUrl =
+        getAbsoluteUrl(
+          data.heroImage || ""
+        );
+
+
+      /*
+        Use the clean invitation URL,
+        without query parameters.
+      */
+
+      var canonicalUrl =
+        window.location.origin +
+        window.location.pathname;
+
+
+      var titleHe =
+        brideHe && groomHe
+          ? brideHe +
+            " & " +
+            groomHe +
+            " | שמרו את התאריך"
+          : "שמרו את התאריך";
+
+
+      var descriptionHe =
+        brideHe && groomHe
+          ? brideHe +
+            " ו" +
+            groomHe +
+            " מתחתנים ❤️" +
+            (
+              date
+                ? " · " + date
+                : ""
+            ) +
+            (
+              venueHe
+                ? " · " + venueHe
+                : ""
+            )
+          : "הזמנה לחתונה";
+
+
+      var titleEn =
+        brideEn && groomEn
+          ? brideEn +
+            " & " +
+            groomEn +
+            " | Save the Date"
+          : "Save the Date";
+
+
+      var descriptionEn =
+        brideEn && groomEn
+          ? brideEn +
+            " & " +
+            groomEn +
+            " are getting married ❤️" +
+            (
+              date
+                ? " · " + date
+                : ""
+            ) +
+            (
+              venueEn
+                ? " · " + venueEn
+                : ""
+            )
+          : "Wedding invitation";
+
+
+      var title =
+        currentLang === "en"
+          ? titleEn
+          : titleHe;
+
+
+      var description =
+        currentLang === "en"
+          ? descriptionEn
+          : descriptionHe;
+
+
+      var imageAlt =
+        currentLang === "en"
+          ? brideEn +
+            " and " +
+            groomEn
+          : brideHe +
+            " ו" +
+            groomHe;
+
+
+      /* ----------------------------------------------------------
+         Meta description
+         ---------------------------------------------------------- */
+
+      if (metaEls.description) {
+
+        metaEls.description.setAttribute(
+          "content",
+          description
+        );
+
+      }
+
+
+      /* ----------------------------------------------------------
+         Canonical URL
+         ---------------------------------------------------------- */
+
+      if (metaEls.canonical) {
+
+        metaEls.canonical.setAttribute(
+          "href",
+          canonicalUrl
+        );
+
+      }
+
+
+      /* ----------------------------------------------------------
+         Open Graph
+         ---------------------------------------------------------- */
+
+      if (metaEls.ogLocale) {
+
+        metaEls.ogLocale.setAttribute(
+          "content",
+          currentLang === "en"
+            ? "en_US"
+            : "he_IL"
+        );
+
+      }
+
+
+      if (metaEls.ogTitle) {
+
+        metaEls.ogTitle.setAttribute(
+          "content",
+          title
+        );
+
+      }
+
+
+      if (metaEls.ogDescription) {
+
+        metaEls.ogDescription.setAttribute(
+          "content",
+          description
+        );
+
+      }
+
+
+      if (metaEls.ogImage) {
+
+        metaEls.ogImage.setAttribute(
+          "content",
+          imageUrl
+        );
+
+      }
+
+
+      if (metaEls.ogImageAlt) {
+
+        metaEls.ogImageAlt.setAttribute(
+          "content",
+          imageAlt
+        );
+
+      }
+
+
+      if (metaEls.ogUrl) {
+
+        metaEls.ogUrl.setAttribute(
+          "content",
+          canonicalUrl
+        );
+
+      }
+
+
+      /* ----------------------------------------------------------
+         Twitter / X
+         ---------------------------------------------------------- */
+
+      if (metaEls.twitterTitle) {
+
+        metaEls.twitterTitle.setAttribute(
+          "content",
+          title
+        );
+
+      }
+
+
+      if (metaEls.twitterDescription) {
+
+        metaEls.twitterDescription.setAttribute(
+          "content",
+          description
+        );
+
+      }
+
+
+      if (metaEls.twitterImage) {
+
+        metaEls.twitterImage.setAttribute(
+          "content",
+          imageUrl
+        );
+
+      }
+
+
+      if (metaEls.twitterImageAlt) {
+
+        metaEls.twitterImageAlt.setAttribute(
+          "content",
+          imageAlt
+        );
+
+      }
+
+    }
+
+
+    /* ============================================================
+       4. LOAD CUSTOMER JSON
        ============================================================ */
 
     async function loadInvitation() {
@@ -1706,7 +2163,7 @@
 
 
     /* ============================================================
-       3. APPLY CUSTOMER DATA
+       5. APPLY CUSTOMER DATA
        ============================================================ */
 
     function applyInvitationData() {
@@ -1852,11 +2309,14 @@
       }
 
 
-      /* ----------------------------------------------------------
-         Browser title
-         ---------------------------------------------------------- */
+      /*
+        Update browser title and
+        social sharing metadata.
+      */
 
       updateDocumentTitle();
+
+      updateSocialMetadata();
 
 
       /*
@@ -1872,7 +2332,7 @@
 
 
     /* ============================================================
-       4. DOCUMENT TITLE
+       6. DOCUMENT TITLE
        ============================================================ */
 
     function updateDocumentTitle() {
@@ -1917,7 +2377,7 @@
 
 
     /* ============================================================
-       5. COUNTDOWN
+       7. COUNTDOWN
        ============================================================ */
 
     var previous = {
@@ -2112,7 +2572,7 @@
 
 
     /* ============================================================
-       6. RSVP MODAL
+       8. RSVP MODAL
        ============================================================ */
 
     var lastFocused = null;
@@ -2264,7 +2724,7 @@
 
 
     /* ============================================================
-       7. LANGUAGE
+       9. LANGUAGE
        ============================================================ */
 
     var htmlEl =
@@ -2468,6 +2928,13 @@
 
       updateDocumentTitle();
 
+
+      /* ----------------------------------------------------------
+         Social / SEO metadata
+         ---------------------------------------------------------- */
+
+      updateSocialMetadata();
+
     }
 
 
@@ -2490,7 +2957,7 @@
 
 
     /* ============================================================
-       8. ERROR HANDLER
+       10. ERROR HANDLER
        ============================================================ */
 
     function showError(message) {
@@ -2527,7 +2994,7 @@
 
 
     /* ============================================================
-       9. INITIALIZE
+       11. INITIALIZE
        ============================================================ */
 
     loadInvitation();

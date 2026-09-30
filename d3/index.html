@@ -7,6 +7,100 @@
 <title>Save the Date</title>
 
 <!-- ============================================================
+     SOCIAL SHARING / SEO METADATA
+     These values are updated dynamically from the customer JSON.
+     Hebrew is the default language.
+     ============================================================ -->
+
+<meta
+  name="description"
+  id="metaDescription"
+  content="הזמנה לחתונה"
+/>
+
+<meta
+  property="og:type"
+  content="website"
+/>
+
+<meta
+  property="og:site_name"
+  content="dotpage"
+/>
+
+<meta
+  property="og:locale"
+  id="ogLocale"
+  content="he_IL"
+/>
+
+<meta
+  property="og:title"
+  id="ogTitle"
+  content="שמרו את התאריך"
+/>
+
+<meta
+  property="og:description"
+  id="ogDescription"
+  content="הזמנה לחתונה"
+/>
+
+<meta
+  property="og:image"
+  id="ogImage"
+  content=""
+/>
+
+<meta
+  property="og:image:alt"
+  id="ogImageAlt"
+  content=""
+/>
+
+<meta
+  property="og:url"
+  id="ogUrl"
+  content=""
+/>
+
+<meta
+  name="twitter:card"
+  content="summary_large_image"
+/>
+
+<meta
+  name="twitter:title"
+  id="twitterTitle"
+  content="שמרו את התאריך"
+/>
+
+<meta
+  name="twitter:description"
+  id="twitterDescription"
+  content="הזמנה לחתונה"
+/>
+
+<meta
+  name="twitter:image"
+  id="twitterImage"
+  content=""
+/>
+
+<meta
+  name="twitter:image:alt"
+  id="twitterImageAlt"
+  content=""
+/>
+
+<link
+  rel="canonical"
+  id="canonicalLink"
+  href=""
+>
+
+
+<!-- ============================================================
      GOOGLE FONTS
      ============================================================ -->
 
@@ -1483,6 +1577,411 @@
 
 
   /* ==========================================================
+     SOCIAL METADATA ELEMENTS
+     ========================================================== */
+
+  var metaDescription =
+    document.getElementById(
+      "metaDescription"
+    );
+
+  var ogLocale =
+    document.getElementById(
+      "ogLocale"
+    );
+
+  var ogTitle =
+    document.getElementById(
+      "ogTitle"
+    );
+
+  var ogDescription =
+    document.getElementById(
+      "ogDescription"
+    );
+
+  var ogImage =
+    document.getElementById(
+      "ogImage"
+    );
+
+  var ogImageAlt =
+    document.getElementById(
+      "ogImageAlt"
+    );
+
+  var ogUrl =
+    document.getElementById(
+      "ogUrl"
+    );
+
+  var twitterTitle =
+    document.getElementById(
+      "twitterTitle"
+    );
+
+  var twitterDescription =
+    document.getElementById(
+      "twitterDescription"
+    );
+
+  var twitterImage =
+    document.getElementById(
+      "twitterImage"
+    );
+
+  var twitterImageAlt =
+    document.getElementById(
+      "twitterImageAlt"
+    );
+
+  var canonicalLink =
+    document.getElementById(
+      "canonicalLink"
+    );
+
+
+  /* ==========================================================
+     GET ABSOLUTE URL
+
+     Converts:
+
+     /assets/image.jpg
+
+     into:
+
+     https://invitewed.pages.dev/assets/image.jpg
+     ========================================================== */
+
+  function getAbsoluteUrl(url){
+
+    if (!url){
+      return "";
+    }
+
+    try{
+
+      return new URL(
+        url,
+        window.location.origin
+      ).href;
+
+    }catch(error){
+
+      return url;
+
+    }
+
+  }
+
+
+  /* ==========================================================
+     UPDATE SOCIAL SHARING METADATA
+     ========================================================== */
+
+  function updateSocialMetadata(){
+
+    if (!invitationData){
+      return;
+    }
+
+
+    var data =
+      invitationData;
+
+
+    var brideHe =
+      data.brideNameHe || "";
+
+    var groomHe =
+      data.groomNameHe || "";
+
+    var brideEn =
+      data.brideNameEn || "";
+
+    var groomEn =
+      data.groomNameEn || "";
+
+    var venueHe =
+      data.venueHe ||
+      data.venueEn ||
+      "";
+
+    var venueEn =
+      data.venueEn ||
+      data.venueHe ||
+      "";
+
+    var date =
+      data.date || "";
+
+
+    /* ----------------------------------------------------------
+       Names
+       ---------------------------------------------------------- */
+
+    var coupleHe =
+      brideHe && groomHe
+        ? brideHe + " ו" + groomHe
+        : (
+            brideHe ||
+            groomHe ||
+            "הזמנה לחתונה"
+          );
+
+
+    var coupleEn =
+      brideEn && groomEn
+        ? brideEn + " & " + groomEn
+        : (
+            brideEn ||
+            groomEn ||
+            "Wedding Invitation"
+          );
+
+
+    /* ----------------------------------------------------------
+       Hebrew social metadata
+       ---------------------------------------------------------- */
+
+    var titleHe =
+      brideHe && groomHe
+
+        ? brideHe +
+          " & " +
+          groomHe +
+          " | שמרו את התאריך"
+
+        : "שמרו את התאריך";
+
+
+    var descriptionHe =
+      [
+        coupleHe + " מתחתנים ❤️",
+        date,
+        venueHe
+      ]
+      .filter(Boolean)
+      .join(" · ");
+
+
+    /* ----------------------------------------------------------
+       English social metadata
+       ---------------------------------------------------------- */
+
+    var titleEn =
+      brideEn && groomEn
+
+        ? coupleEn +
+          " | Save the Date"
+
+        : "Save the Date";
+
+
+    var descriptionEn =
+      [
+        coupleEn +
+          " are getting married ❤️",
+        date,
+        venueEn
+      ]
+      .filter(Boolean)
+      .join(" · ");
+
+
+    /* ----------------------------------------------------------
+       Current language
+       ---------------------------------------------------------- */
+
+    var title =
+      currentLang === "en"
+        ? titleEn
+        : titleHe;
+
+
+    var description =
+      currentLang === "en"
+        ? descriptionEn
+        : descriptionHe;
+
+
+    var imageUrl =
+      getAbsoluteUrl(
+        data.heroImage || ""
+      );
+
+
+    /*
+      Use the clean invitation URL without
+      query parameters such as ?slug=...
+    */
+
+    var pageUrl =
+      window.location.origin +
+      window.location.pathname;
+
+
+    var imageAlt =
+      currentLang === "en"
+
+        ? (
+            brideEn && groomEn
+              ? brideEn +
+                " and " +
+                groomEn
+              : "Wedding invitation"
+          )
+
+        : (
+            brideHe && groomHe
+              ? brideHe +
+                " ו" +
+                groomHe
+              : "הזמנה לחתונה"
+          );
+
+
+    /* ----------------------------------------------------------
+       Browser description
+       ---------------------------------------------------------- */
+
+    if (metaDescription){
+
+      metaDescription.setAttribute(
+        "content",
+        description
+      );
+
+    }
+
+
+    /* ----------------------------------------------------------
+       Open Graph
+       ---------------------------------------------------------- */
+
+    if (ogLocale){
+
+      ogLocale.setAttribute(
+        "content",
+        currentLang === "en"
+          ? "en_US"
+          : "he_IL"
+      );
+
+    }
+
+
+    if (ogTitle){
+
+      ogTitle.setAttribute(
+        "content",
+        title
+      );
+
+    }
+
+
+    if (ogDescription){
+
+      ogDescription.setAttribute(
+        "content",
+        description
+      );
+
+    }
+
+
+    if (ogImage){
+
+      ogImage.setAttribute(
+        "content",
+        imageUrl
+      );
+
+    }
+
+
+    if (ogImageAlt){
+
+      ogImageAlt.setAttribute(
+        "content",
+        imageAlt
+      );
+
+    }
+
+
+    if (ogUrl){
+
+      ogUrl.setAttribute(
+        "content",
+        pageUrl
+      );
+
+    }
+
+
+    /* ----------------------------------------------------------
+       Twitter
+       ---------------------------------------------------------- */
+
+    if (twitterTitle){
+
+      twitterTitle.setAttribute(
+        "content",
+        title
+      );
+
+    }
+
+
+    if (twitterDescription){
+
+      twitterDescription.setAttribute(
+        "content",
+        description
+      );
+
+    }
+
+
+    if (twitterImage){
+
+      twitterImage.setAttribute(
+        "content",
+        imageUrl
+      );
+
+    }
+
+
+    if (twitterImageAlt){
+
+      twitterImageAlt.setAttribute(
+        "content",
+        imageAlt
+      );
+
+    }
+
+
+    /* ----------------------------------------------------------
+       Canonical URL
+       ---------------------------------------------------------- */
+
+    if (canonicalLink){
+
+      canonicalLink.setAttribute(
+        "href",
+        pageUrl
+      );
+
+    }
+
+  }
+
+
+  /* ==========================================================
      GET CUSTOMER SLUG
 
      Supported URLs:
@@ -1728,18 +2227,24 @@
 
 
       els.heroImage.dataset.heAlt =
-        data.brideNameHe && data.groomNameHe
+        data.brideNameHe &&
+        data.groomNameHe
+
           ? data.brideNameHe +
             " ו" +
             data.groomNameHe
+
           : "";
 
 
       els.heroImage.dataset.enAlt =
-        data.brideNameEn && data.groomNameEn
+        data.brideNameEn &&
+        data.groomNameEn
+
           ? data.brideNameEn +
             " and " +
             data.groomNameEn
+
           : "";
 
 
@@ -2420,6 +2925,13 @@
         );
 
     }
+
+
+    /* ----------------------------------------------------------
+       Dynamic social metadata
+       ---------------------------------------------------------- */
+
+    updateSocialMetadata();
 
 
     /* ----------------------------------------------------------

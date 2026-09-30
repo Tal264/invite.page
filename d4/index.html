@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="he" dir="rtl">
 
 <head>
@@ -16,6 +17,99 @@
   >
 
   <title>Save the Date</title>
+
+
+  <!-- ==========================================================
+       DYNAMIC SOCIAL SHARING METADATA
+       Hebrew by default
+       ========================================================== -->
+
+  <meta
+    name="description"
+    id="metaDescription"
+    content="הזמנה לחתונה"
+  >
+
+  <meta
+    property="og:type"
+    content="website"
+  >
+
+  <meta
+    property="og:site_name"
+    content="dotpage"
+  >
+
+  <meta
+    property="og:locale"
+    id="ogLocale"
+    content="he_IL"
+  >
+
+  <meta
+    property="og:title"
+    id="ogTitle"
+    content="הזמנה לחתונה"
+  >
+
+  <meta
+    property="og:description"
+    id="ogDescription"
+    content="הזמנה לחתונה"
+  >
+
+  <meta
+    property="og:image"
+    id="ogImage"
+    content=""
+  >
+
+  <meta
+    property="og:image:alt"
+    id="ogImageAlt"
+    content="הזמנה לחתונה"
+  >
+
+  <meta
+    property="og:url"
+    id="ogUrl"
+    content=""
+  >
+
+  <meta
+    name="twitter:card"
+    content="summary_large_image"
+  >
+
+  <meta
+    name="twitter:title"
+    id="twitterTitle"
+    content="הזמנה לחתונה"
+  >
+
+  <meta
+    name="twitter:description"
+    id="twitterDescription"
+    content="הזמנה לחתונה"
+  >
+
+  <meta
+    name="twitter:image"
+    id="twitterImage"
+    content=""
+  >
+
+  <meta
+    name="twitter:image:alt"
+    id="twitterImageAlt"
+    content="הזמנה לחתונה"
+  >
+
+  <link
+    rel="canonical"
+    id="canonicalLink"
+    href=""
+  >
 
 
   <!-- ==========================================================
@@ -48,13 +142,17 @@
     :root {
 
       --cream: #fffaf3;
+
       --white: #ffffff;
 
       --forest: #23372e;
+
       --forest-dark: #18251f;
+
       --forest-light: #30493d;
 
       --gold: #d5b36a;
+
       --gold-light: #f0dba8;
 
       --shadow:
@@ -74,7 +172,6 @@
         'Assistant',
         Arial,
         sans-serif;
-
     }
 
 
@@ -87,15 +184,14 @@
       box-sizing: border-box;
 
       margin: 0;
-      padding: 0;
 
+      padding: 0;
     }
 
 
     html {
 
       scroll-behavior: smooth;
-
     }
 
 
@@ -113,7 +209,6 @@
         var(--body);
 
       overflow-x: hidden;
-
     }
 
 
@@ -122,14 +217,12 @@
     textarea {
 
       font: inherit;
-
     }
 
 
     button {
 
       cursor: pointer;
-
     }
 
 
@@ -144,11 +237,13 @@
       width: 100%;
 
       min-height: 100svh;
+
       min-height: 100dvh;
 
       display: flex;
 
       align-items: center;
+
       justify-content: center;
 
       overflow: hidden;
@@ -157,7 +252,6 @@
 
       background:
         var(--forest-dark);
-
     }
 
 
@@ -174,19 +268,12 @@
       z-index: -10;
 
       background:
-
         radial-gradient(
-
           circle at center,
-
           var(--forest-light) 0%,
-
           var(--forest) 45%,
-
           var(--forest-dark) 100%
-
         );
-
     }
 
 
@@ -201,17 +288,18 @@
       inset: 0;
 
       width: 100%;
+
       height: 100%;
 
       display: flex;
 
       align-items: center;
+
       justify-content: center;
 
       overflow: hidden;
 
       z-index: -5;
-
     }
 
 
@@ -224,6 +312,7 @@
       display: block;
 
       width: 100%;
+
       height: 100%;
 
       object-fit: cover;
@@ -235,7 +324,6 @@
 
       background:
         var(--forest-dark);
-
     }
 
 
@@ -254,21 +342,13 @@
       pointer-events: none;
 
       background:
-
         linear-gradient(
-
           180deg,
-
           rgba(12, 25, 19, .45) 0%,
-
           rgba(12, 25, 19, .25) 35%,
-
           rgba(12, 25, 19, .40) 65%,
-
           rgba(12, 25, 19, .75) 100%
-
         );
-
     }
 
 
@@ -287,10 +367,8 @@
       pointer-events: none;
 
       box-shadow:
-
         inset 0 0 180px
         rgba(0, 0, 0, .45);
-
     }
 
 
@@ -307,19 +385,18 @@
       width: 100%;
 
       min-height: 100svh;
+
       min-height: 100dvh;
 
       display: flex;
 
       align-items: center;
+
       justify-content: center;
 
       padding:
-
         clamp(30px, 6vh, 70px)
-
         24px;
-
     }
 
 
@@ -337,7 +414,35 @@
       text-align: center;
 
       gap: 16px;
+    }
 
+
+    /* ==========================================================
+       SAVE THE DATE
+       ========================================================== */
+
+    .save-the-date {
+
+      font-family:
+        var(--script);
+
+      font-size:
+        clamp(1.3rem, 3vw, 2rem);
+
+      font-weight: 500;
+
+      color:
+        var(--gold-light);
+
+      text-shadow:
+        0 3px 18px
+        rgba(0, 0, 0, .8),
+
+        0 2px 6px
+        rgba(0, 0, 0, .6);
+
+      animation:
+        fadeUp .9s .04s ease both;
     }
 
 
@@ -364,7 +469,6 @@
         var(--cream);
 
       text-shadow:
-
         0 4px 20px
         rgba(0, 0, 0, .8),
 
@@ -375,7 +479,6 @@
         fadeUp .9s .12s ease both;
 
       margin-top: 0;
-
     }
 
 
@@ -404,7 +507,6 @@
 
       vertical-align:
         .04em;
-
     }
 
 
@@ -431,7 +533,6 @@
         var(--cream);
 
       text-shadow:
-
         0 3px 18px
         rgba(0, 0, 0, .8),
 
@@ -440,7 +541,6 @@
 
       animation:
         fadeUp .9s .24s ease both;
-
     }
 
 
@@ -459,7 +559,6 @@
         var(--cream);
 
       text-shadow:
-
         0 3px 18px
         rgba(0, 0, 0, .8),
 
@@ -468,7 +567,6 @@
 
       animation:
         fadeUp .9s .34s ease both;
-
     }
 
 
@@ -492,7 +590,6 @@
         rgba(255, 255, 255, .96);
 
       text-shadow:
-
         0 3px 18px
         rgba(0, 0, 0, .8),
 
@@ -501,7 +598,6 @@
 
       animation:
         fadeUp .9s .44s ease both;
-
     }
 
 
@@ -525,7 +621,6 @@
 
       animation:
         fadeUp .9s .52s ease both;
-
     }
 
 
@@ -539,19 +634,12 @@
       flex: 1;
 
       background:
-
         linear-gradient(
-
           90deg,
-
           transparent,
-
           rgba(240, 219, 168, .8),
-
           transparent
-
         );
-
     }
 
 
@@ -562,7 +650,6 @@
 
       font-size:
         1rem;
-
     }
 
 
@@ -584,7 +671,6 @@
 
       animation:
         fadeUp .9s .62s ease both;
-
     }
 
 
@@ -624,13 +710,9 @@
         rgba(0, 0, 0, .35);
 
       transition:
-
         transform .2s ease,
-
         box-shadow .2s ease,
-
         background .2s ease;
-
     }
 
 
@@ -645,7 +727,6 @@
 
       background:
         #ffffff;
-
     }
 
 
@@ -654,7 +735,6 @@
       transform:
         translateY(0)
         scale(.98);
-
     }
 
 
@@ -689,11 +769,8 @@
         blur(8px);
 
       transition:
-
         background .2s ease,
-
         transform .2s ease;
-
     }
 
 
@@ -704,7 +781,6 @@
 
       transform:
         translateY(-2px);
-
     }
 
 
@@ -727,7 +803,6 @@
 
       animation:
         fadeUp .9s .72s ease both;
-
     }
 
 
@@ -743,7 +818,6 @@
 
         transform:
           translateY(18px);
-
       }
 
       to {
@@ -752,9 +826,7 @@
 
         transform:
           translateY(0);
-
       }
-
     }
 
 
@@ -793,7 +865,6 @@
 
       transition:
         opacity .3s ease;
-
     }
 
 
@@ -802,7 +873,6 @@
       opacity: 1;
 
       pointer-events: auto;
-
     }
 
 
@@ -833,14 +903,12 @@
         translateY(100%);
 
       transition:
-
         transform .4s
         cubic-bezier(.2, .75, .25, 1);
 
       display: flex;
 
       flex-direction: column;
-
     }
 
 
@@ -848,7 +916,6 @@
 
       transform:
         translateY(0);
-
     }
 
 
@@ -863,7 +930,6 @@
         align-items: center;
 
         padding: 24px;
-
       }
 
 
@@ -874,7 +940,6 @@
 
         max-height:
           88dvh;
-
       }
 
     }
@@ -902,7 +967,6 @@
         rgba(35, 55, 46, .12);
 
       flex-shrink: 0;
-
     }
 
 
@@ -916,13 +980,13 @@
 
       font-weight:
         600;
-
     }
 
 
     .close-button {
 
       width: 38px;
+
       height: 38px;
 
       border:
@@ -943,7 +1007,6 @@
 
       transition:
         transform .2s ease;
-
     }
 
 
@@ -951,7 +1014,6 @@
 
       transform:
         rotate(90deg);
-
     }
 
 
@@ -967,7 +1029,6 @@
 
       -webkit-overflow-scrolling:
         touch;
-
     }
 
 
@@ -984,7 +1045,6 @@
 
       font-size:
         .95rem;
-
     }
 
 
@@ -1009,7 +1069,6 @@
 
       background:
         #ffffff;
-
     }
 
 
@@ -1023,13 +1082,13 @@
 
         min-height:
           100dvh;
-
       }
 
 
       .wedding-video {
 
         width: 100%;
+
         height: 100%;
 
         object-fit:
@@ -1037,28 +1096,19 @@
 
         object-position:
           center center;
-
       }
 
 
       .video-overlay {
 
         background:
-
           linear-gradient(
-
             180deg,
-
             rgba(12, 25, 19, .35) 0%,
-
             rgba(12, 25, 19, .15) 30%,
-
             rgba(12, 25, 19, .30) 60%,
-
             rgba(12, 25, 19, .80) 100%
-
           );
-
       }
 
 
@@ -1067,7 +1117,6 @@
         padding:
           40px 20px
           45px;
-
       }
 
 
@@ -1076,7 +1125,6 @@
         width: 100%;
 
         gap: 12px;
-
       }
 
 
@@ -1084,7 +1132,6 @@
 
         font-size:
           clamp(3.1rem, 15vw, 5rem);
-
       }
 
 
@@ -1092,14 +1139,12 @@
 
         max-width:
           340px;
-
       }
 
 
       .actions {
 
         width: 100%;
-
       }
 
 
@@ -1108,7 +1153,6 @@
 
         width:
           min(320px, 100%);
-
       }
 
     }
@@ -1123,8 +1167,8 @@
       .video-frame {
 
         width: 100%;
-        height: 100%;
 
+        height: 100%;
       }
 
 
@@ -1147,28 +1191,19 @@
         box-shadow:
           0 0 100px
           rgba(0, 0, 0, .40);
-
       }
 
 
       .video-overlay {
 
         background:
-
           linear-gradient(
-
             180deg,
-
             rgba(12, 25, 19, .35) 0%,
-
             rgba(12, 25, 19, .15) 30%,
-
             rgba(12, 25, 19, .35) 60%,
-
             rgba(12, 25, 19, .75) 100%
-
           );
-
       }
 
 
@@ -1176,7 +1211,6 @@
 
         width:
           min(680px, 80%);
-
       }
 
     }
@@ -1194,7 +1228,6 @@
         height: 100vh;
 
         width: 56.25vh;
-
       }
 
 
@@ -1205,7 +1238,6 @@
 
         padding-bottom:
           25px;
-
       }
 
 
@@ -1213,7 +1245,6 @@
 
         font-size:
           clamp(3rem, 9vw, 5.5rem);
-
       }
 
 
@@ -1221,7 +1252,6 @@
 
         margin-top:
           10px;
-
       }
 
 
@@ -1229,7 +1259,6 @@
 
         margin:
           10px auto;
-
       }
 
     }
@@ -1246,7 +1275,6 @@
         padding:
           28px 16px
           35px;
-
       }
 
 
@@ -1254,7 +1282,6 @@
 
         font-size:
           2.8rem;
-
       }
 
 
@@ -1265,7 +1292,6 @@
 
         line-height:
           1.5;
-
       }
 
 
@@ -1277,7 +1303,6 @@
 
         padding:
           13px 20px;
-
       }
 
     }
@@ -1301,7 +1326,6 @@
 
         transition-duration:
           .01ms !important;
-
       }
 
     }
@@ -1377,16 +1401,20 @@
 
 
         <!-- ====================================================
-             DYNAMIC NAMES
+             SAVE THE DATE
              ==================================================== -->
 
-      <h1
-            class="save-the-date"
-            data-en="Save the Date"
-          >
-            החתונה שלנו
-          </h1>
+        <h1
+          class="save-the-date"
+          data-en="Save the Date"
+        >
+          החתונה שלנו
+        </h1>
 
+
+        <!-- ====================================================
+             DYNAMIC NAMES
+             ==================================================== -->
 
         <h1
           class="names"
@@ -1471,9 +1499,7 @@
             id="openRsvp"
             type="button"
           >
-
             אישור הגעה
-
           </button>
 
 
@@ -1486,9 +1512,7 @@
             id="soundButton"
             type="button"
           >
-
             🔊 הפעלת מוזיקה
-
           </button>
 
 
@@ -1513,9 +1537,7 @@
              ==================================================== -->
 
         <p class="credit">
-
           נבנה באהבה על ידי dotpage 🤍
-
         </p>
 
 
@@ -1556,9 +1578,7 @@
           class="modal-title"
           id="modalTitle"
         >
-
           אישור הגעה 💌
-
         </h2>
 
 
@@ -1568,9 +1588,7 @@
           type="button"
           aria-label="סגירה"
         >
-
           ✕
-
         </button>
 
 
@@ -1585,9 +1603,7 @@
 
 
         <p class="form-note">
-
           נשמח לדעת שתהיו איתנו ❤️
-
         </p>
 
 
@@ -1601,9 +1617,7 @@
           title="טופס אישור הגעה"
           loading="lazy"
         >
-
           טוען...
-
         </iframe>
 
 
@@ -1702,13 +1716,10 @@
          GET INVITATION SLUG
 
          Supported:
-
          /d4/maya-yair/
-
          /d4/noa-tomer/
 
          Local testing:
-
          /d4/?slug=maya-yair
          ======================================================== */
 
@@ -1719,7 +1730,6 @@
            1. Query parameter
 
            Example:
-
            /d4/?slug=maya-yair
            ------------------------------------------------------ */
 
@@ -1746,7 +1756,6 @@
            2. Production URL
 
            Example:
-
            /d4/maya-yair/
            ------------------------------------------------------ */
 
@@ -1778,6 +1787,503 @@
 
 
         return null;
+
+      }
+
+
+      /* ========================================================
+         SOCIAL SHARING METADATA
+         ======================================================== */
+
+      function getAbsoluteUrl(url) {
+
+        if (!url) {
+
+          return "";
+
+        }
+
+
+        try {
+
+          return new URL(
+            url,
+            window.location.origin
+          ).href;
+
+        }
+
+        catch (error) {
+
+          return url;
+
+        }
+
+      }
+
+
+      function getCanonicalUrl() {
+
+        return (
+          window.location.origin +
+          window.location.pathname
+        );
+
+      }
+
+
+      function updateSocialMetadata() {
+
+        if (!invitationData) {
+
+          return;
+
+        }
+
+
+        var data =
+          invitationData;
+
+
+        /* ------------------------------------------------------
+           Hebrew names
+           ------------------------------------------------------ */
+
+        var brideHe =
+          data.brideNameHe ||
+          data.brideNameEn ||
+          "";
+
+
+        var groomHe =
+          data.groomNameHe ||
+          data.groomNameEn ||
+          "";
+
+
+        /* ------------------------------------------------------
+           English names
+           ------------------------------------------------------ */
+
+        var brideEn =
+          data.brideNameEn ||
+          data.brideNameHe ||
+          "";
+
+
+        var groomEn =
+          data.groomNameEn ||
+          data.groomNameHe ||
+          "";
+
+
+        /* ------------------------------------------------------
+           Venue
+           ------------------------------------------------------ */
+
+        var venueHe =
+          data.venueHe ||
+          data.venueEn ||
+          "";
+
+
+        var venueEn =
+          data.venueEn ||
+          data.venueHe ||
+          "";
+
+
+        /* ------------------------------------------------------
+           Date
+           ------------------------------------------------------ */
+
+        var date =
+          data.date ||
+          "";
+
+
+        /* ------------------------------------------------------
+           Hebrew social title
+           ------------------------------------------------------ */
+
+        var hebrewTitle =
+          brideHe && groomHe
+
+            ? brideHe +
+              " & " +
+              groomHe +
+              " | שמרו את התאריך"
+
+            : "שמרו את התאריך";
+
+
+        /* ------------------------------------------------------
+           Hebrew social description
+           ------------------------------------------------------ */
+
+        var hebrewDescription =
+          [
+
+            brideHe && groomHe
+
+              ? brideHe +
+                " ו" +
+                groomHe +
+                " מתחתנים ❤️"
+
+              : "הזמנה לחתונה",
+
+            date,
+
+            venueHe
+
+          ]
+
+            .filter(Boolean)
+
+            .join(" · ");
+
+
+        /* ------------------------------------------------------
+           English social title
+           ------------------------------------------------------ */
+
+        var englishTitle =
+          brideEn && groomEn
+
+            ? brideEn +
+              " & " +
+              groomEn +
+              " | Save the Date"
+
+            : "Save the Date";
+
+
+        /* ------------------------------------------------------
+           English social description
+           ------------------------------------------------------ */
+
+        var englishDescription =
+          [
+
+            brideEn && groomEn
+
+              ? brideEn +
+                " & " +
+                groomEn +
+                " are getting married ❤️"
+
+              : "Wedding Invitation",
+
+            date,
+
+            venueEn
+
+          ]
+
+            .filter(Boolean)
+
+            .join(" · ");
+
+
+        /* ------------------------------------------------------
+           Current language
+           ------------------------------------------------------ */
+
+        var title =
+          currentLang === "en"
+
+            ? englishTitle
+
+            : hebrewTitle;
+
+
+        var description =
+          currentLang === "en"
+
+            ? englishDescription
+
+            : hebrewDescription;
+
+
+        /* ------------------------------------------------------
+           Absolute image URL
+           ------------------------------------------------------ */
+
+        var imageUrl =
+          getAbsoluteUrl(
+            data.heroImage || ""
+          );
+
+
+        /* ------------------------------------------------------
+           Canonical invitation URL
+           ------------------------------------------------------ */
+
+        var canonicalUrl =
+          getCanonicalUrl();
+
+
+        /* ------------------------------------------------------
+           Image alt text
+           ------------------------------------------------------ */
+
+        var imageAlt =
+          currentLang === "en"
+
+            ? (
+                brideEn +
+                " and " +
+                groomEn
+              )
+
+            : (
+                brideHe +
+                " ו" +
+                groomHe
+              );
+
+
+        /* ------------------------------------------------------
+           Standard description
+           ------------------------------------------------------ */
+
+        var metaDescription =
+          document.getElementById(
+            "metaDescription"
+          );
+
+
+        if (metaDescription) {
+
+          metaDescription.setAttribute(
+            "content",
+            description
+          );
+
+        }
+
+
+        /* ------------------------------------------------------
+           Open Graph locale
+           ------------------------------------------------------ */
+
+        var ogLocale =
+          document.getElementById(
+            "ogLocale"
+          );
+
+
+        if (ogLocale) {
+
+          ogLocale.setAttribute(
+            "content",
+            currentLang === "en"
+              ? "en_US"
+              : "he_IL"
+          );
+
+        }
+
+
+        /* ------------------------------------------------------
+           Open Graph title
+           ------------------------------------------------------ */
+
+        var ogTitle =
+          document.getElementById(
+            "ogTitle"
+          );
+
+
+        if (ogTitle) {
+
+          ogTitle.setAttribute(
+            "content",
+            title
+          );
+
+        }
+
+
+        /* ------------------------------------------------------
+           Open Graph description
+           ------------------------------------------------------ */
+
+        var ogDescription =
+          document.getElementById(
+            "ogDescription"
+          );
+
+
+        if (ogDescription) {
+
+          ogDescription.setAttribute(
+            "content",
+            description
+          );
+
+        }
+
+
+        /* ------------------------------------------------------
+           Open Graph image
+           ------------------------------------------------------ */
+
+        var ogImage =
+          document.getElementById(
+            "ogImage"
+          );
+
+
+        if (ogImage) {
+
+          ogImage.setAttribute(
+            "content",
+            imageUrl
+          );
+
+        }
+
+
+        /* ------------------------------------------------------
+           Open Graph image alt
+           ------------------------------------------------------ */
+
+        var ogImageAlt =
+          document.getElementById(
+            "ogImageAlt"
+          );
+
+
+        if (ogImageAlt) {
+
+          ogImageAlt.setAttribute(
+            "content",
+            imageAlt
+          );
+
+        }
+
+
+        /* ------------------------------------------------------
+           Open Graph URL
+           ------------------------------------------------------ */
+
+        var ogUrl =
+          document.getElementById(
+            "ogUrl"
+          );
+
+
+        if (ogUrl) {
+
+          ogUrl.setAttribute(
+            "content",
+            canonicalUrl
+          );
+
+        }
+
+
+        /* ------------------------------------------------------
+           Twitter title
+           ------------------------------------------------------ */
+
+        var twitterTitle =
+          document.getElementById(
+            "twitterTitle"
+          );
+
+
+        if (twitterTitle) {
+
+          twitterTitle.setAttribute(
+            "content",
+            title
+          );
+
+        }
+
+
+        /* ------------------------------------------------------
+           Twitter description
+           ------------------------------------------------------ */
+
+        var twitterDescription =
+          document.getElementById(
+            "twitterDescription"
+          );
+
+
+        if (twitterDescription) {
+
+          twitterDescription.setAttribute(
+            "content",
+            description
+          );
+
+        }
+
+
+        /* ------------------------------------------------------
+           Twitter image
+           ------------------------------------------------------ */
+
+        var twitterImage =
+          document.getElementById(
+            "twitterImage"
+          );
+
+
+        if (twitterImage) {
+
+          twitterImage.setAttribute(
+            "content",
+            imageUrl
+          );
+
+        }
+
+
+        /* ------------------------------------------------------
+           Twitter image alt
+           ------------------------------------------------------ */
+
+        var twitterImageAlt =
+          document.getElementById(
+            "twitterImageAlt"
+          );
+
+
+        if (twitterImageAlt) {
+
+          twitterImageAlt.setAttribute(
+            "content",
+            imageAlt
+          );
+
+        }
+
+
+        /* ------------------------------------------------------
+           Canonical URL
+           ------------------------------------------------------ */
+
+        var canonicalLink =
+          document.getElementById(
+            "canonicalLink"
+          );
+
+
+        if (canonicalLink) {
+
+          canonicalLink.setAttribute(
+            "href",
+            canonicalUrl
+          );
+
+        }
 
       }
 
@@ -1847,13 +2353,18 @@
         if (!slug) {
 
           console.error(
+
             "No invitation slug found in URL:",
+
             window.location.href
+
           );
 
 
           showError(
+
             "Invitation not found."
+
           );
 
 
@@ -1873,6 +2384,7 @@
              ---------------------------------------------------- */
 
           var dataUrl =
+
             "/data/" +
 
             encodeURIComponent(
@@ -1883,18 +2395,24 @@
 
 
           console.log(
+
             "Loading invitation data:",
+
             dataUrl
+
           );
 
 
           var response =
+
             await fetch(
 
               dataUrl,
 
               {
+
                 cache: "no-cache"
+
               }
 
             );
@@ -1920,6 +2438,7 @@
 
 
           invitationData =
+
             await response.json();
 
 
@@ -1932,15 +2451,19 @@
 
 
           console.error(
+
             "Failed to load invitation:",
+
             error
+
           );
 
 
           showError(
-            "Unable to load this invitation."
-          );
 
+            "Unable to load this invitation."
+
+          );
 
         }
 
@@ -1959,7 +2482,9 @@
 
 
         if (!data) {
+
           return;
+
         }
 
 
@@ -1970,6 +2495,7 @@
         if (els.brideName) {
 
           els.brideName.textContent =
+
             data.brideNameHe || "";
 
         }
@@ -1978,6 +2504,7 @@
         if (els.groomName) {
 
           els.groomName.textContent =
+
             data.groomNameHe || "";
 
         }
@@ -1990,6 +2517,7 @@
         if (els.eventDate) {
 
           els.eventDate.textContent =
+
             data.date || "";
 
         }
@@ -2002,8 +2530,11 @@
         if (els.eventVenue) {
 
           els.eventVenue.textContent =
+
             data.venueHe ||
+
             data.venueEn ||
+
             "";
 
         }
@@ -2014,18 +2545,29 @@
            ------------------------------------------------------ */
 
         var brideTitle =
+
           data.brideNameHe ||
+
           data.brideNameEn ||
+
           "";
+
 
         var groomTitle =
+
           data.groomNameHe ||
+
           data.groomNameEn ||
+
           "";
 
+
         var titleNames =
+
           [brideTitle, groomTitle]
+
             .filter(Boolean)
+
             .join(" & ");
 
 
@@ -2034,6 +2576,7 @@
           titleNames
 
             ? titleNames +
+
               " | Save the Date"
 
             : "Save the Date";
@@ -2044,7 +2587,9 @@
            ------------------------------------------------------ */
 
         if (
+
           els.rsvpIframe
+
         ) {
 
           var rsvpUrl =
@@ -2052,19 +2597,28 @@
             currentLang === "en"
 
               ? (
+
                   data.rsvpUrlEn ||
+
                   data.rsvpUrlHe ||
+
                   ""
+
                 )
 
               : (
+
                   data.rsvpUrlHe ||
+
                   data.rsvpUrlEn ||
+
                   ""
+
                 );
 
 
           els.rsvpIframe.src =
+
             rsvpUrl;
 
         }
@@ -2075,19 +2629,36 @@
            ------------------------------------------------------ */
 
         document.documentElement
+
           .setAttribute(
+
             "lang",
+
             currentLang
+
           );
 
 
         document.documentElement
+
           .setAttribute(
+
             "dir",
+
             currentLang === "en"
+
               ? "ltr"
+
               : "rtl"
+
           );
+
+
+        /* ------------------------------------------------------
+           Update social sharing metadata
+           ------------------------------------------------------ */
+
+        updateSocialMetadata();
 
       }
 
@@ -2100,22 +2671,30 @@
 
 
         if (!els.modal) {
+
           return;
+
         }
 
 
         els.modal.classList.add(
+
           "open"
+
         );
 
 
         els.modal.setAttribute(
+
           "aria-hidden",
+
           "false"
+
         );
 
 
         document.body.style.overflow =
+
           "hidden";
 
 
@@ -2132,22 +2711,30 @@
 
 
         if (!els.modal) {
+
           return;
+
         }
 
 
         els.modal.classList.remove(
+
           "open"
+
         );
 
 
         els.modal.setAttribute(
+
           "aria-hidden",
+
           "true"
+
         );
 
 
         document.body.style.overflow =
+
           "";
 
 
@@ -2163,8 +2750,11 @@
       if (els.openRsvp) {
 
         els.openRsvp.addEventListener(
+
           "click",
+
           openModal
+
         );
 
       }
@@ -2173,8 +2763,11 @@
       if (els.closeRsvp) {
 
         els.closeRsvp.addEventListener(
+
           "click",
+
           closeModal
+
         );
 
       }
@@ -2187,12 +2780,17 @@
       if (els.modal) {
 
         els.modal.addEventListener(
+
           "click",
+
           function (event) {
 
             if (
+
               event.target ===
+
               els.modal
+
             ) {
 
               closeModal();
@@ -2200,6 +2798,7 @@
             }
 
           }
+
         );
 
       }
@@ -2210,7 +2809,9 @@
          -------------------------------------------------------- */
 
       document.addEventListener(
+
         "keydown",
+
         function (event) {
 
           if (
@@ -2220,7 +2821,9 @@
             els.modal &&
 
             els.modal.classList.contains(
+
               "open"
+
             )
 
           ) {
@@ -2230,6 +2833,7 @@
           }
 
         }
+
       );
 
 
@@ -2241,12 +2845,16 @@
 
 
         els.soundButton.addEventListener(
+
           "click",
+
           async function () {
 
 
             if (
+
               !els.weddingAudio
+
             ) {
 
               return;
@@ -2258,17 +2866,20 @@
 
 
               if (
+
                 els.weddingAudio.paused
+
               ) {
 
 
                 await
+
                   els.weddingAudio.play();
 
 
                 els.soundButton.textContent =
-                  "🔇 כיבוי מוזיקה";
 
+                  "🔇 כיבוי מוזיקה";
 
               }
 
@@ -2279,8 +2890,8 @@
 
 
                 els.soundButton.textContent =
-                  "🔊 הפעלת מוזיקה";
 
+                  "🔊 הפעלת מוזיקה";
 
               }
 
@@ -2291,14 +2902,17 @@
 
 
               console.error(
-                "Unable to play wedding music:",
-                error
-              );
 
+                "Unable to play wedding music:",
+
+                error
+
+              );
 
             }
 
           }
+
         );
 
       }
@@ -2309,18 +2923,25 @@
          ======================================================== */
 
       window.addEventListener(
+
         "load",
+
         function () {
 
 
           if (
+
             els.weddingVideo
+
           ) {
 
 
             els.weddingVideo
+
               .play()
+
               .catch(
+
                 function () {
 
                   /*
@@ -2332,11 +2953,13 @@
                   */
 
                 }
+
               );
 
           }
 
         }
+
       );
 
 
