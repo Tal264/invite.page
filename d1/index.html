@@ -1964,20 +1964,36 @@ async function loadInvitation() {
     /* ----------------------------------------------------------
        Names
        ---------------------------------------------------------- */
-      if (els.brideName) {
-        els.brideName.textContent =
-          currentLang === "en"
-            ? (data.brideNameEn || "")
-            : (data.brideNameHe || "");
-      }
+  if (els.brideName){
 
-      if (els.groomName) {
-        els.groomName.textContent =
-          currentLang === "en"
-            ? (data.groomNameEn || "")
-            : (data.groomNameHe || "");
-      }
+  els.brideName.dataset.he =
+    data.brideNameHe || "";
 
+  els.brideName.dataset.en =
+    data.brideNameEn || "";
+
+  els.brideName.textContent =
+    currentLang === "en"
+      ? data.brideNameEn || ""
+      : data.brideNameHe || "";
+
+}
+
+
+if (els.groomName){
+
+  els.groomName.dataset.he =
+    data.groomNameHe || "";
+
+  els.groomName.dataset.en =
+    data.groomNameEn || "";
+
+  els.groomName.textContent =
+    currentLang === "en"
+      ? data.groomNameEn || ""
+      : data.groomNameHe || "";
+
+}
 
     /* ----------------------------------------------------------
        Browser title
@@ -2784,6 +2800,29 @@ async function loadInvitation() {
 
       }
     );
+
+/* ----------------------------------------------------------
+   Update couple names
+   ---------------------------------------------------------- */
+
+if (els.brideName) {
+
+  els.brideName.textContent =
+    lang === "en"
+      ? els.brideName.dataset.en || ""
+      : els.brideName.dataset.he || "";
+
+}
+
+
+if (els.groomName) {
+
+  els.groomName.textContent =
+    lang === "en"
+      ? els.groomName.dataset.en || ""
+      : els.groomName.dataset.he || "";
+
+}
 
         /* ----------------------------------------------------------
        Update RSVP Google Form
