@@ -1367,11 +1367,7 @@
         playsinline
         preload="auto"
         aria-hidden="true"
-      >
-
-        <source
-          src="flower.mp4"
-          type="video/mp4"
+    
         >
 
       </video>
@@ -1452,6 +1448,51 @@
         ></p>
 
 
+/* ------------------------------------------------------
+   Dynamic hero video
+   ------------------------------------------------------ */
+
+if (els.weddingVideo) {
+
+  var videoUrl = data.heroVideo || "";
+
+  if (videoUrl) {
+
+    els.weddingVideo.src = videoUrl;
+
+    els.weddingVideo.load();
+
+    els.weddingVideo.play().catch(function (error) {
+
+      console.log(
+        "Video autoplay waiting for browser permission:",
+        error
+      );
+
+    });
+
+  }
+}
+
+
+/* ------------------------------------------------------
+   Dynamic wedding audio
+   ------------------------------------------------------ */
+
+if (els.weddingAudio) {
+
+  var audioUrl = data.audio || "";
+
+  if (audioUrl) {
+
+    els.weddingAudio.src = audioUrl;
+
+    els.weddingAudio.load();
+
+  }
+}
+
+
         <!-- ====================================================
              TEMPLATE MESSAGE
              ==================================================== -->
@@ -1520,11 +1561,7 @@
             id="weddingAudio"
             loop
             preload="auto"
-          >
-
-            <source
-              /* src="assets/treasure.mp3"
-              type="audio/mpeg" */
+      
             >
 
           </audio>
