@@ -2199,22 +2199,17 @@ async function loadInvitation() {
       RSVP Google Form
       ---------------------------------------------------------- */
 
-    if (
+            if (
       els.rsvpIframe &&
       (data.rsvpUrlEn || data.rsvpUrlHe)
     ) {
 
-      const rsvpUrl =
-        lang === "en"
-          ? data.rsvpUrlEn
-          : data.rsvpUrlHe;
-
-      if (rsvpUrl) {
-        els.rsvpIframe.src = rsvpUrl;
-      }
+      els.rsvpIframe.src =
+        currentLang === "en"
+          ? (data.rsvpUrlEn || data.rsvpUrlHe || "")
+          : (data.rsvpUrlHe || data.rsvpUrlEn || "");
 
     }
-
     /* ----------------------------------------------------------
        Countdown
        ---------------------------------------------------------- */
