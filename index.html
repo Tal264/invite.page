@@ -483,7 +483,6 @@ html[dir="ltr"] .check-icon {
 
 
 
-
 <!-- ===================================================
      04 — VERTICAL VIDEO
      =================================================== -->
@@ -528,19 +527,15 @@ html[dir="ltr"] .check-icon {
       <div class="vertical-preview-device vertical-video-device">
 
         <!-- =================================================
-             ACTUAL D4 / EMMA-NOAM VIDEO
+             D4 / EMMA-NOAM STATIC SCREENSHOT
              ================================================= -->
 
-        <video
-          class="showcase-video"
-          src="/assets/holdingHandsverticalvideo.mp4"
-          autoplay
-          muted
-          loop
-          playsinline
-          preload="metadata"
-          aria-label="Wedding invitation vertical video preview"
-        ></video>
+        <img
+          class="showcase-image showcase-image--vertical"
+          src="/assets/showcaseverticalvideo.png"
+          alt="Emma and Noam wedding invitation preview"
+          loading="lazy"
+        />
 
       </div>
 
@@ -573,18 +568,20 @@ html[dir="ltr"] .check-icon {
          OPEN TEMPLATE
          ===================================================== -->
 
-   <button
-  class="template-open"
-  type="button"
-  data-template-open="https://invitewed.pages.dev/d4/emma-noam/"
-  data-i18n-key="template_preview_button"
->
-  צפייה בהזמנה
-</button>
+    <button
+      class="template-open"
+      type="button"
+      data-template-open="https://invitewed.pages.dev/d4/emma-noam/"
+      data-i18n-key="template_preview_button"
+    >
+      צפייה בהזמנה
+    </button>
 
   </div>
 
 </article>
+
+
 
 
 
@@ -2730,6 +2727,24 @@ try {
     opacity: 1;
   }
 
+}
+
+.template-preview-wrap--vertical-video .vertical-preview-stage {
+  width: 100%;
+  height: 100%;
+}
+
+.template-preview-wrap--vertical-video .vertical-video-device {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.template-preview-wrap--vertical-video .showcase-image--vertical {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
 }
 
 </style>
