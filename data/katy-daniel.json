@@ -25,5 +25,5 @@
   "rsvpUrlEn": "https://docs.google.com/forms/d/e/1FAIpQLScwgbrZ9_PIwM33jn2Ssq60uCOpZ1mjT_BPKbxy3hKtgudqIg/viewform?embedded=true",
   "rsvpUrlHe": "https://docs.google.com/forms/d/e/1FAIpQLSdWsHbUJHekWG7Xb15X_Zzy5mmfcJ23tLiQadgG6AyyRQ89bA/viewform?embedded=true",
 
-  "heroImage": "./assets/couple-without-layover.jpeg"
+  "heroImage": "/assets/couple-without-layover.jpeg"
 }
