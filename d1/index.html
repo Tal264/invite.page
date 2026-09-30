@@ -1964,32 +1964,34 @@ async function loadInvitation() {
     /* ----------------------------------------------------------
        Names
        ---------------------------------------------------------- */
+      if (els.brideName) {
+        els.brideName.textContent =
+          currentLang === "en"
+            ? (data.brideNameEn || "")
+            : (data.brideNameHe || "");
+      }
 
-    if (els.brideName){
-
-      els.brideName.textContent =
-        data.brideName || "";
-
-    }
-
-
-    if (els.groomName){
-
-      els.groomName.textContent =
-        data.groomName || "";
-
-    }
+      if (els.groomName) {
+        els.groomName.textContent =
+          currentLang === "en"
+            ? (data.groomNameEn || "")
+            : (data.groomNameHe || "");
+      }
 
 
     /* ----------------------------------------------------------
        Browser title
        ---------------------------------------------------------- */
 
-    document.title =
+      document.title =
       "Save the Date | " +
-      (data.brideName || "") +
+      (currentLang === "en"
+        ? (data.brideNameEn || "")
+        : (data.brideNameHe || "")) +
       " & " +
-      (data.groomName || "") +
+      (currentLang === "en"
+        ? (data.groomNameEn || "")
+        : (data.groomNameHe || "")) +
       " · " +
       (data.date || "");
 
@@ -2783,6 +2785,30 @@ async function loadInvitation() {
       }
     );
 
+        /* ----------------------------------------------------------
+       Update RSVP Google Form
+       ---------------------------------------------------------- */
+
+      if (
+    els.rsvpIframe &&
+    invitationData &&
+    (invitationData.rsvpUrlEn || invitationData.rsvpUrlHe)
+  ){
+
+    els.rsvpIframe.src =
+      currentLang === "en"
+        ? (
+            invitationData.rsvpUrlEn ||
+            invitationData.rsvpUrlHe ||
+            ""
+          )
+        : (
+            invitationData.rsvpUrlHe ||
+            invitationData.rsvpUrlEn ||
+            ""
+          );
+
+  }
 
     /* ----------------------------------------------------------
        Hero image alt
