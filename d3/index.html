@@ -4,15 +4,19 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
-<title>Save the Date | נועה & תומר · 18.06.2027</title>
+<title>Save the Date</title>
 
 <!-- ============================================================
      GOOGLE FONTS
      ============================================================ -->
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@400;500;700&family=Assistant:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+<link
+  href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@400;500;700&family=Assistant:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,500;1,600&display=swap"
+  rel="stylesheet"
+>
 
 <style>
 
@@ -71,20 +75,26 @@
   }
 
   @media (prefers-reduced-motion: reduce){
+
     *,
     *::before,
     *::after{
+
       animation-duration: 0.01ms !important;
       animation-iteration-count: 1 !important;
       transition-duration: 0.01ms !important;
       scroll-behavior: auto !important;
+
     }
+
   }
 
   a:focus-visible,
   button:focus-visible{
+
     outline: 2px solid var(--gold);
     outline-offset: 3px;
+
   }
 
 
@@ -93,12 +103,9 @@
      ============================================================ */
 
   .hero-full{
+
     position: relative;
 
-    /*
-      Keep the hero at viewport height.
-      The image itself uses contain so it will NOT be cropped.
-    */
     height: 100vh;
     height: 100dvh;
 
@@ -111,20 +118,19 @@
     overflow: hidden;
 
     background: var(--forest);
+
   }
 
 
   /* ============================================================
      HERO IMAGE
-     
-     IMPORTANT:
-     object-fit: contain = entire image remains visible.
-     This replaces the previous "cover", which was cropping it.
      ============================================================ */
 
   .hero-media{
+
     position: absolute;
     inset: 0;
+
     z-index: 0;
 
     width: 100%;
@@ -135,22 +141,18 @@
     justify-content: center;
 
     background: var(--forest);
+
   }
 
   .hero-media img{
+
     width: 100%;
     height: 100%;
 
-    /*
-      SHOW THE ENTIRE IMAGE.
-      No cropping.
-    */
     object-fit: contain;
 
-    /*
-      Center the complete image.
-    */
     object-position: center center;
+
   }
 
 
@@ -159,6 +161,7 @@
      ============================================================ */
 
   .hero-media::after{
+
     content: "";
 
     position: absolute;
@@ -174,6 +177,7 @@
       );
 
     pointer-events: none;
+
   }
 
 
@@ -182,6 +186,7 @@
      ============================================================ */
 
   .hero-content{
+
     position: relative;
     z-index: 1;
 
@@ -204,6 +209,7 @@
     overflow-y: auto;
 
     scrollbar-width: none;
+
   }
 
   .hero-content::-webkit-scrollbar{
@@ -216,11 +222,14 @@
      ============================================================ */
 
   .hero-content > *{
+
     opacity: 0;
+
     transform: translateY(12px);
 
     animation:
       hero-rise 0.8s ease forwards;
+
   }
 
   .save-the-date{
@@ -248,10 +257,12 @@
   }
 
   @keyframes hero-rise{
+
     to{
       opacity: 1;
       transform: translateY(0);
     }
+
   }
 
 
@@ -260,7 +271,9 @@
      ============================================================ */
 
   .save-the-date{
-    font-size: clamp(0.95rem, 3.2vw, 1.2rem);
+
+    font-size:
+      clamp(0.95rem, 3.2vw, 1.2rem);
 
     font-weight: 600;
 
@@ -275,6 +288,7 @@
 
     margin-bottom:
       clamp(10px, 2.5vh, 18px);
+
   }
 
 
@@ -283,6 +297,7 @@
      ============================================================ */
 
   .hero-names{
+
     font-family: var(--font-display);
 
     font-weight: 500;
@@ -297,9 +312,11 @@
 
     margin-bottom:
       clamp(16px, 3.5vh, 28px);
+
   }
 
   .hero-names .amp{
+
     color: var(--gold-soft);
 
     font-style: italic;
@@ -307,6 +324,7 @@
     padding: 0 10px;
 
     display: inline-block;
+
   }
 
 
@@ -315,6 +333,7 @@
      ============================================================ */
 
   .cd-inline{
+
     display: flex;
 
     align-items: center;
@@ -325,9 +344,11 @@
 
     margin-bottom:
       clamp(16px, 3.5vh, 28px);
+
   }
 
   .cd-item{
+
     display: flex;
 
     flex-direction: column;
@@ -335,9 +356,11 @@
     align-items: center;
 
     min-width: 40px;
+
   }
 
   .countdown-num{
+
     font-family: var(--font-display);
 
     font-weight: 600;
@@ -359,14 +382,19 @@
     transition:
       transform 0.25s ease,
       opacity 0.25s ease;
+
   }
 
   .countdown-num.tick{
+
     transform: translateY(-4px);
+
     opacity: 0.5;
+
   }
 
   .countdown-label{
+
     margin-top: 4px;
 
     font-size: 1rem;
@@ -375,9 +403,11 @@
 
     color:
       rgba(255,255,255,0.82);
+
   }
 
   .cd-bar{
+
     width: 1px;
 
     height:
@@ -389,6 +419,7 @@
     align-self: center;
 
     margin-top: -8px;
+
   }
 
 
@@ -397,6 +428,7 @@
      ============================================================ */
 
   .hero-meta-block{
+
     display: flex;
 
     flex-direction: column;
@@ -406,9 +438,11 @@
 
     margin-bottom:
       clamp(18px, 4vh, 30px);
+
   }
 
   .meta-label{
+
     font-size: 1.5rem;
 
     letter-spacing: 0.14em;
@@ -419,9 +453,11 @@
       rgba(255,255,255,0.72);
 
     margin-bottom: 2px;
+
   }
 
   .meta-value{
+
     font-size:
       clamp(0.92rem, 2.6vw, 1.05rem);
 
@@ -431,6 +467,7 @@
 
     text-shadow:
       0 2px 10px rgba(0,0,0,0.3);
+
   }
 
 
@@ -439,6 +476,7 @@
      ============================================================ */
 
   .btn-learnmore{
+
     display: inline-flex;
 
     align-items: center;
@@ -470,6 +508,7 @@
 
     transition:
       transform 0.15s ease;
+
   }
 
   .btn-learnmore:active{
@@ -482,6 +521,7 @@
      ============================================================ */
 
   .hero-credit{
+
     margin-top:
       clamp(14px, 3vh, 22px);
 
@@ -489,6 +529,7 @@
 
     color:
       rgba(255,255,255,0.55);
+
   }
 
 
@@ -497,6 +538,7 @@
      ============================================================ */
 
   .lang-toggle{
+
     position: fixed;
 
     bottom: 18px;
@@ -533,13 +575,16 @@
 
     box-shadow:
       var(--shadow-tight);
+
   }
 
   .lang-toggle svg{
+
     width: 14px;
     height: 14px;
 
     flex-shrink: 0;
+
   }
 
   .lang-toggle:active{
@@ -553,7 +598,9 @@
 
   html[lang="en"] .hero-names,
   html[lang="en"] .modal-title{
+
     font-family: var(--font-script);
+
   }
 
 
@@ -562,6 +609,7 @@
      ============================================================ */
 
   .modal-overlay{
+
     position: fixed;
     inset: 0;
 
@@ -584,14 +632,19 @@
 
     transition:
       opacity 0.35s ease;
+
   }
 
   .modal-overlay.is-open{
+
     opacity: 1;
+
     pointer-events: auto;
+
   }
 
   .modal-sheet{
+
     width: 100%;
 
     max-width: 480px;
@@ -622,6 +675,7 @@
 
     padding-bottom:
       env(safe-area-inset-bottom, 0px);
+
   }
 
   @media (min-width: 900px){
@@ -631,12 +685,15 @@
     }
 
     .modal-sheet{
+
       max-width: 560px;
 
       border-radius: 26px;
 
       max-height: 82vh;
+
     }
+
   }
 
   .modal-overlay.is-open .modal-sheet{
@@ -649,6 +706,7 @@
      ============================================================ */
 
   .modal-header{
+
     display: flex;
 
     align-items: center;
@@ -659,15 +717,19 @@
 
     border-bottom:
       1px solid var(--line);
+
   }
 
   .modal-title{
+
     font-family: var(--font-display);
 
     font-size: 1.25rem;
+
   }
 
   .modal-close{
+
     width: 36px;
     height: 36px;
 
@@ -691,9 +753,11 @@
     align-items: center;
 
     justify-content: center;
+
   }
 
   .modal-body{
+
     flex: 1;
 
     overflow-y: auto;
@@ -703,6 +767,7 @@
     position: relative;
 
     min-height: 320px;
+
   }
 
 
@@ -715,6 +780,7 @@
   }
 
   .modal-section h4{
+
     font-family: var(--font-display);
 
     font-size: 1.05rem;
@@ -722,6 +788,7 @@
     color: var(--forest);
 
     margin-bottom: 12px;
+
   }
 
   .mini-timeline{
@@ -729,6 +796,7 @@
   }
 
   .mini-timeline li{
+
     display: flex;
 
     gap: 10px;
@@ -741,6 +809,7 @@
     font-size: 0.95rem;
 
     color: var(--forest-soft);
+
   }
 
   .mini-timeline li:last-child{
@@ -748,19 +817,23 @@
   }
 
   .mini-timeline strong{
+
     font-family: var(--font-display);
 
     color: var(--forest);
 
     min-width: 46px;
+
   }
 
   .venue-line{
+
     color: var(--forest-soft);
 
     font-size: 0.95rem;
 
     margin-bottom: 14px;
+
   }
 
 
@@ -769,6 +842,7 @@
      ============================================================ */
 
   .map-embed{
+
     width: 100%;
 
     height: 170px;
@@ -782,6 +856,7 @@
 
     filter:
       sepia(8%) saturate(85%);
+
   }
 
 
@@ -790,6 +865,7 @@
      ============================================================ */
 
   .btn-waze{
+
     display: flex;
 
     align-items: center;
@@ -821,6 +897,7 @@
 
     transition:
       transform 0.15s ease;
+
   }
 
   .btn-waze:active{
@@ -828,10 +905,12 @@
   }
 
   .btn-waze svg{
+
     width: 20px;
     height: 20px;
 
     flex-shrink: 0;
+
   }
 
 
@@ -840,14 +919,17 @@
      ============================================================ */
 
   .rsvp-copy{
+
     color: var(--forest-soft);
 
     font-size: 0.95rem;
 
     margin-bottom: 16px;
+
   }
 
   .form-loader{
+
     display: flex;
 
     flex-direction: column;
@@ -863,9 +945,11 @@
     font-size: 0.95rem;
 
     padding: 40px 0;
+
   }
 
   .form-loader .spinner{
+
     width: 28px;
     height: 28px;
 
@@ -879,15 +963,19 @@
 
     animation:
       spin 0.9s linear infinite;
+
   }
 
   @keyframes spin{
+
     to{
       transform: rotate(360deg);
     }
+
   }
 
   #rsvpIframe{
+
     width: 100%;
 
     min-height: 560px;
@@ -898,14 +986,12 @@
       var(--radius-md);
 
     background: transparent;
+
   }
 
 
   /* ============================================================
      RESPONSIVE IMAGE BEHAVIOR
-     
-     On very narrow phones, contain guarantees that the complete
-     image remains visible.
      ============================================================ */
 
   @media (max-width: 600px){
@@ -915,18 +1001,23 @@
     }
 
     .hero-media img{
+
       width: 100%;
       height: 100%;
 
       object-fit: contain;
 
       object-position: center center;
+
     }
 
     .hero-content{
+
       padding-left: 18px;
       padding-right: 18px;
+
     }
+
   }
 
 
@@ -937,8 +1028,10 @@
   @media (max-height: 700px){
 
     .hero-content{
+
       padding-top: 12px;
       padding-bottom: 12px;
+
     }
 
     .hero-names{
@@ -956,6 +1049,7 @@
     .hero-credit{
       margin-top: 10px;
     }
+
   }
 
 </style>
@@ -973,20 +1067,12 @@
 
   <div class="hero-media">
 
-    <!--
-      🔧 CUSTOMIZE:
-      Replace this image with your own wedding photo.
-
-      IMPORTANT:
-      The CSS uses object-fit: contain so the entire image
-      remains visible and is NOT cropped.
-    -->
-
     <img
-      src="./coupleOnBeach.png"
-      alt="נועה ותומר"
-      data-he-alt="נועה ותומר"
-      data-en-alt="Noa and Tomer"
+      id="heroImage"
+      src=""
+      alt=""
+      data-he-alt=""
+      data-en-alt=""
     >
 
   </div>
@@ -1007,9 +1093,13 @@
 
 
     <h2 class="hero-names">
-      נועה
+
+      <span id="brideName"></span>
+
       <span class="amp">&</span>
-      תומר
+
+      <span id="groomName"></span>
+
     </h2>
 
 
@@ -1135,10 +1225,8 @@
 
         <p
           class="meta-value"
-          data-en="Hanachala Event Hall, Central Region"
-        >
-          אולם אירועים "הנחלה", אזור המרכז
-        </p>
+          id="venueName"
+        ></p>
 
       </div>
 
@@ -1152,9 +1240,10 @@
           מתי
         </p>
 
-        <p class="meta-value">
-          18.06.2027 · 19:30
-        </p>
+        <p
+          class="meta-value"
+          id="eventDate"
+        ></p>
 
       </div>
 
@@ -1220,7 +1309,7 @@
     />
 
     <path
-      d="M3 12h18M12 3c2.5 2.6 3.8 5.7 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.7-3.8-9S9.5 5.6 12 3Z"
+      d="M3 12h18M12 3c2.5 2.6 3.8 5.7 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-6.4-3.8-9S9.5 5.6 12 3Z"
     />
 
   </svg>
@@ -1291,104 +1380,6 @@
 
 
       <!-- ======================================================
-           OPTIONAL SCHEDULE
-           ====================================================== -->
-
-      <!--
-      <div class="modal-section">
-
-        <h4 data-en="Schedule">
-          לוח זמנים
-        </h4>
-
-        <ul class="mini-timeline">
-
-          <li>
-            <strong>19:30</strong>
-            <span data-en="Reception 🍸">
-              קבלת פנים 🍸
-            </span>
-          </li>
-
-          <li>
-            <strong>20:30</strong>
-            <span data-en="Chuppah & Ceremony 💍">
-              חופה וקידושין 💍
-            </span>
-          </li>
-
-          <li>
-            <strong>21:15</strong>
-            <span data-en="Dinner & Party 🪩">
-              ארוחת ערב ומסיבה 🪩
-            </span>
-          </li>
-
-        </ul>
-
-      </div>
-      -->
-
-
-      <!-- ======================================================
-           OPTIONAL VENUE + NAVIGATION
-           ====================================================== -->
-
-      <!--
-      <div class="modal-section">
-
-        <h4 data-en="Venue">
-          מיקום
-        </h4>
-
-        <p
-          class="venue-line"
-          data-en="Hanachala Event Hall, 12 Example St, Central Region"
-        >
-          אולם אירועים "הנחלה",
-          רחוב הדוגמה 12,
-          אזור המרכז
-        </p>
-
-
-        <iframe
-          class="map-embed"
-          src="https://www.google.com/maps?q=32.0853,34.7818&z=15&output=embed"
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-          title="מפת המיקום"
-        ></iframe>
-
-
-        <a
-          class="btn-waze"
-          href="https://waze.com/ul?q=%D7%90%D7%95%D7%9C%D7%9D%20%D7%94%D7%A0%D7%97%D7%9C%D7%94&navigate=yes"
-          target="_blank"
-          rel="noopener"
-        >
-
-          <svg
-            viewBox="0 0 24 24"
-            fill="currentColor"
-          >
-
-            <path
-              d="M12 2C7.6 2 4 5.6 4 10c0 6 8 12 8 12s8-6 8-12c0-4.4-3.6-8-8-8Zm0 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6Z"
-            />
-
-          </svg>
-
-          <span data-en="Navigate with Waze">
-            נווטו למיקום ב-Waze
-          </span>
-
-        </a>
-
-      </div>
-      -->
-
-
-      <!-- ======================================================
            RSVP FORM
            ====================================================== -->
 
@@ -1414,14 +1405,9 @@
         </div>
 
 
-        <!--
-          🔧 CUSTOMIZE:
-          Replace the Google Form URL with your own form.
-        -->
-
         <iframe
           id="rsvpIframe"
-          src="https://docs.google.com/forms/d/e/1FAIpQLSdWsHbUJHekWG7Xb15X_Zzy5mmfcJ23tLiQadgG6AyyRQ89bA/viewform?embedded=true"
+          src=""
           title="טופס אישור הגעה"
         >
           טוען...
@@ -1445,17 +1431,38 @@
 
 
   /* ==========================================================
-     COUNTDOWN TIMER
+     GLOBAL DATA
      ========================================================== */
 
-  // 🔧 CUSTOMIZE:
-  // Set this to your real wedding date/time.
+  var invitationData = null;
 
-  var WEDDING_DATE =
-    new Date("2027-06-18T19:30:00");
+  var currentLang = "he";
 
+  var countdownTimer = null;
+
+  var WEDDING_DATE = null;
+
+
+  /* ==========================================================
+     DOM ELEMENTS
+     ========================================================== */
 
   var els = {
+
+    brideName:
+      document.getElementById("brideName"),
+
+    groomName:
+      document.getElementById("groomName"),
+
+    venueName:
+      document.getElementById("venueName"),
+
+    eventDate:
+      document.getElementById("eventDate"),
+
+    heroImage:
+      document.getElementById("heroImage"),
 
     days:
       document.getElementById("cd-days"),
@@ -1467,10 +1474,403 @@
       document.getElementById("cd-minutes"),
 
     seconds:
-      document.getElementById("cd-seconds")
+      document.getElementById("cd-seconds"),
+
+    rsvpIframe:
+      document.getElementById("rsvpIframe")
 
   };
 
+
+  /* ==========================================================
+     GET CUSTOMER SLUG
+
+     Supported URLs:
+
+     /d3/maya-yair/
+     /d3/noa-tomer/
+
+     Local testing:
+
+     /d3/?slug=maya-yair
+     ========================================================== */
+
+  function getInvitationSlug() {
+
+    /* ----------------------------------------------------------
+       1. Local testing / query parameter
+       ---------------------------------------------------------- */
+
+    var urlParams =
+      new URLSearchParams(
+        window.location.search
+      );
+
+    var paramSlug =
+      urlParams.get("slug");
+
+    if (paramSlug) {
+
+      return paramSlug.trim();
+
+    }
+
+
+    /* ----------------------------------------------------------
+       2. Production URL
+       ---------------------------------------------------------- */
+
+    var pathParts =
+      window.location.pathname
+        .split("/")
+        .filter(Boolean);
+
+
+    /*
+      Expected:
+
+      ["d3", "maya-yair"]
+
+      or
+
+      ["d3", "noa-tomer"]
+    */
+
+    if (
+
+      pathParts.length >= 2 &&
+
+      /^d[1-4]$/i.test(
+        pathParts[0]
+      ) &&
+
+      pathParts[1].trim() !== "" &&
+
+      !pathParts[1]
+        .toLowerCase()
+        .endsWith(".html")
+
+    ){
+
+      return pathParts[1].trim();
+
+    }
+
+
+    return null;
+
+  }
+
+
+  /* ==========================================================
+     LOAD CUSTOMER DATA
+     ========================================================== */
+
+  async function loadInvitation(){
+
+    var slug =
+      getInvitationSlug();
+
+
+    if (!slug){
+
+      console.error(
+        "No invitation slug found in URL:",
+        window.location.href
+      );
+
+      showError(
+        "Invitation not found."
+      );
+
+      return;
+
+    }
+
+
+    try{
+
+      /*
+        All invitation designs use
+        the same centralized customer data.
+
+        Example:
+
+        /data/maya-yair.json
+        /data/noa-tomer.json
+      */
+
+      var dataUrl =
+        "/data/" +
+        encodeURIComponent(slug) +
+        ".json";
+
+
+      console.log(
+        "Loading invitation data:",
+        dataUrl
+      );
+
+
+      var response =
+        await fetch(
+          dataUrl,
+          {
+            cache: "no-cache"
+          }
+        );
+
+
+      if (!response.ok){
+
+        throw new Error(
+          "Invitation data not found: " +
+          slug +
+          " (" +
+          response.status +
+          ")"
+        );
+
+      }
+
+
+      invitationData =
+        await response.json();
+
+
+      applyInvitationData();
+
+
+      document.body.classList.add(
+        "invitation-ready"
+      );
+
+
+    }catch(error){
+
+      console.error(
+        "Failed to load invitation:",
+        error
+      );
+
+
+      showError(
+        "Unable to load this invitation."
+      );
+
+    }
+
+  }
+
+
+  /* ==========================================================
+     APPLY CUSTOMER DATA
+     ========================================================== */
+
+  function applyInvitationData(){
+
+    var data =
+      invitationData;
+
+
+    if (!data){
+      return;
+    }
+
+
+    /* ----------------------------------------------------------
+       Couple names
+       ---------------------------------------------------------- */
+
+    if (els.brideName){
+
+      els.brideName.dataset.he =
+        data.brideNameHe || "";
+
+      els.brideName.dataset.en =
+        data.brideNameEn || "";
+
+      els.brideName.textContent =
+        currentLang === "en"
+          ? data.brideNameEn || ""
+          : data.brideNameHe || "";
+
+    }
+
+
+    if (els.groomName){
+
+      els.groomName.dataset.he =
+        data.groomNameHe || "";
+
+      els.groomName.dataset.en =
+        data.groomNameEn || "";
+
+      els.groomName.textContent =
+        currentLang === "en"
+          ? data.groomNameEn || ""
+          : data.groomNameHe || "";
+
+    }
+
+
+    /* ----------------------------------------------------------
+       Hero image
+       ---------------------------------------------------------- */
+
+    if (
+      els.heroImage &&
+      data.heroImage
+    ){
+
+      els.heroImage.src =
+        data.heroImage;
+
+
+      els.heroImage.dataset.heAlt =
+        data.brideNameHe && data.groomNameHe
+          ? data.brideNameHe +
+            " ו" +
+            data.groomNameHe
+          : "";
+
+
+      els.heroImage.dataset.enAlt =
+        data.brideNameEn && data.groomNameEn
+          ? data.brideNameEn +
+            " and " +
+            data.groomNameEn
+          : "";
+
+
+      els.heroImage.alt =
+        currentLang === "en"
+          ? els.heroImage.dataset.enAlt
+          : els.heroImage.dataset.heAlt;
+
+    }
+
+
+    /* ----------------------------------------------------------
+       Venue
+       ---------------------------------------------------------- */
+
+    if (els.venueName){
+
+      els.venueName.dataset.he =
+        data.venueHe || "";
+
+      els.venueName.dataset.en =
+        data.venueEn || "";
+
+      els.venueName.textContent =
+        currentLang === "en"
+          ? data.venueEn || ""
+          : data.venueHe || "";
+
+    }
+
+
+    /* ----------------------------------------------------------
+       Event date
+       ---------------------------------------------------------- */
+
+    if (els.eventDate){
+
+      els.eventDate.textContent =
+        data.date || "";
+
+    }
+
+
+    /* ----------------------------------------------------------
+       Browser title
+       ---------------------------------------------------------- */
+
+    document.title =
+      "Save the Date | " +
+
+      (
+        currentLang === "en"
+          ? data.brideNameEn || ""
+          : data.brideNameHe || ""
+      ) +
+
+      " & " +
+
+      (
+        currentLang === "en"
+          ? data.groomNameEn || ""
+          : data.groomNameHe || ""
+      ) +
+
+      " · " +
+
+      (
+        data.date || ""
+      );
+
+
+    /* ----------------------------------------------------------
+       Wedding date / countdown
+       ---------------------------------------------------------- */
+
+    if (data.dateISO){
+
+      WEDDING_DATE =
+        new Date(
+          data.dateISO
+        );
+
+      startCountdown();
+
+    }
+
+
+    /* ----------------------------------------------------------
+       RSVP Google Form
+       ---------------------------------------------------------- */
+
+    if (
+      els.rsvpIframe &&
+      (
+        data.rsvpUrlEn ||
+        data.rsvpUrlHe
+      )
+    ){
+
+      els.rsvpIframe.src =
+        currentLang === "en"
+
+          ? (
+              data.rsvpUrlEn ||
+              data.rsvpUrlHe ||
+              ""
+            )
+
+          : (
+              data.rsvpUrlHe ||
+              data.rsvpUrlEn ||
+              ""
+            );
+
+    }
+
+
+    /* ----------------------------------------------------------
+       Apply language
+       ---------------------------------------------------------- */
+
+    applyLanguage(
+      currentLang
+    );
+
+  }
+
+
+  /* ==========================================================
+     COUNTDOWN TIMER
+     ========================================================== */
 
   var previous = {
 
@@ -1484,32 +1884,54 @@
 
   function pad(n){
 
-    return String(n).padStart(2, "0");
+    return String(n)
+      .padStart(2, "0");
 
   }
 
 
-  function renderUnit(el, key, value){
+  function renderUnit(
+    el,
+    key,
+    value
+  ){
 
-    var text = pad(value);
+    if (!el){
+      return;
+    }
 
 
-    if (previous[key] !== text){
+    var text =
+      pad(value);
 
-      el.textContent = text;
 
-      el.classList.add("tick");
+    if (
+      previous[key] !== text
+    ){
+
+      el.textContent =
+        text;
+
+
+      el.classList.add(
+        "tick"
+      );
 
 
       window.setTimeout(
         function(){
-          el.classList.remove("tick");
+
+          el.classList.remove(
+            "tick"
+          );
+
         },
         250
       );
 
 
-      previous[key] = text;
+      previous[key] =
+        text;
 
     }
 
@@ -1517,6 +1939,11 @@
 
 
   function updateCountdown(){
+
+    if (!WEDDING_DATE){
+      return;
+    }
+
 
     var distance =
       WEDDING_DATE.getTime() -
@@ -1550,7 +1977,14 @@
       );
 
 
-      clearInterval(countdownTimer);
+      if (countdownTimer){
+
+        clearInterval(
+          countdownTimer
+        );
+
+      }
+
 
       return;
 
@@ -1570,8 +2004,10 @@
       els.hours,
       "hours",
       Math.floor(
-        (distance % 86400000)
-        / 3600000
+        (
+          distance %
+          86400000
+        ) / 3600000
       )
     );
 
@@ -1580,8 +2016,10 @@
       els.minutes,
       "minutes",
       Math.floor(
-        (distance % 3600000)
-        / 60000
+        (
+          distance %
+          3600000
+        ) / 60000
       )
     );
 
@@ -1590,22 +2028,47 @@
       els.seconds,
       "seconds",
       Math.floor(
-        (distance % 60000)
-        / 1000
+        (
+          distance %
+          60000
+        ) / 1000
       )
     );
 
   }
 
 
-  updateCountdown();
+  function startCountdown(){
+
+    if (countdownTimer){
+
+      clearInterval(
+        countdownTimer
+      );
+
+    }
 
 
-  var countdownTimer =
-    window.setInterval(
-      updateCountdown,
-      1000
-    );
+    previous = {
+
+      days: null,
+      hours: null,
+      minutes: null,
+      seconds: null
+
+    };
+
+
+    updateCountdown();
+
+
+    countdownTimer =
+      window.setInterval(
+        updateCountdown,
+        1000
+      );
+
+  }
 
 
   /* ==========================================================
@@ -1613,21 +2076,32 @@
      ========================================================== */
 
   var modal =
-    document.getElementById("rsvpModal");
+    document.getElementById(
+      "rsvpModal"
+    );
 
   var openBtn =
-    document.getElementById("openRsvp");
+    document.getElementById(
+      "openRsvp"
+    );
 
   var closeBtn =
-    document.getElementById("closeRsvp");
+    document.getElementById(
+      "closeRsvp"
+    );
 
   var iframe =
-    document.getElementById("rsvpIframe");
+    document.getElementById(
+      "rsvpIframe"
+    );
 
   var loader =
-    document.getElementById("formLoader");
+    document.getElementById(
+      "formLoader"
+    );
 
-  var lastFocused = null;
+  var lastFocused =
+    null;
 
 
   function openModal(){
@@ -1636,7 +2110,10 @@
       document.activeElement;
 
 
-    modal.classList.add("is-open");
+    modal.classList.add(
+      "is-open"
+    );
+
 
     modal.setAttribute(
       "aria-hidden",
@@ -1679,30 +2156,44 @@
   }
 
 
-  openBtn.addEventListener(
-    "click",
-    openModal
-  );
+  if (openBtn){
+
+    openBtn.addEventListener(
+      "click",
+      openModal
+    );
+
+  }
 
 
-  closeBtn.addEventListener(
-    "click",
-    closeModal
-  );
+  if (closeBtn){
+
+    closeBtn.addEventListener(
+      "click",
+      closeModal
+    );
+
+  }
 
 
-  modal.addEventListener(
-    "click",
-    function(e){
+  if (modal){
 
-      if (e.target === modal){
+    modal.addEventListener(
+      "click",
+      function(e){
 
-        closeModal();
+        if (
+          e.target === modal
+        ){
+
+          closeModal();
+
+        }
 
       }
+    );
 
-    }
-  );
+  }
 
 
   document.addEventListener(
@@ -1710,10 +2201,14 @@
     function(e){
 
       if (
+
         e.key === "Escape" &&
+
+        modal &&
         modal.classList.contains(
           "is-open"
         )
+
       ){
 
         closeModal();
@@ -1724,15 +2219,23 @@
   );
 
 
-  iframe.addEventListener(
-    "load",
-    function(){
+  if (iframe){
 
-      loader.style.display =
-        "none";
+    iframe.addEventListener(
+      "load",
+      function(){
 
-    }
-  );
+        if (loader){
+
+          loader.style.display =
+            "none";
+
+        }
+
+      }
+    );
+
+  }
 
 
   /* ==========================================================
@@ -1742,10 +2245,12 @@
   var htmlEl =
     document.documentElement;
 
+
   var langToggle =
     document.getElementById(
       "langToggle"
     );
+
 
   var langToggleLabel =
     document.getElementById(
@@ -1759,18 +2264,25 @@
     );
 
 
-  var currentLang = "he";
-
-
   function applyLanguage(lang){
+
+    currentLang =
+      lang;
+
+
+    /* ----------------------------------------------------------
+       Static translated elements
+       ---------------------------------------------------------- */
 
     translatable.forEach(
       function(el){
 
-        if (!el.dataset.he){
+        if (
+          !el.dataset.he
+        ){
 
           el.dataset.he =
-            el.textContent;
+            el.textContent.trim();
 
         }
 
@@ -1784,24 +2296,135 @@
     );
 
 
-    var heroImg =
-      document.querySelector(
-        ".hero-media img"
-      );
+    /* ----------------------------------------------------------
+       Couple names
+       ---------------------------------------------------------- */
 
+    if (els.brideName){
 
-    if (
-      heroImg &&
-      heroImg.dataset.enAlt
-    ){
-
-      heroImg.alt =
+      els.brideName.textContent =
         lang === "en"
-          ? heroImg.dataset.enAlt
-          : heroImg.dataset.heAlt;
+
+          ? els.brideName.dataset.en || ""
+
+          : els.brideName.dataset.he || "";
 
     }
 
+
+    if (els.groomName){
+
+      els.groomName.textContent =
+        lang === "en"
+
+          ? els.groomName.dataset.en || ""
+
+          : els.groomName.dataset.he || "";
+
+    }
+
+
+    /* ----------------------------------------------------------
+       Venue
+       ---------------------------------------------------------- */
+
+    if (els.venueName){
+
+      els.venueName.textContent =
+        lang === "en"
+
+          ? els.venueName.dataset.en || ""
+
+          : els.venueName.dataset.he || "";
+
+    }
+
+
+    /* ----------------------------------------------------------
+       RSVP Google Form
+       ---------------------------------------------------------- */
+
+    if (
+      els.rsvpIframe &&
+      invitationData &&
+      (
+        invitationData.rsvpUrlEn ||
+        invitationData.rsvpUrlHe
+      )
+    ){
+
+      els.rsvpIframe.src =
+
+        lang === "en"
+
+          ? (
+              invitationData.rsvpUrlEn ||
+              invitationData.rsvpUrlHe ||
+              ""
+            )
+
+          : (
+              invitationData.rsvpUrlHe ||
+              invitationData.rsvpUrlEn ||
+              ""
+            );
+
+    }
+
+
+    /* ----------------------------------------------------------
+       Hero image alt
+       ---------------------------------------------------------- */
+
+    if (
+      els.heroImage
+    ){
+
+      els.heroImage.alt =
+        lang === "en"
+
+          ? els.heroImage.dataset.enAlt || ""
+
+          : els.heroImage.dataset.heAlt || "";
+
+    }
+
+
+    /* ----------------------------------------------------------
+       Browser title
+       ---------------------------------------------------------- */
+
+    if (invitationData){
+
+      document.title =
+        "Save the Date | " +
+
+        (
+          lang === "en"
+            ? invitationData.brideNameEn || ""
+            : invitationData.brideNameHe || ""
+        ) +
+
+        " & " +
+
+        (
+          lang === "en"
+            ? invitationData.groomNameEn || ""
+            : invitationData.groomNameHe || ""
+        ) +
+
+        " · " +
+
+        (
+          invitationData.date || ""
+        );
+
+    }
+
+
+    /* ----------------------------------------------------------
+       HTML direction
+       ---------------------------------------------------------- */
 
     htmlEl.setAttribute(
       "lang",
@@ -1817,29 +2440,84 @@
     );
 
 
-    langToggleLabel.textContent =
-      lang === "en"
-        ? "עברית"
-        : "English";
+    /* ----------------------------------------------------------
+       Language toggle label
+       ---------------------------------------------------------- */
 
+    if (langToggleLabel){
 
-    currentLang = lang;
+      langToggleLabel.textContent =
+        lang === "en"
+          ? "עברית"
+          : "English";
+
+    }
 
   }
 
 
-  langToggle.addEventListener(
-    "click",
-    function(){
+  if (langToggle){
 
-      applyLanguage(
-        currentLang === "he"
-          ? "en"
-          : "he"
-      );
+    langToggle.addEventListener(
+      "click",
+      function(){
 
-    }
-  );
+        applyLanguage(
+
+          currentLang === "he"
+            ? "en"
+            : "he"
+
+        );
+
+      }
+    );
+
+  }
+
+
+  /* ==========================================================
+     ERROR MESSAGE
+     ========================================================== */
+
+  function showError(message){
+
+    document.body.innerHTML =
+
+      '<div style="' +
+        'min-height:100vh;' +
+        'display:flex;' +
+        'align-items:center;' +
+        'justify-content:center;' +
+        'background:#2C3E35;' +
+        'color:#fff;' +
+        'font-family:Assistant,Arial,sans-serif;' +
+        'padding:24px;' +
+        'text-align:center;' +
+      '">' +
+
+        '<div>' +
+
+          '<h2 style="margin-bottom:10px;">' +
+            'Invitation not found' +
+          '</h2>' +
+
+          '<p style="opacity:.8;">' +
+            message +
+          '</p>' +
+
+        '</div>' +
+
+      '</div>';
+
+  }
+
+
+  /* ==========================================================
+     START
+     ========================================================== */
+
+  loadInvitation();
 
 })();
 

@@ -2,6 +2,7 @@
 <html lang="he" dir="rtl">
 
 <head>
+
   <meta charset="UTF-8">
 
   <meta
@@ -9,16 +10,28 @@
     content="width=device-width, initial-scale=1.0, viewport-fit=cover"
   >
 
-  <meta name="theme-color" content="#23372e">
+  <meta
+    name="theme-color"
+    content="#23372e"
+  >
 
-  <title>נועה & תומר | Save the Date</title>
+  <title>Save the Date</title>
+
 
   <!-- ==========================================================
        GOOGLE FONTS
        ========================================================== -->
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
 
   <link
     href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;500;600;700&family=Frank+Ruhl+Libre:wght@400;500;600;700&family=Playfair+Display:ital,wght@500;600;700&display=swap"
@@ -35,10 +48,8 @@
     :root {
 
       --cream: #fffaf3;
-
       --white: #ffffff;
 
-      /* Dark green taken as the main wedding color */
       --forest: #23372e;
       --forest-dark: #18251f;
       --forest-light: #30493d;
@@ -46,11 +57,24 @@
       --gold: #d5b36a;
       --gold-light: #f0dba8;
 
-      --shadow: 0 20px 60px rgba(0, 0, 0, .25);
+      --shadow:
+        0 20px 60px rgba(0, 0, 0, .25);
 
-      --display: 'Frank Ruhl Libre', Georgia, serif;
-      --script: 'Playfair Display', Georgia, serif;
-      --body: 'Assistant', Arial, sans-serif;
+      --display:
+        'Frank Ruhl Libre',
+        Georgia,
+        serif;
+
+      --script:
+        'Playfair Display',
+        Georgia,
+        serif;
+
+      --body:
+        'Assistant',
+        Arial,
+        sans-serif;
+
     }
 
 
@@ -59,35 +83,53 @@
        ========================================================== */
 
     * {
+
       box-sizing: border-box;
+
       margin: 0;
       padding: 0;
+
     }
+
 
     html {
+
       scroll-behavior: smooth;
+
     }
+
 
     body {
+
       min-height: 100vh;
 
-      background: var(--forest-dark);
+      background:
+        var(--forest-dark);
 
-      color: var(--white);
+      color:
+        var(--white);
 
-      font-family: var(--body);
+      font-family:
+        var(--body);
 
       overflow-x: hidden;
+
     }
+
 
     button,
     input,
     textarea {
+
       font: inherit;
+
     }
 
+
     button {
+
       cursor: pointer;
+
     }
 
 
@@ -113,14 +155,14 @@
 
       isolation: isolate;
 
-      background: var(--forest-dark);
+      background:
+        var(--forest-dark);
+
     }
 
 
     /* ==========================================================
        DARK GREEN BACKGROUND
-
-       This fills the sides of the screen on desktop.
        ========================================================== */
 
     .video-background {
@@ -132,12 +174,19 @@
       z-index: -10;
 
       background:
+
         radial-gradient(
+
           circle at center,
+
           var(--forest-light) 0%,
+
           var(--forest) 45%,
+
           var(--forest-dark) 100%
+
         );
+
     }
 
 
@@ -162,20 +211,12 @@
       overflow: hidden;
 
       z-index: -5;
+
     }
 
 
     /* ==========================================================
        VIDEO
-
-       The video itself is portrait 9:16.
-
-       On desktop:
-       - stays centered
-       - maintains its proportions
-
-       On mobile:
-       - fills the entire screen
        ========================================================== */
 
     .wedding-video {
@@ -187,18 +228,19 @@
 
       object-fit: cover;
 
-      object-position: center center;
+      object-position:
+        center center;
 
       flex-shrink: 0;
 
-      background: var(--forest-dark);
+      background:
+        var(--forest-dark);
+
     }
 
 
     /* ==========================================================
        VIDEO OVERLAY
-
-       Makes the text readable while keeping the video visible.
        ========================================================== */
 
     .video-overlay {
@@ -212,13 +254,21 @@
       pointer-events: none;
 
       background:
+
         linear-gradient(
+
           180deg,
+
           rgba(12, 25, 19, .45) 0%,
+
           rgba(12, 25, 19, .25) 35%,
+
           rgba(12, 25, 19, .40) 65%,
+
           rgba(12, 25, 19, .75) 100%
+
         );
+
     }
 
 
@@ -237,15 +287,15 @@
       pointer-events: none;
 
       box-shadow:
-        inset 0 0 180px rgba(0, 0, 0, .45);
+
+        inset 0 0 180px
+        rgba(0, 0, 0, .45);
+
     }
 
 
     /* ==========================================================
        CONTENT
-
-       IMPORTANT:
-       This is positioned above the video.
        ========================================================== */
 
     .content {
@@ -265,14 +315,18 @@
       justify-content: center;
 
       padding:
+
         clamp(30px, 6vh, 70px)
+
         24px;
+
     }
 
 
     .content-inner {
 
-      width: min(720px, 100%);
+      width:
+        min(720px, 100%);
 
       display: flex;
 
@@ -281,8 +335,9 @@
       align-items: center;
 
       text-align: center;
-      
+
       gap: 16px;
+
     }
 
 
@@ -291,24 +346,36 @@
        ========================================================== */
 
     .names {
-      font-family: var(--display);
+
+      font-family:
+        var(--display);
+
       font-weight: 600;
 
-      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-size:
+        clamp(2.5rem, 6vw, 4.5rem);
 
       line-height: 1.1;
-      letter-spacing: -.025em;
 
-      color: var(--cream);
+      letter-spacing:
+        -.025em;
+
+      color:
+        var(--cream);
 
       text-shadow:
-        0 4px 20px rgba(0, 0, 0, .8),
-        0 2px 6px rgba(0, 0, 0, .6);
+
+        0 4px 20px
+        rgba(0, 0, 0, .8),
+
+        0 2px 6px
+        rgba(0, 0, 0, .6);
 
       animation:
         fadeUp .9s .12s ease both;
 
       margin-top: 0;
+
     }
 
 
@@ -320,17 +387,24 @@
 
       display: inline-block;
 
-      padding: 0 .14em;
+      padding:
+        0 .14em;
 
-      color: var(--gold-light);
+      color:
+        var(--gold-light);
 
-      font-family: var(--script);
+      font-family:
+        var(--script);
 
-      font-style: italic;
+      font-style:
+        italic;
 
-      font-size: .8em;
+      font-size:
+        .8em;
 
-      vertical-align: .04em;
+      vertical-align:
+        .04em;
+
     }
 
 
@@ -342,22 +416,31 @@
 
       margin-top: 8px;
 
-      font-family: var(--script);
+      font-family:
+        var(--script);
 
-      font-size: clamp(1.4rem, 4vw, 2.2rem);
+      font-size:
+        clamp(1.4rem, 4vw, 2.2rem);
 
       font-weight: 500;
 
-      letter-spacing: .08em;
+      letter-spacing:
+        .08em;
 
-      color: var(--cream);
+      color:
+        var(--cream);
 
       text-shadow:
-        0 3px 18px rgba(0, 0, 0, .8),
-        0 2px 6px rgba(0, 0, 0, .6);
+
+        0 3px 18px
+        rgba(0, 0, 0, .8),
+
+        0 2px 6px
+        rgba(0, 0, 0, .6);
 
       animation:
         fadeUp .9s .24s ease both;
+
     }
 
 
@@ -369,16 +452,23 @@
 
       margin-top: 4px;
 
-      font-size: clamp(1.05rem, 2.8vw, 1.3rem);
+      font-size:
+        clamp(1.05rem, 2.8vw, 1.3rem);
 
-      color: var(--cream);
+      color:
+        var(--cream);
 
       text-shadow:
-        0 3px 18px rgba(0, 0, 0, .8),
-        0 2px 6px rgba(0, 0, 0, .6);
+
+        0 3px 18px
+        rgba(0, 0, 0, .8),
+
+        0 2px 6px
+        rgba(0, 0, 0, .6);
 
       animation:
         fadeUp .9s .34s ease both;
+
     }
 
 
@@ -388,22 +478,30 @@
 
     .message {
 
-      width: min(600px, 100%);
+      width:
+        min(600px, 100%);
 
       margin-top: 12px;
 
-      font-size: clamp(1rem, 2.7vw, 1.25rem);
+      font-size:
+        clamp(1rem, 2.7vw, 1.25rem);
 
       line-height: 1.65;
 
-      color: rgba(255, 255, 255, .96);
+      color:
+        rgba(255, 255, 255, .96);
 
       text-shadow:
-        0 3px 18px rgba(0, 0, 0, .8),
-        0 2px 6px rgba(0, 0, 0, .6);
+
+        0 3px 18px
+        rgba(0, 0, 0, .8),
+
+        0 2px 6px
+        rgba(0, 0, 0, .6);
 
       animation:
         fadeUp .9s .44s ease both;
+
     }
 
 
@@ -419,12 +517,15 @@
 
       gap: 12px;
 
-      width: min(300px, 70%);
+      width:
+        min(300px, 70%);
 
-      margin: 12px auto;
+      margin:
+        12px auto;
 
       animation:
         fadeUp .9s .52s ease both;
+
     }
 
 
@@ -438,20 +539,30 @@
       flex: 1;
 
       background:
+
         linear-gradient(
+
           90deg,
+
           transparent,
+
           rgba(240, 219, 168, .8),
+
           transparent
+
         );
+
     }
 
 
     .divider span {
 
-      color: var(--gold-light);
+      color:
+        var(--gold-light);
 
-      font-size: 1rem;
+      font-size:
+        1rem;
+
     }
 
 
@@ -473,6 +584,7 @@
 
       animation:
         fadeUp .9s .62s ease both;
+
     }
 
 
@@ -486,38 +598,54 @@
 
       min-width: 190px;
 
-      padding: 15px 28px;
+      padding:
+        15px 28px;
 
-      border: 1px solid rgba(255, 255, 255, .7);
+      border:
+        1px solid
+        rgba(255, 255, 255, .7);
 
-      border-radius: 999px;
+      border-radius:
+        999px;
 
-      background: rgba(255, 255, 255, .96);
+      background:
+        rgba(255, 255, 255, .96);
 
-      color: var(--forest);
+      color:
+        var(--forest);
 
       font-weight: 700;
 
-      font-size: 1rem;
+      font-size:
+        1rem;
 
       box-shadow:
-        0 15px 40px rgba(0, 0, 0, .35);
+        0 15px 40px
+        rgba(0, 0, 0, .35);
 
       transition:
+
         transform .2s ease,
+
         box-shadow .2s ease,
+
         background .2s ease;
+
     }
 
 
     .rsvp-button:hover {
 
-      transform: translateY(-3px);
+      transform:
+        translateY(-3px);
 
       box-shadow:
-        0 24px 55px rgba(0, 0, 0, .45);
+        0 24px 55px
+        rgba(0, 0, 0, .45);
 
-      background: #ffffff;
+      background:
+        #ffffff;
+
     }
 
 
@@ -526,6 +654,7 @@
       transform:
         translateY(0)
         scale(.98);
+
     }
 
 
@@ -535,27 +664,36 @@
 
     .secondary-button {
 
-      padding: 14px 24px;
+      padding:
+        14px 24px;
 
       border:
-        1px solid rgba(255, 255, 255, .6);
+        1px solid
+        rgba(255, 255, 255, .6);
 
-      border-radius: 999px;
+      border-radius:
+        999px;
 
       background:
         rgba(20, 30, 25, .45);
 
-      color: #ffffff;
+      color:
+        #ffffff;
 
       font-weight: 600;
 
-      backdrop-filter: blur(8px);
+      backdrop-filter:
+        blur(8px);
 
-      -webkit-backdrop-filter: blur(8px);
+      -webkit-backdrop-filter:
+        blur(8px);
 
       transition:
+
         background .2s ease,
+
         transform .2s ease;
+
     }
 
 
@@ -564,7 +702,9 @@
       background:
         rgba(20, 30, 25, .65);
 
-      transform: translateY(-2px);
+      transform:
+        translateY(-2px);
+
     }
 
 
@@ -581,10 +721,13 @@
       color:
         rgba(255, 255, 255, .85);
 
-      text-shadow: 0 2px 4px rgba(0, 0, 0, .6);
+      text-shadow:
+        0 2px 4px
+        rgba(0, 0, 0, .6);
 
       animation:
         fadeUp .9s .72s ease both;
+
     }
 
 
@@ -600,6 +743,7 @@
 
         transform:
           translateY(18px);
+
       }
 
       to {
@@ -608,7 +752,9 @@
 
         transform:
           translateY(0);
+
       }
+
     }
 
 
@@ -635,9 +781,11 @@
       background:
         rgba(10, 18, 14, .58);
 
-      backdrop-filter: blur(7px);
+      backdrop-filter:
+        blur(7px);
 
-      -webkit-backdrop-filter: blur(7px);
+      -webkit-backdrop-filter:
+        blur(7px);
 
       opacity: 0;
 
@@ -645,6 +793,7 @@
 
       transition:
         opacity .3s ease;
+
     }
 
 
@@ -653,18 +802,23 @@
       opacity: 1;
 
       pointer-events: auto;
+
     }
 
 
     .modal-card {
 
-      width: min(620px, 100%);
+      width:
+        min(620px, 100%);
 
-      max-height: 92dvh;
+      max-height:
+        92dvh;
 
-      background: var(--cream);
+      background:
+        var(--cream);
 
-      color: var(--forest);
+      color:
+        var(--forest);
 
       border-radius:
         28px 28px 0 0;
@@ -672,18 +826,21 @@
       overflow: hidden;
 
       box-shadow:
-        0 -20px 70px rgba(0, 0, 0, .35);
+        0 -20px 70px
+        rgba(0, 0, 0, .35);
 
       transform:
         translateY(100%);
 
       transition:
+
         transform .4s
         cubic-bezier(.2, .75, .25, 1);
 
       display: flex;
 
       flex-direction: column;
+
     }
 
 
@@ -691,6 +848,7 @@
 
       transform:
         translateY(0);
+
     }
 
 
@@ -705,14 +863,20 @@
         align-items: center;
 
         padding: 24px;
+
       }
+
 
       .modal-card {
 
-        border-radius: 28px;
+        border-radius:
+          28px;
 
-        max-height: 88dvh;
+        max-height:
+          88dvh;
+
       }
+
     }
 
 
@@ -730,50 +894,64 @@
 
       gap: 15px;
 
-      padding: 18px 20px;
+      padding:
+        18px 20px;
 
       border-bottom:
-        1px solid rgba(35, 55, 46, .12);
+        1px solid
+        rgba(35, 55, 46, .12);
 
       flex-shrink: 0;
+
     }
 
 
     .modal-title {
 
-      font-family: var(--display);
+      font-family:
+        var(--display);
 
-      font-size: 1.4rem;
+      font-size:
+        1.4rem;
 
-      font-weight: 600;
+      font-weight:
+        600;
+
     }
 
 
     .close-button {
 
       width: 38px;
-
       height: 38px;
 
       border:
-        1px solid rgba(35, 55, 46, .15);
+        1px solid
+        rgba(35, 55, 46, .15);
 
-      border-radius: 50%;
+      border-radius:
+        50%;
 
-      background: #ffffff;
+      background:
+        #ffffff;
 
-      color: var(--forest);
+      color:
+        var(--forest);
 
-      font-size: 1.1rem;
+      font-size:
+        1.1rem;
 
       transition:
         transform .2s ease;
+
     }
 
 
     .close-button:hover {
 
-      transform: rotate(90deg);
+      transform:
+        rotate(90deg);
+
     }
 
 
@@ -787,19 +965,26 @@
 
       padding: 18px;
 
-      -webkit-overflow-scrolling: touch;
+      -webkit-overflow-scrolling:
+        touch;
+
     }
 
 
     .form-note {
 
-      text-align: center;
+      text-align:
+        center;
 
-      margin-bottom: 14px;
+      margin-bottom:
+        14px;
 
-      color: #52645b;
+      color:
+        #52645b;
 
-      font-size: .95rem;
+      font-size:
+        .95rem;
+
     }
 
 
@@ -819,9 +1004,12 @@
 
       border: 0;
 
-      border-radius: 18px;
+      border-radius:
+        18px;
 
-      background: #ffffff;
+      background:
+        #ffffff;
+
     }
 
 
@@ -833,33 +1021,44 @@
 
       .invitation {
 
-        min-height: 100dvh;
+        min-height:
+          100dvh;
+
       }
 
 
       .wedding-video {
 
         width: 100%;
-
         height: 100%;
 
-        object-fit: cover;
+        object-fit:
+          cover;
 
         object-position:
           center center;
+
       }
 
 
       .video-overlay {
 
         background:
+
           linear-gradient(
+
             180deg,
+
             rgba(12, 25, 19, .35) 0%,
+
             rgba(12, 25, 19, .15) 30%,
+
             rgba(12, 25, 19, .30) 60%,
+
             rgba(12, 25, 19, .80) 100%
+
           );
+
       }
 
 
@@ -868,13 +1067,16 @@
         padding:
           40px 20px
           45px;
+
       }
 
 
       .content-inner {
 
         width: 100%;
+
         gap: 12px;
+
       }
 
 
@@ -882,18 +1084,22 @@
 
         font-size:
           clamp(3.1rem, 15vw, 5rem);
+
       }
 
 
       .message {
 
-        max-width: 340px;
+        max-width:
+          340px;
+
       }
 
 
       .actions {
 
         width: 100%;
+
       }
 
 
@@ -902,7 +1108,9 @@
 
         width:
           min(320px, 100%);
+
       }
+
     }
 
 
@@ -916,6 +1124,7 @@
 
         width: 100%;
         height: 100%;
+
       }
 
 
@@ -936,20 +1145,30 @@
         flex-shrink: 0;
 
         box-shadow:
-          0 0 100px rgba(0, 0, 0, .40);
+          0 0 100px
+          rgba(0, 0, 0, .40);
+
       }
 
 
       .video-overlay {
 
         background:
+
           linear-gradient(
+
             180deg,
+
             rgba(12, 25, 19, .35) 0%,
+
             rgba(12, 25, 19, .15) 30%,
+
             rgba(12, 25, 19, .35) 60%,
+
             rgba(12, 25, 19, .75) 100%
+
           );
+
       }
 
 
@@ -957,7 +1176,9 @@
 
         width:
           min(680px, 80%);
+
       }
+
     }
 
 
@@ -973,14 +1194,18 @@
         height: 100vh;
 
         width: 56.25vh;
+
       }
 
 
       .content {
 
-        padding-top: 25px;
+        padding-top:
+          25px;
 
-        padding-bottom: 25px;
+        padding-bottom:
+          25px;
+
       }
 
 
@@ -988,12 +1213,15 @@
 
         font-size:
           clamp(3rem, 9vw, 5.5rem);
+
       }
 
 
       .message {
 
-        margin-top: 10px;
+        margin-top:
+          10px;
+
       }
 
 
@@ -1001,7 +1229,9 @@
 
         margin:
           10px auto;
+
       }
+
     }
 
 
@@ -1016,6 +1246,7 @@
         padding:
           28px 16px
           35px;
+
       }
 
 
@@ -1023,6 +1254,7 @@
 
         font-size:
           2.8rem;
+
       }
 
 
@@ -1033,6 +1265,7 @@
 
         line-height:
           1.5;
+
       }
 
 
@@ -1044,7 +1277,9 @@
 
         padding:
           13px 20px;
+
       }
+
     }
 
 
@@ -1066,7 +1301,9 @@
 
         transition-duration:
           .01ms !important;
+
       }
+
     }
 
   </style>
@@ -1140,46 +1377,47 @@
 
 
         <!-- ====================================================
-             EDIT NAMES
+             DYNAMIC NAMES
              ==================================================== -->
 
-        <h1 class="names">
+        <h1
+          class="names"
+          id="coupleNames"
+        >
 
-          נועה
+          <span id="brideName"></span>
 
           <span class="amp">
             &
           </span>
 
-          תומר
+          <span id="groomName"></span>
 
         </h1>
 
 
         <!-- ====================================================
-             EDIT DATE & TIME
+             DYNAMIC DATE & TIME
              ==================================================== -->
 
-        <p class="date">
-
-          18.06.2027 · 19:30
-
-        </p>
+        <p
+          class="date"
+          id="eventDate"
+        ></p>
 
 
         <!-- ====================================================
-             EDIT LOCATION
+             DYNAMIC LOCATION
              ==================================================== -->
 
-        <p class="location">
-
-          אולם אירועים "הנחלה" · אזור המרכז
-
-        </p>
+        <p
+          class="location"
+          id="eventVenue"
+        ></p>
 
 
         <!-- ====================================================
-             EDIT PERSONAL MESSAGE
+             TEMPLATE MESSAGE
              ==================================================== -->
 
         <p class="message">
@@ -1187,6 +1425,7 @@
           אנחנו מתרגשים להזמין אתכם לחגוג איתנו
 
           <br>
+
           את היום המיוחד שלנו ❤️
 
         </p>
@@ -1244,15 +1483,18 @@
 
           </button>
 
+
           <audio
             id="weddingAudio"
             loop
             preload="auto"
           >
+
             <source
               src="treasure.mp3"
               type="audio/mpeg"
             >
+
           </audio>
 
         </div>
@@ -1342,12 +1584,12 @@
 
 
         <!-- ====================================================
-             GOOGLE FORM
+             DYNAMIC GOOGLE FORM
              ==================================================== -->
 
         <iframe
           id="rsvpIframe"
-          src="https://docs.google.com/forms/d/e/1FAIpQLSdWsHbUJHekWG7Xb15X_Zzy5mmfcJ23tLiQadgG6AyyRQ89bA/viewform?embedded=true"
+          src=""
           title="טופס אישור הגעה"
           loading="lazy"
         >
@@ -1370,190 +1612,734 @@
 
   <script>
 
+    (function () {
 
-    /* ==========================================================
-       RSVP MODAL
-       ========================================================== */
-
-    const modal =
-      document.getElementById('rsvpModal');
-
-    const openRsvp =
-      document.getElementById('openRsvp');
-
-    const closeRsvp =
-      document.getElementById('closeRsvp');
+      "use strict";
 
 
-    /* ==========================================================
-       OPEN MODAL
-       ========================================================== */
+      /* ========================================================
+         GLOBAL DATA
+         ======================================================== */
 
-    function openModal() {
+      var invitationData = null;
 
-      modal.classList.add('open');
-
-      modal.setAttribute(
-        'aria-hidden',
-        'false'
-      );
-
-      document.body.style.overflow =
-        'hidden';
-
-      closeRsvp.focus();
-    }
+      var currentLang = "he";
 
 
-    /* ==========================================================
-       CLOSE MODAL
-       ========================================================== */
+      /* ========================================================
+         DOM ELEMENTS
+         ======================================================== */
 
-    function closeModal() {
+      var els = {
 
-      modal.classList.remove('open');
+        brideName:
+          document.getElementById(
+            "brideName"
+          ),
 
-      modal.setAttribute(
-        'aria-hidden',
-        'true'
-      );
+        groomName:
+          document.getElementById(
+            "groomName"
+          ),
 
-      document.body.style.overflow =
-        '';
+        eventDate:
+          document.getElementById(
+            "eventDate"
+          ),
 
-      openRsvp.focus();
-    }
+        eventVenue:
+          document.getElementById(
+            "eventVenue"
+          ),
+
+        rsvpIframe:
+          document.getElementById(
+            "rsvpIframe"
+          ),
+
+        weddingVideo:
+          document.getElementById(
+            "weddingVideo"
+          ),
+
+        weddingAudio:
+          document.getElementById(
+            "weddingAudio"
+          ),
+
+        soundButton:
+          document.getElementById(
+            "soundButton"
+          ),
+
+        modal:
+          document.getElementById(
+            "rsvpModal"
+          ),
+
+        openRsvp:
+          document.getElementById(
+            "openRsvp"
+          ),
+
+        closeRsvp:
+          document.getElementById(
+            "closeRsvp"
+          )
+
+      };
 
 
-    /* ==========================================================
-       RSVP EVENTS
-       ========================================================== */
+      /* ========================================================
+         GET INVITATION SLUG
 
-    openRsvp.addEventListener(
-      'click',
-      openModal
-    );
+         Supported:
+
+         /d4/maya-yair/
+
+         /d4/noa-tomer/
+
+         Local testing:
+
+         /d4/?slug=maya-yair
+         ======================================================== */
+
+      function getInvitationSlug() {
 
 
-    closeRsvp.addEventListener(
-      'click',
-      closeModal
-    );
+        /* ------------------------------------------------------
+           1. Query parameter
+
+           Example:
+
+           /d4/?slug=maya-yair
+           ------------------------------------------------------ */
+
+        var urlParams =
+          new URLSearchParams(
+            window.location.search
+          );
 
 
-    /* Close when clicking outside the modal */
+        var paramSlug =
+          urlParams.get(
+            "slug"
+          );
 
-    modal.addEventListener(
-      'click',
-      function(event) {
+
+        if (paramSlug) {
+
+          return paramSlug.trim();
+
+        }
+
+
+        /* ------------------------------------------------------
+           2. Production URL
+
+           Example:
+
+           /d4/maya-yair/
+           ------------------------------------------------------ */
+
+        var pathParts =
+          window.location.pathname
+            .split("/")
+            .filter(Boolean);
+
 
         if (
-          event.target === modal
+
+          pathParts.length >= 2 &&
+
+          /^d[1-4]$/i.test(
+            pathParts[0]
+          ) &&
+
+          pathParts[1].trim() !== "" &&
+
+          !pathParts[1]
+            .toLowerCase()
+            .endsWith(".html")
+
         ) {
 
-          closeModal();
+          return pathParts[1].trim();
+
+        }
+
+
+        return null;
+
+      }
+
+
+      /* ========================================================
+         ERROR MESSAGE
+         ======================================================== */
+
+      function showError(message) {
+
+        document.body.innerHTML =
+
+          '<div style="' +
+
+            'min-height:100vh;' +
+
+            'display:flex;' +
+
+            'align-items:center;' +
+
+            'justify-content:center;' +
+
+            'background:#18251f;' +
+
+            'color:#fff;' +
+
+            'font-family:Assistant,Arial,sans-serif;' +
+
+            'padding:24px;' +
+
+            'text-align:center;' +
+
+          '">' +
+
+            '<div>' +
+
+              '<h2 style="margin-bottom:10px;">' +
+
+                'Invitation not found' +
+
+              '</h2>' +
+
+              '<p style="opacity:.8;">' +
+
+                message +
+
+              '</p>' +
+
+            '</div>' +
+
+          '</div>';
+
+      }
+
+
+      /* ========================================================
+         LOAD INVITATION DATA
+         ======================================================== */
+
+      async function loadInvitation() {
+
+
+        var slug =
+          getInvitationSlug();
+
+
+        if (!slug) {
+
+          console.error(
+            "No invitation slug found in URL:",
+            window.location.href
+          );
+
+
+          showError(
+            "Invitation not found."
+          );
+
+
+          return;
+
+        }
+
+
+        try {
+
+
+          /* ----------------------------------------------------
+             Centralized customer data
+
+             /data/maya-yair.json
+             /data/noa-tomer.json
+             ---------------------------------------------------- */
+
+          var dataUrl =
+            "/data/" +
+
+            encodeURIComponent(
+              slug
+            ) +
+
+            ".json";
+
+
+          console.log(
+            "Loading invitation data:",
+            dataUrl
+          );
+
+
+          var response =
+            await fetch(
+
+              dataUrl,
+
+              {
+                cache: "no-cache"
+              }
+
+            );
+
+
+          if (!response.ok) {
+
+            throw new Error(
+
+              "Invitation data not found: " +
+
+              slug +
+
+              " (" +
+
+              response.status +
+
+              ")"
+
+            );
+
+          }
+
+
+          invitationData =
+            await response.json();
+
+
+          applyInvitationData();
+
+
+        }
+
+        catch (error) {
+
+
+          console.error(
+            "Failed to load invitation:",
+            error
+          );
+
+
+          showError(
+            "Unable to load this invitation."
+          );
+
 
         }
 
       }
-    );
 
 
-    /* Close with ESC */
+      /* ========================================================
+         APPLY CUSTOMER DATA
+         ======================================================== */
 
-    document.addEventListener(
-      'keydown',
-      function(event) {
+      function applyInvitationData() {
+
+
+        var data =
+          invitationData;
+
+
+        if (!data) {
+          return;
+        }
+
+
+        /* ------------------------------------------------------
+           Names
+           ------------------------------------------------------ */
+
+        if (els.brideName) {
+
+          els.brideName.textContent =
+            data.brideNameHe || "";
+
+        }
+
+
+        if (els.groomName) {
+
+          els.groomName.textContent =
+            data.groomNameHe || "";
+
+        }
+
+
+        /* ------------------------------------------------------
+           Date
+           ------------------------------------------------------ */
+
+        if (els.eventDate) {
+
+          els.eventDate.textContent =
+            data.date || "";
+
+        }
+
+
+        /* ------------------------------------------------------
+           Venue
+           ------------------------------------------------------ */
+
+        if (els.eventVenue) {
+
+          els.eventVenue.textContent =
+            data.venueHe ||
+            data.venueEn ||
+            "";
+
+        }
+
+
+        /* ------------------------------------------------------
+           Browser title
+           ------------------------------------------------------ */
+
+        var brideTitle =
+          data.brideNameHe ||
+          data.brideNameEn ||
+          "";
+
+        var groomTitle =
+          data.groomNameHe ||
+          data.groomNameEn ||
+          "";
+
+        var titleNames =
+          [brideTitle, groomTitle]
+            .filter(Boolean)
+            .join(" & ");
+
+
+        document.title =
+
+          titleNames
+
+            ? titleNames +
+              " | Save the Date"
+
+            : "Save the Date";
+
+
+        /* ------------------------------------------------------
+           RSVP Google Form
+           ------------------------------------------------------ */
 
         if (
-          event.key === 'Escape' &&
-          modal.classList.contains('open')
+          els.rsvpIframe
         ) {
 
-          closeModal();
+          var rsvpUrl =
+
+            currentLang === "en"
+
+              ? (
+                  data.rsvpUrlEn ||
+                  data.rsvpUrlHe ||
+                  ""
+                )
+
+              : (
+                  data.rsvpUrlHe ||
+                  data.rsvpUrlEn ||
+                  ""
+                );
+
+
+          els.rsvpIframe.src =
+            rsvpUrl;
+
+        }
+
+
+        /* ------------------------------------------------------
+           Update HTML language
+           ------------------------------------------------------ */
+
+        document.documentElement
+          .setAttribute(
+            "lang",
+            currentLang
+          );
+
+
+        document.documentElement
+          .setAttribute(
+            "dir",
+            currentLang === "en"
+              ? "ltr"
+              : "rtl"
+          );
+
+      }
+
+
+      /* ========================================================
+         RSVP MODAL
+         ======================================================== */
+
+      function openModal() {
+
+
+        if (!els.modal) {
+          return;
+        }
+
+
+        els.modal.classList.add(
+          "open"
+        );
+
+
+        els.modal.setAttribute(
+          "aria-hidden",
+          "false"
+        );
+
+
+        document.body.style.overflow =
+          "hidden";
+
+
+        if (els.closeRsvp) {
+
+          els.closeRsvp.focus();
 
         }
 
       }
-    );
-
-/* ==========================================================
-   VIDEO / SOUND
-   ========================================================== */
-
-const video =
-  document.getElementById(
-    'weddingVideo'
-  );
-
-const soundButton =
-  document.getElementById(
-    'soundButton'
-  );
-
-const weddingAudio =
-  document.getElementById(
-    'weddingAudio'
-  );
 
 
-soundButton.addEventListener(
-  'click',
-  async function() {
+      function closeModal() {
 
-    try {
 
-      if (weddingAudio.paused) {
+        if (!els.modal) {
+          return;
+        }
 
-        await weddingAudio.play();
 
-        soundButton.textContent =
-          '🔇 כיבוי מוזיקה';
+        els.modal.classList.remove(
+          "open"
+        );
 
-      } else {
 
-        weddingAudio.pause();
+        els.modal.setAttribute(
+          "aria-hidden",
+          "true"
+        );
 
-        soundButton.textContent =
-          '🔊 הפעלת מוזיקה';
+
+        document.body.style.overflow =
+          "";
+
+
+        if (els.openRsvp) {
+
+          els.openRsvp.focus();
+
+        }
 
       }
 
-    }
 
-    catch (error) {
+      if (els.openRsvp) {
 
-      console.error(
-        'Unable to play wedding music:',
-        error
-      );
+        els.openRsvp.addEventListener(
+          "click",
+          openModal
+        );
 
-    }
+      }
 
-  }
-);
 
-    /* ==========================================================
-       MAKE SURE VIDEO STARTS
-       ========================================================== */
+      if (els.closeRsvp) {
 
-    window.addEventListener(
-      'load',
-      function() {
+        els.closeRsvp.addEventListener(
+          "click",
+          closeModal
+        );
 
-        video.play().catch(
-          function() {
-            /*
-              Autoplay may be blocked by
-              the browser. The video is muted,
-              so normally it should work.
-            */
+      }
+
+
+      /* --------------------------------------------------------
+         Close by clicking outside
+         -------------------------------------------------------- */
+
+      if (els.modal) {
+
+        els.modal.addEventListener(
+          "click",
+          function (event) {
+
+            if (
+              event.target ===
+              els.modal
+            ) {
+
+              closeModal();
+
+            }
+
           }
         );
 
       }
-    );
 
+
+      /* --------------------------------------------------------
+         Close with ESC
+         -------------------------------------------------------- */
+
+      document.addEventListener(
+        "keydown",
+        function (event) {
+
+          if (
+
+            event.key === "Escape" &&
+
+            els.modal &&
+
+            els.modal.classList.contains(
+              "open"
+            )
+
+          ) {
+
+            closeModal();
+
+          }
+
+        }
+      );
+
+
+      /* ========================================================
+         VIDEO / SOUND
+         ======================================================== */
+
+      if (els.soundButton) {
+
+
+        els.soundButton.addEventListener(
+          "click",
+          async function () {
+
+
+            if (
+              !els.weddingAudio
+            ) {
+
+              return;
+
+            }
+
+
+            try {
+
+
+              if (
+                els.weddingAudio.paused
+              ) {
+
+
+                await
+                  els.weddingAudio.play();
+
+
+                els.soundButton.textContent =
+                  "🔇 כיבוי מוזיקה";
+
+
+              }
+
+              else {
+
+
+                els.weddingAudio.pause();
+
+
+                els.soundButton.textContent =
+                  "🔊 הפעלת מוזיקה";
+
+
+              }
+
+
+            }
+
+            catch (error) {
+
+
+              console.error(
+                "Unable to play wedding music:",
+                error
+              );
+
+
+            }
+
+          }
+        );
+
+      }
+
+
+      /* ========================================================
+         MAKE SURE VIDEO STARTS
+         ======================================================== */
+
+      window.addEventListener(
+        "load",
+        function () {
+
+
+          if (
+            els.weddingVideo
+          ) {
+
+
+            els.weddingVideo
+              .play()
+              .catch(
+                function () {
+
+                  /*
+                    Autoplay may be blocked
+                    by the browser.
+
+                    The video is muted,
+                    so normally it should work.
+                  */
+
+                }
+              );
+
+          }
+
+        }
+      );
+
+
+      /* ========================================================
+         START
+         ======================================================== */
+
+      loadInvitation();
+
+
+    })();
 
   </script>
 
