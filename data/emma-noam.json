@@ -1,0 +1,28 @@
+{
+  "brideNameEn": "Emma",
+  "brideNameHe": "אמה",
+  "groomNameEn": "Noam",
+  "groomNameHe": "נועם",
+
+  "date": "23.10.2027 · 18:30",
+  "dateISO": "2027-10-23T18:30:00+03:00",
+
+  "reception": "18:30",
+
+  "venueEn": "The Green House",
+  "venueHe": "הבית הירוק",
+
+  "addressEn": "65 George Wise St, Tel Aviv, Israel",
+  "addressHe": "רחוב ג'ורג' וייז 65, תל אביב",
+
+  "rsvpDeadlineEn": "05.10.2027",
+  "rsvpDeadlineHe": "05.10.2027",
+
+  "googleMaps": "https://www.google.com/maps/search/?api=1&query=65+George+Wise+St,+Tel+Aviv,+Israel",
+  "waze": "https://www.waze.com/ul?q=65%20George%20Wise%20St%2C%20Tel%20Aviv",
+
+  "rsvpUrlEn": "https://forms.google.com/",
+  "rsvpUrlHe": "https://forms.google.com/",
+
+  "heroVideo": "/assets/holdingHands.mp4"
+}
