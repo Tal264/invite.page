@@ -1,6 +1,9 @@
 {
+  "id": "g9tyhd",
+
   "brideNameEn": "Emma",
   "brideNameHe": "אמה",
+
   "groomNameEn": "Noam",
   "groomNameHe": "נועם",
 
@@ -19,11 +22,13 @@
   "rsvpDeadlineHe": "05.10.2027",
 
   "googleMaps": "https://www.google.com/maps/search/?api=1&query=65+George+Wise+St,+Tel+Aviv,+Israel",
+
   "waze": "https://www.waze.com/ul?q=65%20George%20Wise%20St%2C%20Tel%20Aviv",
 
   "rsvpUrlEn": "https://forms.google.com/",
   "rsvpUrlHe": "https://forms.google.com/",
 
   "heroVideo": "/assets/holdingHandsverticalvideo.mp4",
-   "audio": "assets/treasure.mp3"
+
+  "audio": "/assets/treasure.mp3"
 }

@@ -142,17 +142,13 @@
     :root {
 
       --cream: #fffaf3;
-
       --white: #ffffff;
 
       --forest: #23372e;
-
       --forest-dark: #18251f;
-
       --forest-light: #30493d;
 
       --gold: #d5b36a;
-
       --gold-light: #f0dba8;
 
       --shadow:
@@ -180,17 +176,13 @@
        ========================================================== */
 
     * {
-
       box-sizing: border-box;
-
       margin: 0;
-
       padding: 0;
     }
 
 
     html {
-
       scroll-behavior: smooth;
     }
 
@@ -215,13 +207,11 @@
     button,
     input,
     textarea {
-
       font: inherit;
     }
 
 
     button {
-
       cursor: pointer;
     }
 
@@ -237,13 +227,11 @@
       width: 100%;
 
       min-height: 100svh;
-
       min-height: 100dvh;
 
       display: flex;
 
       align-items: center;
-
       justify-content: center;
 
       overflow: hidden;
@@ -288,13 +276,11 @@
       inset: 0;
 
       width: 100%;
-
       height: 100%;
 
       display: flex;
 
       align-items: center;
-
       justify-content: center;
 
       overflow: hidden;
@@ -312,7 +298,6 @@
       display: block;
 
       width: 100%;
-
       height: 100%;
 
       object-fit: cover;
@@ -385,13 +370,11 @@
       width: 100%;
 
       min-height: 100svh;
-
       min-height: 100dvh;
 
       display: flex;
 
       align-items: center;
-
       justify-content: center;
 
       padding:
@@ -941,7 +924,6 @@
         max-height:
           88dvh;
       }
-
     }
 
 
@@ -986,7 +968,6 @@
     .close-button {
 
       width: 38px;
-
       height: 38px;
 
       border:
@@ -1154,7 +1135,6 @@
         width:
           min(320px, 100%);
       }
-
     }
 
 
@@ -1212,7 +1192,6 @@
         width:
           min(680px, 80%);
       }
-
     }
 
 
@@ -1260,7 +1239,6 @@
         margin:
           10px auto;
       }
-
     }
 
 
@@ -1304,7 +1282,6 @@
         padding:
           13px 20px;
       }
-
     }
 
 
@@ -1327,7 +1304,6 @@
         transition-duration:
           .01ms !important;
       }
-
     }
 
   </style>
@@ -1367,10 +1343,7 @@
         playsinline
         preload="auto"
         aria-hidden="true"
-    
-        >
-
-      </video>
+      ></video>
 
     </div>
 
@@ -1448,51 +1421,6 @@
         ></p>
 
 
-/* ------------------------------------------------------
-   Dynamic hero video
-   ------------------------------------------------------ */
-
-if (els.weddingVideo) {
-
-  var videoUrl = data.heroVideo || "";
-
-  if (videoUrl) {
-
-    els.weddingVideo.src = videoUrl;
-
-    els.weddingVideo.load();
-
-    els.weddingVideo.play().catch(function (error) {
-
-      console.log(
-        "Video autoplay waiting for browser permission:",
-        error
-      );
-
-    });
-
-  }
-}
-
-
-/* ------------------------------------------------------
-   Dynamic wedding audio
-   ------------------------------------------------------ */
-
-if (els.weddingAudio) {
-
-  var audioUrl = data.audio || "";
-
-  if (audioUrl) {
-
-    els.weddingAudio.src = audioUrl;
-
-    els.weddingAudio.load();
-
-  }
-}
-
-
         <!-- ====================================================
              TEMPLATE MESSAGE
              ==================================================== -->
@@ -1552,19 +1480,22 @@ if (els.weddingAudio) {
             class="secondary-button"
             id="soundButton"
             type="button"
+            aria-label="הפעלת מוזיקה"
           >
             🔊 הפעלת מוזיקה
           </button>
 
 
+          <!-- ==================================================
+               DYNAMIC AUDIO
+               Source is loaded from JSON
+               ================================================== -->
+
           <audio
             id="weddingAudio"
             loop
             preload="auto"
-      
-            >
-
-          </audio>
+          ></audio>
 
         </div>
 
@@ -1610,7 +1541,6 @@ if (els.weddingAudio) {
 
       <div class="modal-header">
 
-
         <h2
           class="modal-title"
           id="modalTitle"
@@ -1628,7 +1558,6 @@ if (els.weddingAudio) {
           ✕
         </button>
 
-
       </div>
 
 
@@ -1637,7 +1566,6 @@ if (els.weddingAudio) {
            ====================================================== -->
 
       <div class="modal-body">
-
 
         <p class="form-note">
           נשמח לדעת שתהיו איתנו ❤️
@@ -1656,7 +1584,6 @@ if (els.weddingAudio) {
         >
           טוען...
         </iframe>
-
 
       </div>
 
@@ -1753,10 +1680,12 @@ if (els.weddingAudio) {
          GET INVITATION SLUG
 
          Supported:
+
          /d4/maya-yair/
          /d4/noa-tomer/
 
          Local testing:
+
          /d4/?slug=maya-yair
          ======================================================== */
 
@@ -1945,12 +1874,10 @@ if (els.weddingAudio) {
 
         var hebrewTitle =
           brideHe && groomHe
-
             ? brideHe +
               " & " +
               groomHe +
               " | שמרו את התאריך"
-
             : "שמרו את התאריך";
 
 
@@ -1962,12 +1889,10 @@ if (els.weddingAudio) {
           [
 
             brideHe && groomHe
-
               ? brideHe +
                 " ו" +
                 groomHe +
                 " מתחתנים ❤️"
-
               : "הזמנה לחתונה",
 
             date,
@@ -1975,9 +1900,7 @@ if (els.weddingAudio) {
             venueHe
 
           ]
-
             .filter(Boolean)
-
             .join(" · ");
 
 
@@ -1987,12 +1910,10 @@ if (els.weddingAudio) {
 
         var englishTitle =
           brideEn && groomEn
-
             ? brideEn +
               " & " +
               groomEn +
               " | Save the Date"
-
             : "Save the Date";
 
 
@@ -2004,12 +1925,10 @@ if (els.weddingAudio) {
           [
 
             brideEn && groomEn
-
               ? brideEn +
                 " & " +
                 groomEn +
                 " are getting married ❤️"
-
               : "Wedding Invitation",
 
             date,
@@ -2017,9 +1936,7 @@ if (els.weddingAudio) {
             venueEn
 
           ]
-
             .filter(Boolean)
-
             .join(" · ");
 
 
@@ -2029,22 +1946,20 @@ if (els.weddingAudio) {
 
         var title =
           currentLang === "en"
-
             ? englishTitle
-
             : hebrewTitle;
 
 
         var description =
           currentLang === "en"
-
             ? englishDescription
-
             : hebrewDescription;
 
 
         /* ------------------------------------------------------
            Absolute image URL
+
+           heroImage remains optional.
            ------------------------------------------------------ */
 
         var imageUrl =
@@ -2067,13 +1982,11 @@ if (els.weddingAudio) {
 
         var imageAlt =
           currentLang === "en"
-
             ? (
                 brideEn +
                 " and " +
                 groomEn
               )
-
             : (
                 brideHe +
                 " ו" +
@@ -2382,7 +2295,6 @@ if (els.weddingAudio) {
 
       async function loadInvitation() {
 
-
         var slug =
           getInvitationSlug();
 
@@ -2390,18 +2302,13 @@ if (els.weddingAudio) {
         if (!slug) {
 
           console.error(
-
             "No invitation slug found in URL:",
-
             window.location.href
-
           );
 
 
           showError(
-
             "Invitation not found."
-
           );
 
 
@@ -2421,85 +2328,59 @@ if (els.weddingAudio) {
              ---------------------------------------------------- */
 
           var dataUrl =
-
             "/data/" +
-
             encodeURIComponent(
               slug
             ) +
-
             ".json";
 
 
           console.log(
-
             "Loading invitation data:",
-
             dataUrl
-
           );
 
 
           var response =
-
             await fetch(
-
               dataUrl,
-
               {
-
                 cache: "no-cache"
-
               }
-
             );
 
 
           if (!response.ok) {
 
             throw new Error(
-
               "Invitation data not found: " +
-
               slug +
-
               " (" +
-
               response.status +
-
               ")"
-
             );
 
           }
 
 
           invitationData =
-
             await response.json();
 
 
           applyInvitationData();
 
-
         }
 
         catch (error) {
 
-
           console.error(
-
             "Failed to load invitation:",
-
             error
-
           );
 
 
           showError(
-
             "Unable to load this invitation."
-
           );
 
         }
@@ -2512,7 +2393,6 @@ if (els.weddingAudio) {
          ======================================================== */
 
       function applyInvitationData() {
-
 
         var data =
           invitationData;
@@ -2532,8 +2412,17 @@ if (els.weddingAudio) {
         if (els.brideName) {
 
           els.brideName.textContent =
-
-            data.brideNameHe || "";
+            currentLang === "en"
+              ? (
+                  data.brideNameEn ||
+                  data.brideNameHe ||
+                  ""
+                )
+              : (
+                  data.brideNameHe ||
+                  data.brideNameEn ||
+                  ""
+                );
 
         }
 
@@ -2541,8 +2430,17 @@ if (els.weddingAudio) {
         if (els.groomName) {
 
           els.groomName.textContent =
-
-            data.groomNameHe || "";
+            currentLang === "en"
+              ? (
+                  data.groomNameEn ||
+                  data.groomNameHe ||
+                  ""
+                )
+              : (
+                  data.groomNameHe ||
+                  data.groomNameEn ||
+                  ""
+                );
 
         }
 
@@ -2554,7 +2452,6 @@ if (els.weddingAudio) {
         if (els.eventDate) {
 
           els.eventDate.textContent =
-
             data.date || "";
 
         }
@@ -2568,11 +2465,19 @@ if (els.weddingAudio) {
 
           els.eventVenue.textContent =
 
-            data.venueHe ||
+            currentLang === "en"
 
-            data.venueEn ||
+              ? (
+                  data.venueEn ||
+                  data.venueHe ||
+                  ""
+                )
 
-            "";
+              : (
+                  data.venueHe ||
+                  data.venueEn ||
+                  ""
+                );
 
         }
 
@@ -2582,80 +2487,265 @@ if (els.weddingAudio) {
            ------------------------------------------------------ */
 
         var brideTitle =
-
           data.brideNameHe ||
-
           data.brideNameEn ||
-
           "";
 
 
         var groomTitle =
-
           data.groomNameHe ||
-
           data.groomNameEn ||
-
           "";
 
 
         var titleNames =
-
           [brideTitle, groomTitle]
-
             .filter(Boolean)
-
             .join(" & ");
 
 
         document.title =
-
           titleNames
-
             ? titleNames +
-
               " | Save the Date"
-
             : "Save the Date";
+
+
+        /* ======================================================
+           DYNAMIC HERO VIDEO
+
+           Loaded from:
+
+           "heroVideo": "/assets/holdingHandsverticalvideo.mp4"
+           ====================================================== */
+
+        if (els.weddingVideo) {
+
+          var videoUrl =
+            data.heroVideo || "";
+
+
+          if (videoUrl) {
+
+            var absoluteVideoUrl =
+              getAbsoluteUrl(
+                videoUrl
+              );
+
+
+            console.log(
+              "Loading wedding video:",
+              absoluteVideoUrl
+            );
+
+
+            /*
+             * Remove any previous source.
+             */
+
+            els.weddingVideo.pause();
+
+            els.weddingVideo.removeAttribute(
+              "src"
+            );
+
+
+            /*
+             * Set the new source.
+             */
+
+            els.weddingVideo.src =
+              absoluteVideoUrl;
+
+
+            /*
+             * Reload the media element.
+             */
+
+            els.weddingVideo.load();
+
+
+            /*
+             * Try to start playback.
+
+             * The video is muted and playsinline,
+             * so normal browser autoplay policies
+             * should allow it.
+             */
+
+            var playVideo =
+              function () {
+
+                els.weddingVideo
+                  .play()
+                  .then(function () {
+
+                    console.log(
+                      "Wedding video started."
+                    );
+
+                  })
+                  .catch(function (error) {
+
+                    console.log(
+                      "Video autoplay was blocked or is waiting:",
+                      error
+                    );
+
+                  });
+
+              };
+
+
+            /*
+             * If metadata is already available,
+             * try immediately.
+             */
+
+            if (
+              els.weddingVideo.readyState >= 2
+            ) {
+
+              playVideo();
+
+            }
+
+            else {
+
+              els.weddingVideo.addEventListener(
+                "loadeddata",
+                playVideo,
+                {
+                  once: true
+                }
+              );
+
+            }
+
+          }
+
+          else {
+
+            console.warn(
+              "No heroVideo found in invitation JSON."
+            );
+
+          }
+
+        }
+
+
+        /* ======================================================
+           DYNAMIC WEDDING AUDIO
+
+           Loaded from:
+
+           "audio": "/assets/treasure.mp3"
+
+           Audio does NOT autoplay.
+
+           It starts only after the visitor
+           clicks the music button.
+           ====================================================== */
+
+        if (els.weddingAudio) {
+
+          var audioUrl =
+            data.audio || "";
+
+
+          if (audioUrl) {
+
+            var absoluteAudioUrl =
+              getAbsoluteUrl(
+                audioUrl
+              );
+
+
+            console.log(
+              "Loading wedding audio:",
+              absoluteAudioUrl
+            );
+
+
+            /*
+             * Stop any previous audio.
+             */
+
+            els.weddingAudio.pause();
+
+
+            /*
+             * Set source dynamically.
+             */
+
+            els.weddingAudio.src =
+              absoluteAudioUrl;
+
+
+            /*
+             * Reload audio.
+             */
+
+            els.weddingAudio.load();
+
+
+            /*
+             * Reset button state.
+             */
+
+            if (els.soundButton) {
+
+              els.soundButton.textContent =
+                "🔊 הפעלת מוזיקה";
+
+            }
+
+          }
+
+          else {
+
+            console.warn(
+              "No audio found in invitation JSON."
+            );
+
+
+            if (els.soundButton) {
+
+              els.soundButton.textContent =
+                "🔊 מוזיקה לא זמינה";
+
+            }
+
+          }
+
+        }
 
 
         /* ------------------------------------------------------
            RSVP Google Form
            ------------------------------------------------------ */
 
-        if (
-
-          els.rsvpIframe
-
-        ) {
+        if (els.rsvpIframe) {
 
           var rsvpUrl =
 
             currentLang === "en"
 
               ? (
-
                   data.rsvpUrlEn ||
-
                   data.rsvpUrlHe ||
-
                   ""
-
                 )
 
               : (
-
                   data.rsvpUrlHe ||
-
                   data.rsvpUrlEn ||
-
                   ""
-
                 );
 
 
           els.rsvpIframe.src =
-
             rsvpUrl;
 
         }
@@ -2666,28 +2756,18 @@ if (els.weddingAudio) {
            ------------------------------------------------------ */
 
         document.documentElement
-
           .setAttribute(
-
             "lang",
-
             currentLang
-
           );
 
 
         document.documentElement
-
           .setAttribute(
-
             "dir",
-
             currentLang === "en"
-
               ? "ltr"
-
               : "rtl"
-
           );
 
 
@@ -2706,7 +2786,6 @@ if (els.weddingAudio) {
 
       function openModal() {
 
-
         if (!els.modal) {
 
           return;
@@ -2715,23 +2794,17 @@ if (els.weddingAudio) {
 
 
         els.modal.classList.add(
-
           "open"
-
         );
 
 
         els.modal.setAttribute(
-
           "aria-hidden",
-
           "false"
-
         );
 
 
         document.body.style.overflow =
-
           "hidden";
 
 
@@ -2746,7 +2819,6 @@ if (els.weddingAudio) {
 
       function closeModal() {
 
-
         if (!els.modal) {
 
           return;
@@ -2755,23 +2827,17 @@ if (els.weddingAudio) {
 
 
         els.modal.classList.remove(
-
           "open"
-
         );
 
 
         els.modal.setAttribute(
-
           "aria-hidden",
-
           "true"
-
         );
 
 
         document.body.style.overflow =
-
           "";
 
 
@@ -2787,11 +2853,8 @@ if (els.weddingAudio) {
       if (els.openRsvp) {
 
         els.openRsvp.addEventListener(
-
           "click",
-
           openModal
-
         );
 
       }
@@ -2800,11 +2863,8 @@ if (els.weddingAudio) {
       if (els.closeRsvp) {
 
         els.closeRsvp.addEventListener(
-
           "click",
-
           closeModal
-
         );
 
       }
@@ -2817,17 +2877,12 @@ if (els.weddingAudio) {
       if (els.modal) {
 
         els.modal.addEventListener(
-
           "click",
-
           function (event) {
 
             if (
-
               event.target ===
-
               els.modal
-
             ) {
 
               closeModal();
@@ -2835,7 +2890,6 @@ if (els.weddingAudio) {
             }
 
           }
-
         );
 
       }
@@ -2846,9 +2900,7 @@ if (els.weddingAudio) {
          -------------------------------------------------------- */
 
       document.addEventListener(
-
         "keydown",
-
         function (event) {
 
           if (
@@ -2858,9 +2910,7 @@ if (els.weddingAudio) {
             els.modal &&
 
             els.modal.classList.contains(
-
               "open"
-
             )
 
           ) {
@@ -2870,7 +2920,6 @@ if (els.weddingAudio) {
           }
 
         }
-
       );
 
 
@@ -2880,19 +2929,30 @@ if (els.weddingAudio) {
 
       if (els.soundButton) {
 
-
         els.soundButton.addEventListener(
-
           "click",
-
           async function () {
 
+            if (
+              !els.weddingAudio
+            ) {
+
+              return;
+
+            }
+
+
+            /*
+             * Make sure an audio source exists.
+             */
 
             if (
-
-              !els.weddingAudio
-
+              !els.weddingAudio.src
             ) {
+
+              console.warn(
+                "No audio source is loaded."
+              );
 
               return;
 
@@ -2903,100 +2963,187 @@ if (els.weddingAudio) {
 
 
               if (
-
                 els.weddingAudio.paused
-
               ) {
 
-
                 await
-
                   els.weddingAudio.play();
 
 
                 els.soundButton.textContent =
-
                   "🔇 כיבוי מוזיקה";
 
               }
 
               else {
 
-
                 els.weddingAudio.pause();
 
 
                 els.soundButton.textContent =
-
                   "🔊 הפעלת מוזיקה";
 
               }
-
 
             }
 
             catch (error) {
 
-
               console.error(
-
                 "Unable to play wedding music:",
-
                 error
-
               );
+
+
+              /*
+               * Keep the button usable if
+               * the browser refuses playback.
+               */
+
+              els.soundButton.textContent =
+                "🔊 הפעלת מוזיקה";
 
             }
 
           }
-
         );
 
       }
 
 
       /* ========================================================
-         MAKE SURE VIDEO STARTS
+         AUDIO EVENT STATES
+         ======================================================== */
+
+      if (els.weddingAudio) {
+
+
+        els.weddingAudio.addEventListener(
+          "play",
+          function () {
+
+            if (els.soundButton) {
+
+              els.soundButton.textContent =
+                "🔇 כיבוי מוזיקה";
+
+            }
+
+          }
+        );
+
+
+        els.weddingAudio.addEventListener(
+          "pause",
+          function () {
+
+            if (els.soundButton) {
+
+              els.soundButton.textContent =
+                "🔊 הפעלת מוזיקה";
+
+            }
+
+          }
+        );
+
+
+        els.weddingAudio.addEventListener(
+          "ended",
+          function () {
+
+            if (els.soundButton) {
+
+              els.soundButton.textContent =
+                "🔊 הפעלת מוזיקה";
+
+            }
+
+          }
+        );
+
+
+        els.weddingAudio.addEventListener(
+          "error",
+          function () {
+
+            console.error(
+              "Wedding audio failed to load:",
+              els.weddingAudio.src
+            );
+
+          }
+        );
+
+      }
+
+
+      /* ========================================================
+         VIDEO EVENTS
+         ======================================================== */
+
+      if (els.weddingVideo) {
+
+
+        els.weddingVideo.addEventListener(
+          "error",
+          function () {
+
+            console.error(
+              "Wedding video failed to load:",
+              els.weddingVideo.src
+            );
+
+          }
+        );
+
+
+        els.weddingVideo.addEventListener(
+          "loadeddata",
+          function () {
+
+            console.log(
+              "Wedding video loaded successfully."
+            );
+
+          }
+        );
+
+      }
+
+
+      /* ========================================================
+         MAKE SURE VIDEO STARTS AFTER PAGE LOAD
          ======================================================== */
 
       window.addEventListener(
-
         "load",
-
         function () {
 
-
           if (
-
-            els.weddingVideo
-
+            els.weddingVideo &&
+            els.weddingVideo.src
           ) {
 
-
             els.weddingVideo
-
               .play()
-
               .catch(
-
                 function () {
 
                   /*
-                    Autoplay may be blocked
-                    by the browser.
+                   * Autoplay may be blocked
+                   * by the browser.
 
-                    The video is muted,
-                    so normally it should work.
-                  */
+                   * The video is muted,
+                   * so normally this should work.
+                   */
 
                 }
-
               );
 
           }
 
         }
-
       );
 
 
@@ -3015,3 +3162,4 @@ if (els.weddingAudio) {
 </body>
 
 </html>
+
