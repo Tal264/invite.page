@@ -1,0 +1,29 @@
+{
+  "brideNameEn": "Michal",
+  "brideNameHe": "מיכל",
+  "groomNameEn": "Assaf",
+  "groomNameHe": "אסף",
+
+  "date": "12.06.2027 · 19:00",
+  "dateISO": "2027-06-12T19:00:00+03:00",
+
+  "reception": "19:00",
+
+  "venueEn": "The Norman Tel Aviv",
+  "venueHe": "מלון נורמן תל אביב",
+
+  "addressEn": "23-25 Nachmani St, Tel Aviv, Israel",
+  "addressHe": "רחוב נחמני 23–25, תל אביב",
+
+  "rsvpDeadlineEn": "25.05.2027",
+  "rsvpDeadlineHe": "25.05.2027",
+
+  "googleMaps": "https://www.google.com/maps/search/?api=1&query=The+Norman+Tel+Aviv",
+  "waze": "https://www.waze.com/ul?q=The%20Norman%20Tel%20Aviv",
+
+  "rsvpUrlEn": "https://forms.google.com/",
+  "rsvpUrlHe": "https://forms.google.com/",
+
+  "heroVideo": "/assets/flowerhorizontalvideo.mp4",
+  "audio": "/assets/treasure.mp3"
+}
